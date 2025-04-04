@@ -4,34 +4,50 @@ import javax.swing.*;
 import java.awt.*;
 
 public class LoginView extends JFrame {
+    //Tamaño de la ventana de inicio
+    final int windowWidth=1200;
+    final int windowHeight=700;
+    //Tamaño del boton
+    final int loginButtonWidth=150;
+    final int loginButtonHeight=70;
+    //Tamaño del contenedor del boton
+    final int loginPanelWidth=0;
+    final int loginPanelHeight=110;
     ImageIcon icon, background;
-    JButton login = new JButton("Iniciar");
+    JPanel loginPanel;
+    JButton login;
     public LoginView() {
         setTitle("CO-Gestor");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setSize(1255, 800);
+        setResizable(false);
+        setSize(windowWidth, windowHeight);
         setLayout(new BorderLayout());
         initComponents();
     }
     public void initComponents() {
-        imagesSettings();
+        WindowIcon();
         loginButton();
+        BackgroundImage();
     }
-    public void imagesSettings() {
+    public void WindowIcon(){
         icon = new ImageIcon("src/main/resources/img/icon-comercio.png");
         setIconImage(icon.getImage());
-        ImageIcon background = new ImageIcon("src/main/resources/img/background-comercio.jpg");
-        background.getImage().getScaledInstance(200, 200, Image.SCALE_SMOOTH);
-        add(new JLabel(background), BorderLayout.CENTER);
     }
     public void loginButton(){
-        JPanel loginPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
-        loginPanel.setPreferredSize(new Dimension(0, 100));
-        login.setPreferredSize(new Dimension(50, 50));
+        login = new JButton("Iniciar");
+        login.setFont(new Font("Arial", Font.BOLD, 20));
+        login.setPreferredSize(new Dimension(loginButtonWidth, loginButtonHeight));
         login.setHorizontalAlignment(SwingConstants.CENTER);
         login.setVerticalAlignment(SwingConstants.CENTER);
+        loginPanel = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        loginPanel.setPreferredSize(new Dimension(loginPanelWidth, loginPanelHeight));
         loginPanel.add(login);
         add(loginPanel, BorderLayout.SOUTH);
+    }
+    public void BackgroundImage() {
+        background = new ImageIcon("src/main/resources/img/background-comercio.jpg");
+        background = new ImageIcon(background.getImage().getScaledInstance(windowWidth, windowHeight-loginButtonHeight-loginButtonHeight, Image.SCALE_SMOOTH));
+        JLabel backgroundLabel = new JLabel(background);
+        add(backgroundLabel, BorderLayout.CENTER);
     }
 }

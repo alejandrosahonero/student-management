@@ -6,16 +6,18 @@ import javax.swing.*;
 import java.awt.*;
 
 public class LoginView extends JFrame {
-    //Tamaño de la ventana de inicio
-    final int windowWidth=1152;
-    final int windowHeight=768;
-    //Tamaño del boton
-    final int loginButtonWidth=180;
-    final int loginButtonHeight=90;
 
-    JLayeredPane loginPanel;
-    ImageIcon icon, background;
-    JButton loginButton;
+    // Tamaño de la ventana de inicio
+    private final int windowWidth=1152;
+    private final int windowHeight=768;
+
+    // Tamaño del boton
+    private final int loginButtonWidth=180;
+    private final int loginButtonHeight=90;
+
+    private JLayeredPane loginPanel;
+    private ImageIcon icon, background, buttonIcon;
+    private JButton loginButton;
 
     public LoginView() {
         setTitle("CO-Gestor");
@@ -24,13 +26,16 @@ public class LoginView extends JFrame {
         setSize(windowWidth, windowHeight);
         setLayout(null);
         setBackground(new Color(0xCCCCCC));
+        setLocationRelativeTo(null);
+
         initComponents();
+        ejecutarAcciones();
     }
 
     /**
      * Método que inicializa todos los demás métodos para aligerar la carga al constructor
      */
-    public void initComponents() {
+    private void initComponents() {
         WindowIcon();
         BackgroundImage();
         loginButton();
@@ -39,7 +44,7 @@ public class LoginView extends JFrame {
     /**
      * Establece el ícono de la ventana y de la aplicación
      */
-    public void WindowIcon(){
+    private void WindowIcon(){
         icon = new ImageIcon("src/main/resources/img/icon-comercio.png");
         setIconImage(icon.getImage());
     }
@@ -47,11 +52,13 @@ public class LoginView extends JFrame {
     /**
      * Establece la imagen de fondo
      */
-    public void BackgroundImage() {
-        background = new ImageIcon("src/main/resources/img/background-comercio.png");
-        JLabel backgroundLabel = new JLabel(background);
+    private void BackgroundImage() {
+        background = new ImageIcon("src/main/resources/img/background-day-comercio.png");
+        background = new ImageIcon(background.getImage().getScaledInstance(windowWidth, windowHeight, Image.SCALE_SMOOTH));
 
+        JLabel backgroundLabel = new JLabel(background);
         backgroundLabel.setBounds(0, 0, windowWidth, windowHeight);
+
         add(backgroundLabel);
     }
 
@@ -59,20 +66,23 @@ public class LoginView extends JFrame {
      * Crea el botón de inicio
      * Añade el boton a un panel para poder alinearlo correctamente y a la vez tener un tamaño especificado
      */
-    public void loginButton(){
-        loginButton = new JButton();
-        loginButton.setFont(new Font("Arial", Font.BOLD, 20));
+    private void loginButton(){
+        buttonIcon = new ImageIcon("src/main/resources/img/login-button.png");
+        buttonIcon = new ImageIcon(buttonIcon.getImage().getScaledInstance(loginButtonWidth, loginButtonHeight, Image.SCALE_SMOOTH));
+
+        loginButton = new JButton("INICIAR");
         loginButton.setBackground(new Color(0,0,0, 55));
         loginButton.setBorder(BorderFactory.createLineBorder(new Color(0x3c7181),10,true));
-
-        ImageIcon buttonIcon = new ImageIcon("src/main/resources/img/login-button.png");
-        buttonIcon = new ImageIcon(buttonIcon.getImage().getScaledInstance(loginButtonWidth, loginButtonHeight, Image.SCALE_SMOOTH));
         loginButton.setIcon(buttonIcon);
-
         loginButton.setBounds((windowWidth/2)-(loginButtonWidth/2), windowHeight-250, loginButtonWidth, loginButtonHeight);
+
         add(loginButton);
 
         loginButton.addActionListener(new LoginButtonController(this));
+    }
+    private void ejecutarAcciones(){
+        LoginButtonController loginButtonController = new LoginButtonController(this);
+        loginButtonController.escucharEventos();
     }
 
     public JButton getLoginButton() {

@@ -1,5 +1,7 @@
 package dev.alejandrosahonero.gui;
 
+import dev.alejandrosahonero.logic.LoginButtonController;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -18,7 +20,7 @@ public class LoginView extends JFrame {
     public LoginView() {
         setTitle("CO-Gestor");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(false);
+        setResizable(true);
         setSize(windowWidth, windowHeight);
         setLayout(null);
         setBackground(new Color(0xCCCCCC));
@@ -29,8 +31,6 @@ public class LoginView extends JFrame {
      * Método que inicializa todos los demás métodos para aligerar la carga al constructor
      */
     public void initComponents() {
-        loginPanel = getLayeredPane();
-        loginPanel.setBounds(0, 0, windowWidth, windowHeight);
         WindowIcon();
         BackgroundImage();
         loginButton();
@@ -52,7 +52,7 @@ public class LoginView extends JFrame {
         JLabel backgroundLabel = new JLabel(background);
 
         backgroundLabel.setBounds(0, 0, windowWidth, windowHeight);
-        loginPanel.add(backgroundLabel, 1);
+        add(backgroundLabel);
     }
 
     /**
@@ -62,16 +62,17 @@ public class LoginView extends JFrame {
     public void loginButton(){
         loginButton = new JButton();
         loginButton.setFont(new Font("Arial", Font.BOLD, 20));
+        loginButton.setBackground(new Color(0,0,0, 55));
         loginButton.setBorder(BorderFactory.createLineBorder(new Color(0x3c7181),10,true));
-        //loginButton.setBackground(null);
 
         ImageIcon buttonIcon = new ImageIcon("src/main/resources/img/login-button.png");
         buttonIcon = new ImageIcon(buttonIcon.getImage().getScaledInstance(loginButtonWidth, loginButtonHeight, Image.SCALE_SMOOTH));
         loginButton.setIcon(buttonIcon);
 
         loginButton.setBounds((windowWidth/2)-(loginButtonWidth/2), windowHeight-250, loginButtonWidth, loginButtonHeight);
-        loginPanel.add(loginButton,2);
+        add(loginButton);
 
+        loginButton.addActionListener(new LoginButtonController(this));
     }
 
     public JButton getLoginButton() {

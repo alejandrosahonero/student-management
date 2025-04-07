@@ -8,7 +8,6 @@ import java.awt.event.ActionListener;
 
 public class LoginButtonController implements ActionListener {
     LoginView loginView;
-    OptionsView optionsView = new OptionsView();
 
     public LoginButtonController(LoginView loginView) {
         this.loginView = loginView;
@@ -21,7 +20,7 @@ public class LoginButtonController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == loginView.getLoginButton()){
             loginView.setVisible(false);
-            optionsView.setVisible(true);
+            new OptionsView().setVisible(true);
         }
     }
 }

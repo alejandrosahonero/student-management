@@ -70,15 +70,12 @@ public class LoginView extends JFrame {
         buttonIcon = new ImageIcon("src/main/resources/img/login-button.png");
         buttonIcon = new ImageIcon(buttonIcon.getImage().getScaledInstance(loginButtonWidth, loginButtonHeight, Image.SCALE_SMOOTH));
 
-        loginButton = new JButton("INICIAR");
-        loginButton.setBackground(new Color(0,0,0, 55));
-        loginButton.setBorder(BorderFactory.createLineBorder(new Color(0x3c7181),10,true));
+        loginButton = new JButton();
+        loginButton.setBackground(new Color(0x758A45));
         loginButton.setIcon(buttonIcon);
-        loginButton.setBounds((windowWidth/2)-(loginButtonWidth/2), windowHeight-250, loginButtonWidth, loginButtonHeight);
+        loginButton.setBounds((windowWidth/2)+(windowWidth/3), windowHeight-250, loginButtonWidth, loginButtonHeight);
 
         add(loginButton);
-
-        loginButton.addActionListener(new LoginButtonController(this));
     }
     private void ejecutarAcciones(){
         LoginButtonController loginButtonController = new LoginButtonController(this);

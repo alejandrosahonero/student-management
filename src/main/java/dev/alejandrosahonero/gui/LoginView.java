@@ -24,6 +24,7 @@ public class LoginView extends JFrame {
         setResizable(false);
         setSize(windowWidth, windowHeight);
         setLayout(new BorderLayout());
+        setBackground(new Color(0xCCCCCC));
         initComponents();
     }
 
@@ -61,9 +62,13 @@ public class LoginView extends JFrame {
      * Añade el boton a un panel para poder alinearlo correctamente y a la vez tener un tamaño especificado
      */
     public void loginButton(){
-        login = new JButton("Iniciar");
+        login = new JButton();
         login.setFont(new Font("Arial", Font.BOLD, 20));
         login.setPreferredSize(new Dimension(loginButtonWidth, loginButtonHeight));
+
+        ImageIcon buttonIcon = new ImageIcon("src/main/resources/img/login-button.png");
+        buttonIcon = new ImageIcon(buttonIcon.getImage().getScaledInstance(loginButtonWidth, loginButtonHeight, Image.SCALE_SMOOTH));
+        login.setIcon(buttonIcon);
 
         loginPanel = new JPanel(new GridBagLayout());
         loginPanel.setPreferredSize(new Dimension(loginPanelWidth, loginPanelHeight));

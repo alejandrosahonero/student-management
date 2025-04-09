@@ -6,15 +6,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class LoginView extends JFrame {
-
-    // Tamaño de la ventana de inicio
-    private final int windowWidth=1152;
-    private final int windowHeight=768;
-
-    // Tamaño del boton
-    private final int loginButtonWidth=180;
-    private final int loginButtonHeight=90;
-
     private JLayeredPane loginPanel;
     private ImageIcon icon, background, buttonIcon;
     private JButton loginButton;
@@ -23,13 +14,12 @@ public class LoginView extends JFrame {
         setTitle("CO-Gestor");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setResizable(true);
-        setSize(windowWidth, windowHeight);
+        setSize(1152, 768);
         setLayout(null);
         setBackground(new Color(0xCCCCCC));
         setLocationRelativeTo(null);
 
         initComponents();
-        ejecutarAcciones();
     }
 
     /**
@@ -54,10 +44,10 @@ public class LoginView extends JFrame {
      */
     private void BackgroundImage() {
         background = new ImageIcon("src/main/resources/img/background-day-comercio.png");
-        background = new ImageIcon(background.getImage().getScaledInstance(windowWidth, windowHeight, Image.SCALE_SMOOTH));
+        background = new ImageIcon(background.getImage().getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
 
         JLabel backgroundLabel = new JLabel(background);
-        backgroundLabel.setBounds(0, 0, windowWidth, windowHeight);
+        backgroundLabel.setBounds(0, 0, this.getWidth(), this.getHeight());
 
         add(backgroundLabel);
     }
@@ -67,19 +57,16 @@ public class LoginView extends JFrame {
      * Añade el boton a un panel para poder alinearlo correctamente y a la vez tener un tamaño especificado
      */
     private void loginButton(){
-        buttonIcon = new ImageIcon("src/main/resources/img/login-button.png");
-        buttonIcon = new ImageIcon(buttonIcon.getImage().getScaledInstance(loginButtonWidth, loginButtonHeight, Image.SCALE_SMOOTH));
-
         loginButton = new JButton();
         loginButton.setBackground(new Color(0x758A45));
+        loginButton.setBounds(this.getWidth()/2, this.getHeight()-250, 180, 90);
+        loginButton.addActionListener(new LoginButtonController(this));
+
+        buttonIcon = new ImageIcon("src/main/resources/img/login-button.png");
+        buttonIcon = new ImageIcon(buttonIcon.getImage().getScaledInstance(loginButton.getWidth(), loginButton.getHeight(), Image.SCALE_SMOOTH));
         loginButton.setIcon(buttonIcon);
-        loginButton.setBounds((windowWidth/2)+(windowWidth/3), windowHeight-250, loginButtonWidth, loginButtonHeight);
 
         add(loginButton);
-    }
-    private void ejecutarAcciones(){
-        LoginButtonController loginButtonController = new LoginButtonController(this);
-        loginButtonController.escucharEventos();
     }
 
     public JButton getLoginButton() {

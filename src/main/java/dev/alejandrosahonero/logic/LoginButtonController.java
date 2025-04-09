@@ -18,29 +18,22 @@ public class LoginButtonController implements ActionListener {
         this.loginView = loginView;
     }
 
-    public void escucharEventos(){
-        loginView.getLoginButton().addActionListener(this);
-    }
-
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == loginView.getLoginButton()){
+        /*//    Prueba conexion base de datos
+        EntityManager em = Conector.getEntityManager();
+        em.getTransaction().begin();
+        Persona persona = new Persona("2956864X", "Hernesto", "Pablo", 34, "femenino");
+        em.persist(persona);
+        ArrayList<String> modulos = new ArrayList<>();
+        modulos.add("mates");
+        modulos.add("bio");
+        Profesor profesor = new Profesor("2956864Z", "Hernesto", "Pablo", 34, "femenino", modulos);
+        em.persist(profesor);
+        em.getTransaction().commit();
+        em.close();*/
 
-            /*//    Prueba conexion base de datos
-            EntityManager em = Conector.getEntityManager();
-            em.getTransaction().begin();
-            Persona persona = new Persona("2956864X", "Hernesto", "Pablo", 34, "femenino");
-            em.persist(persona);
-            ArrayList<String> modulos = new ArrayList<>();
-            modulos.add("mates");
-            modulos.add("bio");
-            Profesor profesor = new Profesor("2956864Z", "Hernesto", "Pablo", 34, "femenino", modulos);
-            em.persist(profesor);
-            em.getTransaction().commit();
-            em.close();*/
+        loginView.setVisible(false);
+        new OptionsView().setVisible(true);
 
-
-            loginView.setVisible(false);
-            new OptionsView().setVisible(true);
-        }
     }
 }

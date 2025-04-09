@@ -11,7 +11,7 @@ public class MatriculacionView extends JFrame
     private JButton photoButton;
     private JTextField nombre, apellido, email, telefono;
     private JLabel labelPhoto;
-    private ImageIcon photo = new ImageIcon("src/main/resources/img/photo-default.jpg");
+    private ImageIcon background, photo = new ImageIcon("src/main/resources/img/photo-default.jpg");
 
     public MatriculacionView()
     {
@@ -20,18 +20,27 @@ public class MatriculacionView extends JFrame
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(true);
-        setLayout(new BorderLayout());
+        setLayout(null);
 
         initComponents();
     }
     private void initComponents()
     {
+        backgroundImage();
         imagePanel();
         personalInformation();
     }
+    private void backgroundImage() {
+        background = new ImageIcon("src/main/resources/img/background-windows.png");
+        background = new ImageIcon(background.getImage().getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
+
+        JLabel backgroundLabel = new JLabel(background);
+        backgroundLabel.setBounds(0, 0, this.getWidth(), this.getHeight());
+
+        add(backgroundLabel);
+    }
     private void personalInformation(){
         personalInformationPanel = new JPanel(new GridLayout(2,2));
-        personalInformationPanel.setPreferredSize(new Dimension(0, 100));
 
         nombre = new JTextField("Nombre");
         nombre.setPreferredSize(new Dimension(200, 30));
@@ -49,7 +58,8 @@ public class MatriculacionView extends JFrame
         telefono.setPreferredSize(new Dimension(200, 30));
         personalInformationPanel.add(telefono);
 
-        add(personalInformationPanel, BorderLayout.NORTH);
+        personalInformationPanel.setBounds(0, 0, this.getWidth()/2, this.getHeight()/2);
+        add(personalInformationPanel);
     }
     private void imagePanel()
     {
@@ -66,7 +76,8 @@ public class MatriculacionView extends JFrame
         photoButton.addActionListener(new PhotoButtonController(this));
         imagePanel.add(photoButton, BorderLayout.SOUTH);
 
-        add(imagePanel, BorderLayout.CENTER);
+        imagePanel.setBounds(250, 250, this.getWidth()/2, this.getHeight()/2);
+        add(imagePanel);
     }
 
     public void setPhoto(ImageIcon photoChossed) {

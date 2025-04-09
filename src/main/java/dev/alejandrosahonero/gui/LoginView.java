@@ -12,6 +12,7 @@ public class LoginView extends JFrame {
 
     public LoginView() {
         setTitle("CO-Gestor");
+        // TAMAÑO MÁS COMUN 1280x720 -> HACER UNA SUPERCLASE
         setSize(1152, 768);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

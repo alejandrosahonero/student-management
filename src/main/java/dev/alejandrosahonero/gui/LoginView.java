@@ -12,12 +12,12 @@ public class LoginView extends JFrame {
 
     public LoginView() {
         setTitle("CO-Gestor");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(true);
         setSize(1152, 768);
-        setLayout(null);
-        setBackground(new Color(0xCCCCCC));
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
+        setResizable(false);
+        setLayout(null);
+
 
         initComponents();
     }
@@ -67,9 +67,5 @@ public class LoginView extends JFrame {
         loginButton.setIcon(buttonIcon);
 
         add(loginButton);
-    }
-
-    public JButton getLoginButton() {
-        return loginButton;
     }
 }

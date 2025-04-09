@@ -6,14 +6,14 @@ import javax.swing.*;
 import java.awt.*;
 
 public class OptionsView extends JFrame {
-    JPanel panel;
-    JButton matricularButton, listarButton, addProButton, addModButton;
+    private JPanel panel;
+    private JButton matricularButton, listarButton, addProButton, addModButton;
     public OptionsView(){
         setTitle("Opciones");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setResizable(false);
-        setLocationRelativeTo(null);
         setSize(new Dimension(1152, 768));
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setResizable(false);
         setLayout(new BorderLayout());
 
         initComponents();
@@ -64,26 +64,5 @@ public class OptionsView extends JFrame {
         panel.add(button4);
 
         add(panel);
-    }
-
-    //Getters and Setters
-    public JPanel getPanel() {
-        return panel;
-    }
-
-    public JButton getMatricularButton() {
-        return matricularButton;
-    }
-
-    public JButton getListarButton() {
-        return listarButton;
-    }
-
-    public JButton getAddProButton() {
-        return addProButton;
-    }
-
-    public JButton getAddModButton() {
-        return addModButton;
     }
 }

@@ -5,9 +5,13 @@ import javax.swing.*;
 public class MatriculacionView extends JFrame {
     public MatriculacionView() {
         setTitle("Matriculacion");
+        setSize(1152, 768);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
-        setSize(500, 500);
+        setLayout(null);
+
+        initComponents();
     }
+    private void initComponents() {}
 }

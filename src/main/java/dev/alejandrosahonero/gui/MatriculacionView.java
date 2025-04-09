@@ -1,14 +1,16 @@
 package dev.alejandrosahonero.gui;
 
+import dev.alejandrosahonero.logic.PhotoButtonController;
+
 import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
-import java.io.FileFilter;
 
 public class MatriculacionView extends JFrame {
     private JPanel imagePanel;
     private ImageIcon photo;
+    private JButton photoButton;
     private JFileChooser photoChooser;
+
     public MatriculacionView() {
         setTitle("Matriculacion");
         setSize(1152, 768);
@@ -29,17 +31,20 @@ public class MatriculacionView extends JFrame {
 
         photo = new ImageIcon("src/main/resources/img/photo-default.jpg");
         photo = new ImageIcon(photo.getImage().getScaledInstance(150, 200, Image.SCALE_SMOOTH));
-
         imagePanel.add(new JLabel(photo), BorderLayout.CENTER);
 
-        photoChooser = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("jpg, jpeg, png", "jpg", "jpeg", "png");
-        photoChooser.setFileFilter(filter);
-        photoChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
-
-
-        imagePanel.add(photoChooser, BorderLayout.SOUTH);
+        photoButton = new JButton("Escoger imagen");
+        photoButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        photoButton.setVerticalAlignment(SwingConstants.CENTER);
+        photoButton.setHorizontalAlignment(SwingConstants.CENTER);
+        photoButton.addActionListener(new PhotoButtonController(this));
+        imagePanel.add(photoButton, BorderLayout.SOUTH);
 
         add(imagePanel, BorderLayout.CENTER);
+    }
+    public void setPhoto(ImageIcon image) {
+        photo = image;
+        photo = new ImageIcon(photo.getImage().getScaledInstance(150, 200, Image.SCALE_SMOOTH));
+        imagePanel.add(new JLabel(photo), BorderLayout.CENTER);
     }
 }

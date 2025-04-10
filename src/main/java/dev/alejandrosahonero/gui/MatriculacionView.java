@@ -5,39 +5,29 @@ import dev.alejandrosahonero.logic.PhotoButtonController;
 import javax.swing.*;
 import java.awt.*;
 
-public class MatriculacionView extends JFrame
+public class MatriculacionView extends MainView
 {
+    private JLabel background, labelPhoto;
     private JPanel imagePanel, personalInformationPanel;
     private JButton photoButton;
     private JTextField nombre, apellido, email, telefono;
-    private JLabel labelPhoto;
-    private ImageIcon background, photo = new ImageIcon("src/main/resources/img/photo-default.jpg");
+    private ImageIcon photo = new ImageIcon("src/main/resources/img/photo-default.jpg");
 
     public MatriculacionView()
     {
-        setTitle("Matriculacion");
-        setSize(1152, 768);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setResizable(true);
-        setLayout(null);
+        super("Matriculacion");
+        setBackgroundImage("src/main/resources/img/background-windows.png");
 
         initComponents();
     }
     private void initComponents()
     {
-        backgroundImage();
+        background = new JLabel(getBackgroundImage());
+
         imagePanel();
         personalInformation();
-    }
-    private void backgroundImage() {
-        background = new ImageIcon("src/main/resources/img/background-windows.png");
-        background = new ImageIcon(background.getImage().getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
 
-        JLabel backgroundLabel = new JLabel(background);
-        backgroundLabel.setBounds(0, 0, this.getWidth(), this.getHeight());
-
-        add(backgroundLabel);
+        add(background, BorderLayout.CENTER);
     }
     private void personalInformation(){
         personalInformationPanel = new JPanel(new GridLayout(2,2));
@@ -59,7 +49,7 @@ public class MatriculacionView extends JFrame
         personalInformationPanel.add(telefono);
 
         personalInformationPanel.setBounds(0, 0, this.getWidth()/2, this.getHeight()/2);
-        add(personalInformationPanel);
+        background.add(personalInformationPanel);
     }
     private void imagePanel()
     {
@@ -77,7 +67,7 @@ public class MatriculacionView extends JFrame
         imagePanel.add(photoButton, BorderLayout.SOUTH);
 
         imagePanel.setBounds(250, 250, this.getWidth()/2, this.getHeight()/2);
-        add(imagePanel);
+        background.add(imagePanel);
     }
 
     public void setPhoto(ImageIcon photoChossed) {

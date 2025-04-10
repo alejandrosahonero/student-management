@@ -6,9 +6,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class OptionsView extends JFrame {
-    private JLabel backgroundLabel;
+    private JLabel background;
+    private ImageIcon backgroundImage;
     private JButton matricularButton, listarButton, addProButton, addModButton;
-    private ImageIcon background;
     public OptionsView(){
         setTitle("Opciones");
         setSize(new Dimension(1152, 768));
@@ -19,18 +19,20 @@ public class OptionsView extends JFrame {
 
         initComponents();
     }
+
     private void initComponents(){
         backgroundImage();
         buttonsPanel();
     }
+
     private void backgroundImage() {
-        background = new ImageIcon("src/main/resources/img/background-windows.png");
-        background = new ImageIcon(background.getImage().getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
+        backgroundImage = new ImageIcon("src/main/resources/img/background-windows.png");
+        backgroundImage = new ImageIcon(backgroundImage.getImage().getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
 
-        backgroundLabel = new JLabel(background);
-        backgroundLabel.setSize(background.getIconWidth(), background.getIconHeight());
+        background = new JLabel(backgroundImage);
+        background.setSize(getWidth(), getHeight());
 
-        add(backgroundLabel, BorderLayout.CENTER);
+        add(background, BorderLayout.CENTER);
     }
     private void buttonsPanel(){
         final int buttonWidth = 250;
@@ -64,10 +66,10 @@ public class OptionsView extends JFrame {
         addModButton.addActionListener(new OptionsController(this));
         addModButton.setBounds((getWidth()/2+buttonWidth/2), (getHeight()/2+buttonHeight/2), buttonWidth, buttonHeight);
 
-        backgroundLabel.add(matricularButton);
-        backgroundLabel.add(listarButton);
-        backgroundLabel.add(addProButton);
-        backgroundLabel.add(addModButton);
+        background.add(matricularButton);
+        background.add(listarButton);
+        background.add(addProButton);
+        background.add(addModButton);
 
     }
 

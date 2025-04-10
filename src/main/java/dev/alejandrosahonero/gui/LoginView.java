@@ -6,19 +6,18 @@ import javax.swing.*;
 import java.awt.*;
 
 public class LoginView extends JFrame {
-    private JLayeredPane loginPanel;
-    private ImageIcon icon, background, buttonIcon;
+    private JLabel background;
+    private ImageIcon icon, backgroundImage, buttonIcon;
     private JButton loginButton;
 
     public LoginView() {
         setTitle("CO-Gestor");
         // TAMAÑO MÁS COMUN 1280x720 -> HACER UNA SUPERCLASE
-        setSize(1152, 768);
+        setSize(1280, 720);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
-        setLayout(null);
-
+        setLayout(new BorderLayout());
 
         initComponents();
     }
@@ -44,13 +43,13 @@ public class LoginView extends JFrame {
      * Establece la imagen de fondo
      */
     private void BackgroundImage() {
-        background = new ImageIcon("src/main/resources/img/background-day-comercio.png");
-        background = new ImageIcon(background.getImage().getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
+        backgroundImage = new ImageIcon("src/main/resources/img/background-day-comercio.png");
+        backgroundImage = new ImageIcon(backgroundImage.getImage().getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH));
 
-        JLabel backgroundLabel = new JLabel(background);
-        backgroundLabel.setBounds(0, 0, this.getWidth(), this.getHeight());
+        background = new JLabel(backgroundImage);
+        background.setSize(getWidth(), getHeight());
 
-        add(backgroundLabel);
+        add(background, BorderLayout.CENTER);
     }
 
     /**
@@ -59,14 +58,13 @@ public class LoginView extends JFrame {
      */
     private void loginButton(){
         loginButton = new JButton();
-        loginButton.setBackground(new Color(0x758A45));
-        loginButton.setBounds(this.getWidth()/2, this.getHeight()-250, 180, 90);
         loginButton.addActionListener(new LoginButtonController(this));
+        loginButton.setBounds(getWidth()/2, getHeight()/2, 180, 90);
 
         buttonIcon = new ImageIcon("src/main/resources/img/login-button.png");
         buttonIcon = new ImageIcon(buttonIcon.getImage().getScaledInstance(loginButton.getWidth(), loginButton.getHeight(), Image.SCALE_SMOOTH));
         loginButton.setIcon(buttonIcon);
 
-        add(loginButton);
+        background.add(loginButton);
     }
 }

@@ -12,7 +12,6 @@ public class LoginView extends MainView {
 
     public LoginView() {
         super("CO-Gestor");
-        setWindowIcon("src/main/resources/img/icon-comercio.png");
         setBackgroundImage("src/main/resources/img/background-day-comercio.png");
 
         initComponents();

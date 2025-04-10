@@ -3,7 +3,7 @@ package dev.alejandrosahonero.gui;
 import javax.swing.*;
 import java.awt.*;
 
-public class MainView extends JFrame {
+public abstract class MainView extends JFrame {
     final int windowsWidth = 1280;
     final int windowsHeight = 720;
 
@@ -16,6 +16,8 @@ public class MainView extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setLayout(new BorderLayout());
+
+        setWindowIcon("src/main/resources/img/icon-comercio.png");
     }
     /**
      * Establece el ícono de la ventana y de la aplicación

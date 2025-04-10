@@ -5,32 +5,20 @@ import dev.alejandrosahonero.logic.OptionsController;
 import javax.swing.*;
 import java.awt.*;
 
-public class OptionsView extends JFrame {
+public class OptionsView extends MainView {
     private JLabel background;
-    private ImageIcon backgroundImage;
     private JButton matricularButton, listarButton, addProButton, addModButton;
     public OptionsView(){
-        setTitle("Opciones");
-        setSize(new Dimension(1152, 768));
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
-        setResizable(false);
-        setLayout(new BorderLayout());
+        super("Options");
+        setBackgroundImage("src/main/resources/img/background-windows.png");
 
         initComponents();
     }
 
     private void initComponents(){
-        backgroundImage();
+        background = new JLabel(getBackgroundImage());
+
         buttonsPanel();
-    }
-
-    private void backgroundImage() {
-        backgroundImage = new ImageIcon("src/main/resources/img/background-windows.png");
-        backgroundImage = new ImageIcon(backgroundImage.getImage().getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
-
-        background = new JLabel(backgroundImage);
-        background.setSize(getWidth(), getHeight());
 
         add(background, BorderLayout.CENTER);
     }
@@ -70,7 +58,6 @@ public class OptionsView extends JFrame {
         background.add(listarButton);
         background.add(addProButton);
         background.add(addModButton);
-
     }
 
     //Getters

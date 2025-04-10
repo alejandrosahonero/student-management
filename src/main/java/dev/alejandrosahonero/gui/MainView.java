@@ -4,8 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public abstract class MainView extends JFrame {
-    final int windowsWidth = 1280;
-    final int windowsHeight = 720;
+    private final int windowsWidth = 1280;
+    private final int windowsHeight = 720;
+
+    private final int buttonsWidth = 180;
+    private final int buttonsHeight = 90;
 
     private ImageIcon icon, backgroundImage;
 
@@ -37,5 +40,13 @@ public abstract class MainView extends JFrame {
 
     public ImageIcon getBackgroundImage() {
         return backgroundImage;
+    }
+
+    public int getButtonsWidth() {
+        return buttonsWidth;
+    }
+
+    public int getButtonsHeight() {
+        return buttonsHeight;
     }
 }

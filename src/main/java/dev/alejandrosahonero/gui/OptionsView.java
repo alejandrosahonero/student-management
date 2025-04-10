@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class OptionsView extends JFrame {
-    private JPanel globalPanel, panel;
+    private JLabel backgroundLabel;
     private JButton matricularButton, listarButton, addProButton, addModButton;
     private ImageIcon background;
     public OptionsView(){
@@ -15,7 +15,7 @@ public class OptionsView extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
-        setLayout(null);
+        setLayout(new BorderLayout());
 
         initComponents();
     }
@@ -27,10 +27,10 @@ public class OptionsView extends JFrame {
         background = new ImageIcon("src/main/resources/img/background-windows.png");
         background = new ImageIcon(background.getImage().getScaledInstance(this.getWidth(), this.getHeight(), Image.SCALE_SMOOTH));
 
-        JLabel backgroundLabel = new JLabel(background);
-        backgroundLabel.setBounds(0, 0, this.getWidth(), this.getHeight());
+        backgroundLabel = new JLabel(background);
+        backgroundLabel.setSize(background.getIconWidth(), background.getIconHeight());
 
-        add(backgroundLabel);
+        add(backgroundLabel, BorderLayout.CENTER);
     }
     private void buttonsPanel(){
         final int buttonWidth = 250;
@@ -47,7 +47,6 @@ public class OptionsView extends JFrame {
         listarButton.setFont(new Font("Tahoma", Font.BOLD, 20));
         listarButton.setHorizontalAlignment(SwingConstants.CENTER);
         listarButton.setVerticalAlignment(SwingConstants.CENTER);
-        listarButton.setPreferredSize(new Dimension(250, 100));
         listarButton.addActionListener(new OptionsController(this));
         listarButton.setBounds((getWidth()/2+buttonWidth/2), (getHeight()/2-buttonHeight/2)/2, buttonWidth, buttonHeight);
 
@@ -55,7 +54,6 @@ public class OptionsView extends JFrame {
         addProButton.setFont(new Font("Tahoma", Font.BOLD, 20));
         addProButton.setHorizontalAlignment(SwingConstants.CENTER);
         addProButton.setVerticalAlignment(SwingConstants.CENTER);
-        addProButton.setPreferredSize(new Dimension(250, 100));
         addProButton.addActionListener(new OptionsController(this));
         addProButton.setBounds((getWidth()/2-buttonWidth/2)/2, (getHeight()/2+buttonHeight/2), buttonWidth, buttonHeight);
 
@@ -63,28 +61,26 @@ public class OptionsView extends JFrame {
         addModButton.setFont(new Font("Tahoma", Font.BOLD, 20));
         addModButton.setHorizontalAlignment(SwingConstants.CENTER);
         addModButton.setVerticalAlignment(SwingConstants.CENTER);
-        addModButton.setPreferredSize(new Dimension(250, 100));
         addModButton.addActionListener(new OptionsController(this));
         addModButton.setBounds((getWidth()/2+buttonWidth/2), (getHeight()/2+buttonHeight/2), buttonWidth, buttonHeight);
 
-        add(matricularButton);
-        add(listarButton);
-        add(addProButton);
-        add(addModButton);
+        backgroundLabel.add(matricularButton);
+        backgroundLabel.add(listarButton);
+        backgroundLabel.add(addProButton);
+        backgroundLabel.add(addModButton);
+
     }
 
+    //Getters
     public JButton getMatricularButton() {
         return matricularButton;
     }
-
     public JButton getListarButton() {
         return listarButton;
     }
-
     public JButton getAddProButton() {
         return addProButton;
     }
-
     public JButton getAddModButton() {
         return addModButton;
     }

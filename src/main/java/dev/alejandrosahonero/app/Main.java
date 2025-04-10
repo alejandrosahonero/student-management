@@ -1,6 +1,6 @@
 package dev.alejandrosahonero.app;
 
-import dev.alejandrosahonero.gui.LoginView;
+import dev.alejandrosahonero.gui.StartView;
 
 import java.io.File;
 
@@ -13,7 +13,7 @@ public class Main {
         if (databaseOpen.exists())
             databaseOpen.delete();
 
-        LoginView loginView = new LoginView();
-        loginView.setVisible(true);
+        StartView startView = new StartView();
+        startView.setVisible(true);
     }
 }

@@ -1,21 +1,16 @@
 package dev.alejandrosahonero.logic;
 
-import dev.alejandrosahonero.db.Conector;
-import dev.alejandrosahonero.db.Persona;
-import dev.alejandrosahonero.db.Profesor;
-import dev.alejandrosahonero.gui.LoginView;
+import dev.alejandrosahonero.gui.StartView;
 import dev.alejandrosahonero.gui.OptionsView;
 
-import javax.persistence.EntityManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class LoginButtonController implements ActionListener {
-    LoginView loginView;
+    private StartView startView;
 
-    public LoginButtonController(LoginView loginView) {
-        this.loginView = loginView;
+    public LoginButtonController(StartView startView) {
+        this.startView = startView;
     }
 
     public void actionPerformed(ActionEvent e) {
@@ -32,7 +27,7 @@ public class LoginButtonController implements ActionListener {
         em.getTransaction().commit();
         em.close();*/
 
-        loginView.setVisible(false);
+        startView.setVisible(false);
         new OptionsView().setVisible(true);
 
     }

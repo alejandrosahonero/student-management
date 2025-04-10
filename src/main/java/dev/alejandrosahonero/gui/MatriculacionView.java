@@ -16,7 +16,6 @@ public class MatriculacionView extends MainView
     public MatriculacionView()
     {
         super("Matriculacion");
-        setBackgroundImage("src/main/resources/img/background-windows.png");
 
         initComponents();
     }

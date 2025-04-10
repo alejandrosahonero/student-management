@@ -18,6 +18,7 @@ public abstract class MainView extends JFrame {
         setLayout(new BorderLayout());
 
         setWindowIcon("src/main/resources/img/icon-comercio.png");
+        setBackgroundImage("src/main/resources/img/background-windows.png");
     }
     /**
      * Establece el ícono de la ventana y de la aplicación

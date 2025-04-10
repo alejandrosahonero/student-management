@@ -8,7 +8,6 @@ public class AddProfesorView extends MainView {
 
     public AddProfesorView() {
         super("Profesores");
-        setBackgroundImage("src/main/resources/img/background-windows.png");
 
         initComponents();
     }

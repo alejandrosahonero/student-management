@@ -10,7 +10,6 @@ public class OptionsView extends MainView {
     private JButton matricularButton, listarButton, addProButton, addModButton;
     public OptionsView(){
         super("Options");
-        setBackgroundImage("src/main/resources/img/background-windows.png");
 
         initComponents();
     }

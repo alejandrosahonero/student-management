@@ -8,7 +8,6 @@ public class AddModuloView extends MainView {
 
     public AddModuloView() {
         super("Modulos");
-        setBackgroundImage("src/main/resources/img/background-windows.png");
 
         initComponents();
     }

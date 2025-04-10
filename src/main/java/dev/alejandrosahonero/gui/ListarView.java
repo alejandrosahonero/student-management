@@ -8,7 +8,6 @@ public class ListarView extends MainView {
 
     public ListarView() {
         super("Lista");
-        setBackgroundImage("src/main/resources/img/background-windows.png");
 
         initComponents();
     }

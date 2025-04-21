@@ -7,9 +7,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class StartView extends MainView {
+    final int buttonPanelHeight = 80;
+
     private JLabel background;
-    private ImageIcon loginIcon;
     private JButton loginButton, registerButton;
+    private JPanel buttonPanel;
 
     public StartView() {
         super("CO-Gestor");
@@ -22,12 +24,16 @@ public class StartView extends MainView {
      * Método que inicializa todos los demás métodos para aligerar la carga al constructor
      */
     private void initComponents() {
-        background = new JLabel(getBackgroundImage());
+        ImageIcon newBackground = new ImageIcon(getBackgroundImage().getImage().getScaledInstance(getWidth(),getHeight()-buttonPanelHeight, Image.SCALE_SMOOTH));
+        background = new JLabel(newBackground);
+        buttonPanel = new JPanel(new GridBagLayout());
+        buttonPanel.setPreferredSize(new Dimension(getWidth(),buttonPanelHeight));
 
-        loginButton();
         registerButton();
+        loginButton();
 
         add(background, BorderLayout.CENTER);
+        add(buttonPanel, BorderLayout.SOUTH);
     }
 
 
@@ -36,30 +42,34 @@ public class StartView extends MainView {
      */
     private void loginButton() {
         int thiswidth = 260;
-        int thisheight = 70;
+        int thisheight = 60;
 
-        loginButton = new JButton();
+        loginButton = new JButton("INICIAR SESION");
         loginButton.addActionListener(new LoginButtonController(this));
-        loginButton.setBounds((getWidth()/4)*3-thiswidth/2, (getHeight()/2+(getHeight()/7)*2)-getButtonsHeight()/2, thiswidth, thisheight);
 
-        loginIcon = new ImageIcon("src/main/resources/img/login-button-normal.png");
-        loginIcon = new ImageIcon(loginIcon.getImage().getScaledInstance(loginButton.getWidth(), loginButton.getHeight(), Image.SCALE_SMOOTH));
-        loginButton.setIcon(loginIcon);
+        loginButton.setPreferredSize(new Dimension(thiswidth,thisheight));
+        loginButton.setFont(new Font("Arial", Font.BOLD, 28));
+        loginButton.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        loginButton.setBackground(new Color(0x2C3E50));
+        loginButton.setForeground(new Color(0xffffff));
+        loginButton.setFocusPainted(false);
 
-        background.add(loginButton);
+        buttonPanel.add(loginButton);
     }
     private void registerButton() {
-        int thiswidth = 160;
-        int thisheight = 40;
+        int thiswidth = 260;
+        int thisheight = 60;
 
-        registerButton = new JButton();
+        registerButton = new JButton("REGISTRARSE");
         registerButton.addActionListener(new RegisterButtonController(this));
-        registerButton.setBounds((getWidth()/4)*3-thiswidth/2, (getHeight()/2+(getHeight()/5)*2)-getButtonsHeight()/2, thiswidth, thisheight);
 
-        loginIcon = new ImageIcon("src/main/resources/img/register-button-normal.png");
-        loginIcon = new ImageIcon(loginIcon.getImage().getScaledInstance(registerButton.getWidth(), registerButton.getHeight(), Image.SCALE_SMOOTH));
-        registerButton.setIcon(loginIcon);
+        registerButton.setPreferredSize(new Dimension(thiswidth,thisheight));
+        registerButton.setFont(new Font("Arial", Font.BOLD, 14));
+        registerButton.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        registerButton.setBackground(new Color(0x5A4E44));
+        registerButton.setForeground(new Color(0xffffff));
+        registerButton.setFocusPainted(false);
 
-        background.add(registerButton);
+        buttonPanel.add(registerButton);
     }
 }

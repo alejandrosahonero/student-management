@@ -35,9 +35,12 @@ public class StartView extends MainView {
      * Crea el botón de inicio
      */
     private void loginButton() {
+        int thiswidth = 260;
+        int thisheight = 70;
+
         loginButton = new JButton();
         loginButton.addActionListener(new LoginButtonController(this));
-        loginButton.setBounds((getWidth()/4)*3-getButtonsWidth()/2, (getHeight()/2+getHeight()/3)-getButtonsHeight()/2, getButtonsWidth(), getButtonsHeight());
+        loginButton.setBounds((getWidth()/4)*3-thiswidth/2, (getHeight()/2+(getHeight()/7)*2)-getButtonsHeight()/2, thiswidth, thisheight);
 
         loginIcon = new ImageIcon("src/main/resources/img/login-button-normal.png");
         loginIcon = new ImageIcon(loginIcon.getImage().getScaledInstance(loginButton.getWidth(), loginButton.getHeight(), Image.SCALE_SMOOTH));
@@ -46,12 +49,15 @@ public class StartView extends MainView {
         background.add(loginButton);
     }
     private void registerButton() {
+        int thiswidth = 160;
+        int thisheight = 40;
+
         registerButton = new JButton();
         registerButton.addActionListener(new RegisterButtonController(this));
-        registerButton.setBounds((getWidth()/4)*3-getButtonsWidth()/2, (getHeight()/2+getHeight()/3)-getButtonsHeight()/2, getButtonsWidth(), getButtonsHeight());
+        registerButton.setBounds((getWidth()/4)*3-thiswidth/2, (getHeight()/2+(getHeight()/5)*2)-getButtonsHeight()/2, thiswidth, thisheight);
 
         loginIcon = new ImageIcon("src/main/resources/img/register-button-normal.png");
-        loginIcon = new ImageIcon(loginIcon.getImage().getScaledInstance(loginButton.getWidth(), loginButton.getHeight(), Image.SCALE_SMOOTH));
+        loginIcon = new ImageIcon(loginIcon.getImage().getScaledInstance(registerButton.getWidth(), registerButton.getHeight(), Image.SCALE_SMOOTH));
         registerButton.setIcon(loginIcon);
 
         background.add(registerButton);

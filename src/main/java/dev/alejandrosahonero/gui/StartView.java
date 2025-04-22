@@ -48,44 +48,23 @@ public class StartView extends MainView {
      * Crea el botón de inicio
      */
     private void loginButton() {
-        loginButton = new JButton("INICIAR SESION");
-        loginButton.addActionListener(new LoginButtonController(this));
-
-        loginButton.setPreferredSize(new Dimension(buttonsWidth,0));
-        loginButton.setFont(new Font("Tahoma", Font.BOLD, 40));
+        loginButton = makeButton("INICIAR SESION", buttonsWidth, 0, 40, 0x2E8B57, 0xffffff);
         loginButton.setBorder(BorderFactory.createLineBorder(new Color(0x276b45),3));
-        loginButton.setBackground(new Color(0x2E8B57));
-        loginButton.setForeground(new Color(0xffffff));
-        loginButton.setFocusPainted(false);
-        loginButton.setVerticalAlignment(SwingConstants.CENTER);
+        loginButton.addActionListener(new LoginButtonController(this));
 
         buttonPanel.add(loginButton, BorderLayout.CENTER);
     }
     private void registerButton() {
-        registerButton = new JButton("REGISTRARSE");
-        registerButton.addActionListener(new RegisterButtonController(this));
-
-        registerButton.setPreferredSize(new Dimension(buttonsWidth,0));
-        registerButton.setFont(new Font("Tahoma", Font.BOLD, 25));
+        registerButton = makeButton("REGISTRARSE", buttonsWidth, 0, 25, 0xEEE7CC, 0x2E8B57);
         registerButton.setBorder(BorderFactory.createLineBorder(new Color(0x2E8B57),3));
-        registerButton.setBackground(new Color(0xEEE7CC));
-        registerButton.setForeground(new Color(0x2E8B57));
-        registerButton.setFocusPainted(false);
-        registerButton.setVerticalAlignment(SwingConstants.CENTER);
+        registerButton.addActionListener(new RegisterButtonController(this));
 
         buttonPanel.add(registerButton , BorderLayout.EAST);
     }
     private void settingsButton() {
-        settingsButton = new JButton("AJUSTES");
-        settingsButton.addActionListener(new SettingsButtonController(this));
-
-        settingsButton.setPreferredSize(new Dimension(buttonsWidth,0));
-        settingsButton.setFont(new Font("Tahoma", Font.BOLD, 25));
+        settingsButton = makeButton("AJUSTES", buttonsWidth, 0, 25, 0xEEE7CC, 0x2E8B57);
         settingsButton.setBorder(BorderFactory.createLineBorder(new Color(0x2E8B57),3));
-        settingsButton.setBackground(new Color(0xEEE7CC));
-        settingsButton.setForeground(new Color(0x2E8B57));
-        settingsButton.setFocusPainted(false);
-        settingsButton.setVerticalAlignment(SwingConstants.CENTER);
+        settingsButton.addActionListener(new SettingsButtonController(this));
 
         buttonPanel.add(settingsButton , BorderLayout.WEST);
     }

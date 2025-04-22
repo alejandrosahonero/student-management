@@ -16,7 +16,8 @@ public class OptionsView extends MainView {
     }
 
     private void initComponents(){
-        background = new JLabel(getBackgroundImage());
+        background = new OptionsBackground();
+        background.setIcon(getBackgroundImage());
 
         matricularButton();
         modAlumButton();

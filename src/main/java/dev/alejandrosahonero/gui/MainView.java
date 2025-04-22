@@ -7,8 +7,8 @@ public abstract class MainView extends JFrame {
     private final int windowsWidth = 1280;
     private final int windowsHeight = 720;
 
-    private final int buttonsWidth = 180;
-    private final int buttonsHeight = 90;
+    private final int buttonsWidth = 250;
+    private final int buttonsHeight = 100;
 
     private ImageIcon icon, backgroundImage;
 
@@ -45,6 +45,7 @@ public abstract class MainView extends JFrame {
         button.setForeground(new Color(foreColor));
         button.setFocusPainted(false);
         button.setVerticalAlignment(SwingConstants.CENTER);
+        button.setHorizontalAlignment(SwingConstants.CENTER);
         return button;
     }
 

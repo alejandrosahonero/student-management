@@ -22,48 +22,22 @@ public class OptionsView extends MainView {
         add(background, BorderLayout.CENTER);
     }
     private void buttonsPanel(){
-        final int buttonWidth = 250;
-        final int buttonHeight = 100;
 
-        matricularButton = new JButton("Matricular");
-        matricularButton.setFont(new Font("Tahoma", Font.BOLD, 30));
-        matricularButton.setHorizontalAlignment(SwingConstants.CENTER);
-        matricularButton.setVerticalAlignment(SwingConstants.CENTER);
-        matricularButton.setBackground(new Color(0x3D5A40));
-        matricularButton.setForeground(new Color(0xffffff));
-        matricularButton.setFocusable(false);
+        matricularButton = createButton("Matricular", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
         matricularButton.addActionListener(new OptionsController(this));
-        matricularButton.setBounds((getWidth()/2-buttonWidth/2)/2, (getHeight()/2-buttonHeight/2)/2, buttonWidth, buttonHeight);
+        matricularButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
 
-        listarButton = new JButton("Listar");
-        listarButton.setFont(new Font("Tahoma", Font.BOLD, 30));
-        listarButton.setHorizontalAlignment(SwingConstants.CENTER);
-        listarButton.setVerticalAlignment(SwingConstants.CENTER);
-        listarButton.setBackground(new Color(0x3D5A40));
-        listarButton.setForeground(new Color(0xffffff));
-        listarButton.setFocusable(false);
+        listarButton = createButton("Listar", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
         listarButton.addActionListener(new OptionsController(this));
-        listarButton.setBounds((getWidth()/2+buttonWidth/2), (getHeight()/2-buttonHeight/2)/2, buttonWidth, buttonHeight);
+        listarButton.setBounds((getWidth()/2+getButtonsWidth()/2), (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
 
-        addProButton = new JButton("Añadir Profesor");
-        addProButton.setFont(new Font("Tahoma", Font.BOLD, 30));
-        addProButton.setHorizontalAlignment(SwingConstants.CENTER);
-        addProButton.setVerticalAlignment(SwingConstants.CENTER);
-        addProButton.setBackground(new Color(0x3D5A40));
-        addProButton.setForeground(new Color(0xffffff));
-        addProButton.setFocusable(false);
+        addProButton = createButton("Añadir Profesor", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
         addProButton.addActionListener(new OptionsController(this));
-        addProButton.setBounds((getWidth()/2-buttonWidth/2)/2, (getHeight()/2+buttonHeight/2), buttonWidth, buttonHeight);
+        addProButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2+getButtonsHeight()/2), getButtonsWidth(), getButtonsHeight());
 
-        addModButton = new JButton("Añadir módulo");
-        addModButton.setFont(new Font("Tahoma", Font.BOLD, 30));
-        addModButton.setHorizontalAlignment(SwingConstants.CENTER);
-        addModButton.setVerticalAlignment(SwingConstants.CENTER);
-        addModButton.setBackground(new Color(0x3D5A40));
-        addModButton.setForeground(new Color(0xffffff));
-        addModButton.setFocusable(false);
+        addModButton = createButton("Añadir módulo", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
         addModButton.addActionListener(new OptionsController(this));
-        addModButton.setBounds((getWidth()/2+buttonWidth/2), (getHeight()/2+buttonHeight/2), buttonWidth, buttonHeight);
+        addModButton.setBounds((getWidth()/2+getButtonsWidth()/2), (getHeight()/2+getButtonsHeight()/2), getButtonsWidth(), getButtonsHeight());
 
         background.add(matricularButton);
         background.add(listarButton);

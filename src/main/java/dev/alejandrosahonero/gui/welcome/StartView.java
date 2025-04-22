@@ -1,8 +1,9 @@
-package dev.alejandrosahonero.gui;
+package dev.alejandrosahonero.gui.welcome;
 
-import dev.alejandrosahonero.logic.LoginButtonController;
-import dev.alejandrosahonero.logic.RegisterButtonController;
-import dev.alejandrosahonero.logic.SettingsButtonController;
+import dev.alejandrosahonero.gui.MainView;
+import dev.alejandrosahonero.logic.welcome.LoginButtonController;
+import dev.alejandrosahonero.logic.welcome.RegisterButtonController;
+import dev.alejandrosahonero.logic.welcome.SettingsButtonController;
 
 import javax.swing.*;
 import java.awt.*;

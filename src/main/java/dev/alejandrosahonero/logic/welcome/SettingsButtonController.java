@@ -1,7 +1,7 @@
-package dev.alejandrosahonero.logic;
+package dev.alejandrosahonero.logic.welcome;
 
-import dev.alejandrosahonero.gui.SettingsView;
-import dev.alejandrosahonero.gui.StartView;
+import dev.alejandrosahonero.gui.welcome.SettingsView;
+import dev.alejandrosahonero.gui.welcome.StartView;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;

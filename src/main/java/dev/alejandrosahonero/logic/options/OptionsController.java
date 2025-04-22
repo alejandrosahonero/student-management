@@ -1,6 +1,6 @@
-package dev.alejandrosahonero.logic;
+package dev.alejandrosahonero.logic.options;
 
-import dev.alejandrosahonero.gui.*;
+import dev.alejandrosahonero.gui.options.*;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

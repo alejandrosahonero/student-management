@@ -1,6 +1,6 @@
 package dev.alejandrosahonero.app;
 
-import dev.alejandrosahonero.gui.StartView;
+import dev.alejandrosahonero.gui.welcome.StartView;
 
 import java.io.File;
 

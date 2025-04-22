@@ -1,9 +1,11 @@
-package dev.alejandrosahonero.gui;
+package dev.alejandrosahonero.gui.welcome;
+
+import dev.alejandrosahonero.gui.MainView;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class SettingsView extends MainView{
+public class SettingsView extends MainView {
     JLabel background;
     public SettingsView() {
         super("Ajustes");

@@ -1,13 +1,15 @@
-package dev.alejandrosahonero.gui;
+package dev.alejandrosahonero.gui.options;
+
+import dev.alejandrosahonero.gui.MainView;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class ListarView extends MainView {
+public class AddProfesorView extends MainView {
     JLabel background;
 
-    public ListarView() {
-        super("Lista");
+    public AddProfesorView() {
+        super("Profesores");
 
         initComponents();
     }

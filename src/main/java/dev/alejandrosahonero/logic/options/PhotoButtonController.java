@@ -1,13 +1,11 @@
-package dev.alejandrosahonero.logic;
+package dev.alejandrosahonero.logic.options;
 
-import dev.alejandrosahonero.gui.MatriculacionView;
+import dev.alejandrosahonero.gui.options.MatriculacionView;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 
 public class PhotoButtonController implements ActionListener {
     private MatriculacionView matriculacionView;

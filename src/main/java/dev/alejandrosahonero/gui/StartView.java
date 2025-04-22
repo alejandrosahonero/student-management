@@ -43,7 +43,6 @@ public class StartView extends MainView {
         buttonPanel.setBackground(new Color(0x888d81));
     }
 
-
     /**
      * Crea el botón de inicio
      */
@@ -52,9 +51,9 @@ public class StartView extends MainView {
         loginButton.addActionListener(new LoginButtonController(this));
 
         loginButton.setPreferredSize(new Dimension(buttonsWidth,0));
-        loginButton.setFont(new Font("Arial", Font.BOLD, 25));
-        loginButton.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        loginButton.setBackground(new Color(0x2C3E50));
+        loginButton.setFont(new Font("Tahoma", Font.BOLD, 40));
+        loginButton.setBorder(BorderFactory.createLineBorder(new Color(0x276b45),3));
+        loginButton.setBackground(new Color(0x2E8B57));
         loginButton.setForeground(new Color(0xffffff));
         loginButton.setFocusPainted(false);
         loginButton.setVerticalAlignment(SwingConstants.CENTER);
@@ -66,10 +65,10 @@ public class StartView extends MainView {
         registerButton.addActionListener(new RegisterButtonController(this));
 
         registerButton.setPreferredSize(new Dimension(buttonsWidth,0));
-        registerButton.setFont(new Font("Arial", Font.BOLD, 25));
-        registerButton.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        registerButton.setBackground(new Color(0x5A4E44));
-        registerButton.setForeground(new Color(0xffffff));
+        registerButton.setFont(new Font("Tahoma", Font.BOLD, 25));
+        registerButton.setBorder(BorderFactory.createLineBorder(new Color(0x2E8B57),3));
+        registerButton.setBackground(new Color(0xEEE7CC));
+        registerButton.setForeground(new Color(0x2E8B57));
         registerButton.setFocusPainted(false);
         registerButton.setVerticalAlignment(SwingConstants.CENTER);
 
@@ -80,10 +79,10 @@ public class StartView extends MainView {
         settingsButton.addActionListener(new RegisterButtonController(this));
 
         settingsButton.setPreferredSize(new Dimension(buttonsWidth,0));
-        settingsButton.setFont(new Font("Arial", Font.BOLD, 25));
-        settingsButton.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        settingsButton.setBackground(new Color(0x5A4E44));
-        settingsButton.setForeground(new Color(0xffffff));
+        settingsButton.setFont(new Font("Tahoma", Font.BOLD, 25));
+        settingsButton.setBorder(BorderFactory.createLineBorder(new Color(0x2E8B57),3));
+        settingsButton.setBackground(new Color(0xEEE7CC));
+        settingsButton.setForeground(new Color(0x2E8B57));
         settingsButton.setFocusPainted(false);
         settingsButton.setVerticalAlignment(SwingConstants.CENTER);
 

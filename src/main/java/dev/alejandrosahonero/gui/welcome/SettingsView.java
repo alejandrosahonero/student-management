@@ -10,6 +10,8 @@ public class SettingsView extends MainView {
     public SettingsView() {
         super("Ajustes");
         setSize(600, 400);
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+
         initComponents();
     }
     public void initComponents(){

@@ -3,6 +3,7 @@ package dev.alejandrosahonero.logic;
 import dev.alejandrosahonero.gui.StartView;
 import dev.alejandrosahonero.gui.OptionsView;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -26,6 +27,8 @@ public class LoginButtonController implements ActionListener {
         em.persist(profesor);
         em.getTransaction().commit();
         em.close();*/
+
+        startView.getLoginButton().setBackground(new Color(0x276b45));
 
         startView.setVisible(false);
         new OptionsView().setVisible(true);

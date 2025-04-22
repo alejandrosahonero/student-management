@@ -2,6 +2,7 @@ package dev.alejandrosahonero.gui;
 
 import dev.alejandrosahonero.logic.LoginButtonController;
 import dev.alejandrosahonero.logic.RegisterButtonController;
+import dev.alejandrosahonero.logic.SettingsButtonController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -76,7 +77,7 @@ public class StartView extends MainView {
     }
     private void settingsButton() {
         settingsButton = new JButton("AJUSTES");
-        settingsButton.addActionListener(new RegisterButtonController(this));
+        settingsButton.addActionListener(new SettingsButtonController(this));
 
         settingsButton.setPreferredSize(new Dimension(buttonsWidth,0));
         settingsButton.setFont(new Font("Tahoma", Font.BOLD, 25));

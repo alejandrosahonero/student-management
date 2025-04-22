@@ -1,0 +1,18 @@
+package dev.alejandrosahonero.gui;
+
+import javax.swing.*;
+import java.awt.*;
+
+public class SettingsView extends MainView{
+    JLabel background;
+    public SettingsView() {
+        super("Ajustes");
+        setSize(600, 400);
+        initComponents();
+    }
+    public void initComponents(){
+        background = new JLabel(getBackgroundImage());
+
+        add(background, BorderLayout.CENTER);
+    }
+}

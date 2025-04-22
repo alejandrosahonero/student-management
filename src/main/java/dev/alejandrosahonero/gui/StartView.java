@@ -48,21 +48,21 @@ public class StartView extends MainView {
      * Crea el botón de inicio
      */
     private void loginButton() {
-        loginButton = makeButton("INICIAR SESION", buttonsWidth, 0, 40, 0x2E8B57, 0xffffff);
+        loginButton = createButton("INICIAR SESION", buttonsWidth, 0, 40, 0x2E8B57, 0xffffff);
         loginButton.setBorder(BorderFactory.createLineBorder(new Color(0x276b45),3));
         loginButton.addActionListener(new LoginButtonController(this));
 
         buttonPanel.add(loginButton, BorderLayout.CENTER);
     }
     private void registerButton() {
-        registerButton = makeButton("REGISTRARSE", buttonsWidth, 0, 25, 0xEEE7CC, 0x2E8B57);
+        registerButton = createButton("REGISTRARSE", buttonsWidth, 0, 25, 0xEEE7CC, 0x2E8B57);
         registerButton.setBorder(BorderFactory.createLineBorder(new Color(0x2E8B57),3));
         registerButton.addActionListener(new RegisterButtonController(this));
 
         buttonPanel.add(registerButton , BorderLayout.EAST);
     }
     private void settingsButton() {
-        settingsButton = makeButton("AJUSTES", buttonsWidth, 0, 25, 0xEEE7CC, 0x2E8B57);
+        settingsButton = createButton("AJUSTES", buttonsWidth, 0, 25, 0xEEE7CC, 0x2E8B57);
         settingsButton.setBorder(BorderFactory.createLineBorder(new Color(0x2E8B57),3));
         settingsButton.addActionListener(new SettingsButtonController(this));
 
@@ -73,11 +73,9 @@ public class StartView extends MainView {
     public JButton getLoginButton() {
         return loginButton;
     }
-
     public JButton getRegisterButton() {
         return registerButton;
     }
-
     public JButton getSettingsButton() {
         return settingsButton;
     }

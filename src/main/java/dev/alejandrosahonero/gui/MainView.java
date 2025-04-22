@@ -37,7 +37,7 @@ public abstract class MainView extends JFrame {
         backgroundImage = new ImageIcon(path);
         backgroundImage = new ImageIcon(backgroundImage.getImage().getScaledInstance(getWidth(), getHeight(), Image.SCALE_SMOOTH));
     }
-    public JButton makeButton(String name, int width, int height, int size, int backColor, int foreColor){
+    public JButton createButton(String name, int width, int height, int size, int backColor, int foreColor){
         JButton button = new JButton(name);
         button.setPreferredSize(new Dimension(width,height));
         button.setFont(new Font("Tahoma", Font.BOLD, size));

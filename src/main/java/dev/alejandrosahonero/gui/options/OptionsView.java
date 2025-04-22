@@ -16,7 +16,7 @@ public class OptionsView extends MainView {
     }
 
     private void initComponents(){
-        background = new OptionsBackground();
+        background = new OptionsBackground(getWindowsWidth(), getWindowsHeight());
         background.setIcon(getBackgroundImage());
 
         matricularButton();

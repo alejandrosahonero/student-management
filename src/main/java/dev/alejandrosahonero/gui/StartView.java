@@ -89,4 +89,17 @@ public class StartView extends MainView {
 
         buttonPanel.add(settingsButton , BorderLayout.WEST);
     }
+
+    //Getters
+    public JButton getLoginButton() {
+        return loginButton;
+    }
+
+    public JButton getRegisterButton() {
+        return registerButton;
+    }
+
+    public JButton getSettingsButton() {
+        return settingsButton;
+    }
 }

@@ -12,7 +12,7 @@ public class OptionsController implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == optionsView.getMatricularButton()){
+        /*if(e.getSource() == optionsView.getMatricularButton()){
             optionsView.setVisible(false);
             new MatriculacionView().setVisible(true);
         }
@@ -27,6 +27,6 @@ public class OptionsController implements ActionListener {
         if(e.getSource() == optionsView.getAddModButton()){
             optionsView.setVisible(false);
             new AddModuloView().setVisible(true);
-        }
+        }*/
     }
 }

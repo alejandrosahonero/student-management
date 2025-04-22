@@ -8,7 +8,7 @@ import java.awt.*;
 
 public class OptionsView extends MainView {
     private JLabel background;
-    private JButton matricularButton, listarButton, addProButton, addModButton;
+    private JButton matricularButton, modAlumButton, modProButton, modModButton, modAsigButton, listAlumButton, listProButton, listModButton, listAsigButton;
     public OptionsView(){
         super("Options");
 
@@ -18,45 +18,111 @@ public class OptionsView extends MainView {
     private void initComponents(){
         background = new JLabel(getBackgroundImage());
 
-        buttonsPanel();
+        matricularButton();
+        modAlumButton();
+        modProButton();
+        modModButton();
+        modAsigButton();
+        listAlumButton();
+        listProButton();
+        listModButton();
+        listAsigButton();
+
 
         add(background, BorderLayout.CENTER);
     }
-    private void buttonsPanel(){
-
-        matricularButton = createButton("Matricular", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+    private void matricularButton(){
+        matricularButton = createButton("Matricular Alumno", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
         matricularButton.addActionListener(new OptionsController(this));
         matricularButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
 
-        listarButton = createButton("Listar", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
-        listarButton.addActionListener(new OptionsController(this));
-        listarButton.setBounds((getWidth()/2+getButtonsWidth()/2), (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
-
-        addProButton = createButton("Añadir Profesor", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
-        addProButton.addActionListener(new OptionsController(this));
-        addProButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2+getButtonsHeight()/2), getButtonsWidth(), getButtonsHeight());
-
-        addModButton = createButton("Añadir módulo", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
-        addModButton.addActionListener(new OptionsController(this));
-        addModButton.setBounds((getWidth()/2+getButtonsWidth()/2), (getHeight()/2+getButtonsHeight()/2), getButtonsWidth(), getButtonsHeight());
-
         background.add(matricularButton);
-        background.add(listarButton);
-        background.add(addProButton);
-        background.add(addModButton);
     }
+    private void modAlumButton(){
+        modAlumButton = createButton("Modificar Alumno", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        modAlumButton.addActionListener(new OptionsController(this));
+        modAlumButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+
+        background.add(modAlumButton);
+    }
+    private void modProButton(){
+        modProButton = createButton("Modificar Profesor", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        modProButton.addActionListener(new OptionsController(this));
+        modProButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+
+        background.add(modProButton);
+    }
+    private void modModButton(){
+        modModButton = createButton("Modificar Módulo", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        modModButton.addActionListener(new OptionsController(this));
+        modModButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+
+        background.add(modModButton);
+    }
+    private void modAsigButton(){
+        modAsigButton = createButton("Modificar Asignatura", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        modAsigButton.addActionListener(new OptionsController(this));
+        modAsigButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+
+        background.add(modAsigButton);
+    }
+    private void listAlumButton(){
+        listAlumButton = createButton("Alumnos", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        listAlumButton.addActionListener(new OptionsController(this));
+        listAlumButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+
+        background.add(listAlumButton);
+    }
+    private void listProButton(){
+        listProButton = createButton("Profesores", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        listProButton.addActionListener(new OptionsController(this));
+        listProButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+
+        background.add(listProButton);
+    }
+    private void listModButton(){
+        listModButton = createButton("Módulos", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        listModButton.addActionListener(new OptionsController(this));
+        listModButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+
+        background.add(listModButton);
+    }
+    private void listAsigButton(){
+        listAsigButton = createButton("Asignaturas", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        listAsigButton.addActionListener(new OptionsController(this));
+        listAsigButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+
+        background.add(listAsigButton);
+    }
+
+
 
     //Getters
     public JButton getMatricularButton() {
         return matricularButton;
     }
-    public JButton getListarButton() {
-        return listarButton;
+    public JButton getModAlumButton() {
+        return modAlumButton;
     }
-    public JButton getAddProButton() {
-        return addProButton;
+    public JButton getModProButton() {
+        return modProButton;
     }
-    public JButton getAddModButton() {
-        return addModButton;
+    public JButton getModModButton() {
+        return modModButton;
+    }
+    public JButton getModAsigButton() {
+        return modAsigButton;
+    }
+    public JButton getListAlumButton() {
+        return listAlumButton;
+    }
+    public JButton getListProButton() {
+        return listProButton;
+    }
+    public JButton getListModButton() {
+        return listModButton;
+    }
+    public JButton getListAsigButton() {
+        return listAsigButton;
     }
 }

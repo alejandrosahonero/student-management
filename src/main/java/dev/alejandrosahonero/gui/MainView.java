@@ -50,15 +50,20 @@ public abstract class MainView extends JFrame {
     }
 
     //Getters
-    public ImageIcon getBackgroundImage() {
-        return backgroundImage;
-    }
 
+    public int getWindowsWidth() {
+        return windowsWidth;
+    }
+    public int getWindowsHeight() {
+        return windowsHeight;
+    }
     public int getButtonsWidth() {
         return buttonsWidth;
     }
-
     public int getButtonsHeight() {
         return buttonsHeight;
+    }
+    public ImageIcon getBackgroundImage() {
+        return backgroundImage;
     }
 }

@@ -22,7 +22,7 @@ public class OptionsController implements ActionListener {
         }
         if(e.getSource() == optionsView.getAddProButton()){
             optionsView.setVisible(false);
-            new AddProfesorView().setVisible(true);
+            new ModProView().setVisible(true);
         }
         if(e.getSource() == optionsView.getAddModButton()){
             optionsView.setVisible(false);

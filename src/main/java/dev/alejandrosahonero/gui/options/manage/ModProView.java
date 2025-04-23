@@ -5,10 +5,10 @@ import dev.alejandrosahonero.gui.MainView;
 import javax.swing.*;
 import java.awt.*;
 
-public class AddProfesorView extends MainView {
+public class ModProView extends MainView {
     JLabel background;
 
-    public AddProfesorView() {
+    public ModProView() {
         super("Profesores");
 
         initComponents();

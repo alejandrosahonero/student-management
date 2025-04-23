@@ -14,18 +14,19 @@ public class Main {
         StartView startView = new StartView();
         startView.setVisible(true);
 
-        /*EntityManager em = Conector.getEntityManager();
+        /* Alumnos de ejemplo para tener una base de datos
+        EntityManager em = Conector.getEntityManager();
         em.getTransaction().begin();
-        Alumno a1 = new Alumno("12345678A", "García", "Ana", 19, "Femenino", 1001, new ArrayList<>(List.of("Programación", "Bases de Datos")));
-        Alumno a2 = new Alumno("87654321B", "Pérez", "Carlos", 20, "Masculino", 1002, new ArrayList<>(List.of("Entornos de Desarrollo", "Sistemas Informáticos")));
-        Alumno a3 = new Alumno("45678912C", "López", "María", 18, "Femenino", 1003, new ArrayList<>(List.of("Lenguajes de Marcas", "FOL")));
-        Alumno a4 = new Alumno("78945612D", "Sánchez", "Luis", 21, "Masculino", 1004, new ArrayList<>(List.of("Programación", "Sistemas Informáticos")));
-        Alumno a5 = new Alumno("32165487E", "Martínez", "Lucía", 22, "Femenino", 1005, new ArrayList<>(List.of("Bases de Datos", "FOL")));
-        Alumno a6 = new Alumno("14785236F", "Fernández", "Javier", 19, "Masculino", 1006, new ArrayList<>(List.of("Lenguajes de Marcas", "Entornos de Desarrollo")));
-        Alumno a7 = new Alumno("96325874G", "Torres", "Elena", 20, "Femenino", 1007, new ArrayList<>(List.of("Programación", "FOL")));
-        Alumno a8 = new Alumno("85274196H", "Ramírez", "Sergio", 23, "Masculino", 1008, new ArrayList<>(List.of("Bases de Datos", "Entornos de Desarrollo")));
-        Alumno a9 = new Alumno("15975348I", "Morales", "Andrea", 18, "Femenino", 1009, new ArrayList<>(List.of("Sistemas Informáticos", "Lenguajes de Marcas")));
-        Alumno a10 = new Alumno("35795126J", "Castro", "David", 21, "Masculino", 1010, new ArrayList<>(List.of("FOL", "Programación")));
+        Alumno a1 = new Alumno("12345678A", "García", "López", "Ana", 19, "Femenino", 1001, new ArrayList<>(List.of("Programación", "Bases de Datos")));
+        Alumno a2 = new Alumno("87654321B", "Pérez", "Ramírez", "Carlos", 20, "Masculino", 1002, new ArrayList<>(List.of("Entornos de Desarrollo", "Sistemas Informáticos")));
+        Alumno a3 = new Alumno("45678912C", "López", "Martínez", "María", 18, "Femenino", 1003, new ArrayList<>(List.of("Lenguajes de Marcas", "FOL")));
+        Alumno a4 = new Alumno("78945612D", "Sánchez", "Castillo", "Luis", 21, "Masculino", 1004, new ArrayList<>(List.of("Programación", "Sistemas Informáticos")));
+        Alumno a5 = new Alumno("32165487E", "Martínez", "Gómez", "Lucía", 22, "Femenino", 1005, new ArrayList<>(List.of("Bases de Datos", "FOL")));
+        Alumno a6 = new Alumno("14785236F", "Fernández", "Navarro", "Javier", 19, "Masculino", 1006, new ArrayList<>(List.of("Lenguajes de Marcas", "Entornos de Desarrollo")));
+        Alumno a7 = new Alumno("96325874G", "Torres", "Moreno", "Elena", 20, "Femenino", 1007, new ArrayList<>(List.of("Programación", "FOL")));
+        Alumno a8 = new Alumno("85274196H", "Ramírez", "Silva", "Sergio", 23, "Masculino", 1008, new ArrayList<>(List.of("Bases de Datos", "Entornos de Desarrollo")));
+        Alumno a9 = new Alumno("15975348I", "Morales", "Cruz", "Andrea", 18, "Femenino", 1009, new ArrayList<>(List.of("Sistemas Informáticos", "Lenguajes de Marcas")));
+        Alumno a10 = new Alumno("35795126J", "Castro", "Hernández", "David", 21, "Masculino", 1010, new ArrayList<>(List.of("FOL", "Programación")));
         em.persist(a1);
         em.persist(a2);
         em.persist(a3);

@@ -8,7 +8,7 @@ public abstract class MainView extends JFrame {
     private final int windowsHeight = 720;
 
     private final int buttonsWidth = 250;
-    private final int buttonsHeight = 100;
+    private final int buttonsHeight = 80;
 
     private ImageIcon icon, backgroundImage;
 

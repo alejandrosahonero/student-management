@@ -12,6 +12,7 @@ public class ListAlumView extends MainView {
 
     public ListAlumView() {
         super("Modificar Alumno");
+
         initComponents();
     }
     private void initComponents(){
@@ -23,7 +24,7 @@ public class ListAlumView extends MainView {
     }
     private void table(){
         tablePanel = new JPanel(new BorderLayout());
-        tablePanel.setBounds(100, 100, 800, 400);
+        tablePanel.setBounds(getWindowsWidth()/30, getWindowsHeight()/20, getWindowsWidth()-getWindowsWidth()/25*2, getWindowsHeight()-getWindowsHeight()/3);
 
         String[] columnNames = {"First Name",
                 "Last Name",

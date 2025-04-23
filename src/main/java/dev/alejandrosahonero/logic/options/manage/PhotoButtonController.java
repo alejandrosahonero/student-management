@@ -1,4 +1,4 @@
-package dev.alejandrosahonero.logic.options;
+package dev.alejandrosahonero.logic.options.manage;
 
 import dev.alejandrosahonero.gui.options.manage.MatricularView;
 

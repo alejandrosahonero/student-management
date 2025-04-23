@@ -1,7 +1,7 @@
 package dev.alejandrosahonero.gui.options.manage;
 
 import dev.alejandrosahonero.gui.MainView;
-import dev.alejandrosahonero.logic.options.PhotoButtonController;
+import dev.alejandrosahonero.logic.options.manage.PhotoButtonController;
 
 import javax.swing.*;
 import java.awt.*;

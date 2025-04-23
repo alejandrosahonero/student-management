@@ -5,10 +5,10 @@ import dev.alejandrosahonero.gui.MainView;
 import javax.swing.*;
 import java.awt.*;
 
-public class AddModuloView extends MainView {
+public class ModModView extends MainView {
     JLabel background;
 
-    public AddModuloView() {
+    public ModModView() {
         super("Modulos");
 
         initComponents();

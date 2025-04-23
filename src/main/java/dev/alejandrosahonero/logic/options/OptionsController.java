@@ -26,7 +26,7 @@ public class OptionsController implements ActionListener {
         }
         if(e.getSource() == optionsView.getAddModButton()){
             optionsView.setVisible(false);
-            new AddModuloView().setVisible(true);
+            new ModModView().setVisible(true);
         }*/
     }
 }

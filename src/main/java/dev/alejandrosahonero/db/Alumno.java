@@ -1,7 +1,6 @@
 package dev.alejandrosahonero.db;
 
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -11,8 +10,8 @@ public class Alumno extends Persona implements Serializable {
     private ArrayList<String> modulosCursa = new ArrayList<String>();
 
     public Alumno() {}
-    public Alumno(String dni, String apellido, String nombre, int edad, String sexo, int IDMatricula, ArrayList<String> modulosCursa) {
-        super(dni, apellido, nombre, edad, sexo);
+    public Alumno(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, int edad, String sexo, int IDMatricula, ArrayList<String> modulosCursa) {
+        super(dni, apellidoPaterno, apellidoMaterno, nombre, edad, sexo);
         this.IDMatricula = IDMatricula;
         this.modulosCursa = modulosCursa;
     }

@@ -16,4 +16,12 @@ public class Alumno extends Persona implements Serializable {
         this.IDMatricula = IDMatricula;
         this.modulosCursa = modulosCursa;
     }
+
+    //Getters
+    public int getIDMatricula() {
+        return IDMatricula;
+    }
+    public ArrayList<String> getModulosCursa() {
+        return modulosCursa;
+    }
 }

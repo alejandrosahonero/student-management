@@ -18,8 +18,11 @@ public class OptionsBackground extends JLabel {
         super.paintComponent(g);
         Color c = new Color(0x3D5A40);
         g.setColor(c);
-        g.drawString("GESTIONAR", windowsWidth/4, windowsHeight/12);
-        g.drawString("LISTAR", windowsWidth/4*3, windowsHeight/12);
+        //Línea del medio
         g.fillRect(windowsWidth/2, windowsHeight/12, 4, windowsHeight/6*4);
+        //Lina debajo title1
+        g.fillRect(windowsWidth/12, windowsHeight/7, windowsWidth/3, 4);
+        //Línea debajo title2
+        g.fillRect(windowsWidth/2+windowsWidth/12, windowsHeight/7, windowsWidth/3, 4);
     }
 }

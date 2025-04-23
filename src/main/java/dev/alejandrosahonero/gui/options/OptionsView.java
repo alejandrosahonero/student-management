@@ -7,7 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class OptionsView extends MainView {
-    private JLabel background;
+    private JLabel background, title1, title2;
     private JButton matricularButton, modAlumButton, modProButton, modModButton, modAsigButton, listAlumButton, listProButton, listModButton, listAsigButton;
     public OptionsView(){
         super("Options");
@@ -19,6 +19,7 @@ public class OptionsView extends MainView {
         background = new OptionsBackground(getWindowsWidth(), getWindowsHeight());
         background.setIcon(getBackgroundImage());
 
+        titles();
         matricularButton();
         modAlumButton();
         modProButton();
@@ -32,10 +33,28 @@ public class OptionsView extends MainView {
 
         add(background, BorderLayout.CENTER);
     }
+    private void titles(){
+        title1 = new JLabel("GESTIONAR");
+        title1.setFont(new Font("Tahoma", Font.BOLD, 50));
+        title1.setForeground(new Color(0x3D5A40));
+        title1.setHorizontalAlignment(SwingConstants.CENTER);
+        title1.setVerticalAlignment(SwingConstants.CENTER);
+        title1.setBounds(getWindowsWidth()/4-getButtonsWidth(), getWindowsHeight()/12-getButtonsHeight()/2, getButtonsWidth()*2, getButtonsHeight());
+
+        title2 = new JLabel("LISTAR");
+        title2.setFont(new Font("Tahoma", Font.BOLD, 50));
+        title2.setForeground(new Color(0x3D5A40));
+        title2.setHorizontalAlignment(SwingConstants.CENTER);
+        title2.setVerticalAlignment(SwingConstants.CENTER);
+        title2.setBounds(getWindowsWidth()/4*3-getButtonsWidth()/2, getWindowsHeight()/12-getButtonsHeight()/2, getButtonsWidth(), getButtonsHeight());
+
+        background.add(title1);
+        background.add(title2);
+    }
     private void matricularButton(){
         matricularButton = createButton("Matricular Alumno", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
         matricularButton.addActionListener(new OptionsController(this));
-        matricularButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+        matricularButton.setBounds(getWindowsWidth()/12, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
 
         background.add(matricularButton);
     }

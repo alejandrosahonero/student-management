@@ -52,65 +52,65 @@ public class OptionsView extends MainView {
         background.add(title2);
     }
     private void matricularButton(){
-        matricularButton = createButton("Matricular Alumno", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        matricularButton = createButton("Matricular Alumno", getButtonsWidth(), getButtonsHeight(), 22, 0x3D5A40, 0xffffff);
         matricularButton.addActionListener(new OptionsController(this));
-        matricularButton.setBounds(getWindowsWidth()/12, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+        matricularButton.setBounds(getWindowsWidth()/26, getWindowsHeight()/6+getButtonsHeight()/3*2, getButtonsWidth(), getButtonsHeight());
 
         background.add(matricularButton);
     }
     private void modAlumButton(){
-        modAlumButton = createButton("Modificar Alumno", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        modAlumButton = createButton("Modificar Alumno", getButtonsWidth(), getButtonsHeight(), 22, 0x3D5A40, 0xffffff);
         modAlumButton.addActionListener(new OptionsController(this));
-        modAlumButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+        modAlumButton.setBounds(getWindowsWidth()/18*5, getWindowsHeight()/6+getButtonsHeight()/3*2, getButtonsWidth(), getButtonsHeight());
 
         background.add(modAlumButton);
     }
     private void modProButton(){
-        modProButton = createButton("Modificar Profesor", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        modProButton = createButton("Modificar Profesor", getButtonsWidth(), getButtonsHeight(), 22, 0x3D5A40, 0xffffff);
         modProButton.addActionListener(new OptionsController(this));
-        modProButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+        modProButton.setBounds(getWindowsWidth()/26, getWindowsHeight()/6+getButtonsHeight()*5/2, getButtonsWidth(), getButtonsHeight());
 
         background.add(modProButton);
     }
     private void modModButton(){
-        modModButton = createButton("Modificar Módulo", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        modModButton = createButton("Modificar Módulo", getButtonsWidth(), getButtonsHeight(), 22, 0x3D5A40, 0xffffff);
         modModButton.addActionListener(new OptionsController(this));
-        modModButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+        modModButton.setBounds(getWindowsWidth()/18*5, getWindowsHeight()/6+getButtonsHeight()*5/2, getButtonsWidth(), getButtonsHeight());
 
         background.add(modModButton);
     }
     private void modAsigButton(){
-        modAsigButton = createButton("Modificar Asignatura", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        modAsigButton = createButton("Modificar Asignatura", getButtonsWidth(), getButtonsHeight(), 20, 0x3D5A40, 0xffffff);
         modAsigButton.addActionListener(new OptionsController(this));
-        modAsigButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+        modAsigButton.setBounds(getWindowsWidth()/26*4, getWindowsHeight()/6+getButtonsHeight()*13/3, getButtonsWidth(), getButtonsHeight());
 
         background.add(modAsigButton);
     }
     private void listAlumButton(){
-        listAlumButton = createButton("Alumnos", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        listAlumButton = createButton("Alumnos", getButtonsWidth(), getButtonsHeight(), 22, 0x3D5A40, 0xffffff);
         listAlumButton.addActionListener(new OptionsController(this));
-        listAlumButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+        listAlumButton.setBounds(getWindowsWidth()/13*7, getWindowsHeight()/6+getButtonsHeight(), getButtonsWidth(), getButtonsHeight());
 
         background.add(listAlumButton);
     }
     private void listProButton(){
-        listProButton = createButton("Profesores", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        listProButton = createButton("Profesores", getButtonsWidth(), getButtonsHeight(), 22, 0x3D5A40, 0xffffff);
         listProButton.addActionListener(new OptionsController(this));
-        listProButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+        listProButton.setBounds(getWindowsWidth()/13*10, getWindowsHeight()/6+getButtonsHeight(), getButtonsWidth(), getButtonsHeight());
 
         background.add(listProButton);
     }
     private void listModButton(){
-        listModButton = createButton("Módulos", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        listModButton = createButton("Módulos", getButtonsWidth(), getButtonsHeight(), 22, 0x3D5A40, 0xffffff);
         listModButton.addActionListener(new OptionsController(this));
-        listModButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+        listModButton.setBounds(getWindowsWidth()/13*7, getWindowsHeight()/6+getButtonsHeight()/3*10, getButtonsWidth(), getButtonsHeight());
 
         background.add(listModButton);
     }
     private void listAsigButton(){
-        listAsigButton = createButton("Asignaturas", getButtonsWidth(), getButtonsHeight(), 30, 0x3D5A40, 0xffffff);
+        listAsigButton = createButton("Asignaturas", getButtonsWidth(), getButtonsHeight(), 22, 0x3D5A40, 0xffffff);
         listAsigButton.addActionListener(new OptionsController(this));
-        listAsigButton.setBounds((getWidth()/2-getButtonsWidth()/2)/2, (getHeight()/2-getButtonsHeight()/2)/2, getButtonsWidth(), getButtonsHeight());
+        listAsigButton.setBounds(getWindowsWidth()/13*10, getWindowsHeight()/6+getButtonsHeight()/3*10, getButtonsWidth(), getButtonsHeight());
 
         background.add(listAsigButton);
     }

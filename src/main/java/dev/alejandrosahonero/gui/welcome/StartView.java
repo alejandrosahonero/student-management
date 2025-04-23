@@ -2,7 +2,7 @@ package dev.alejandrosahonero.gui.welcome;
 
 import dev.alejandrosahonero.gui.MainView;
 import dev.alejandrosahonero.logic.welcome.LoginButtonController;
-import dev.alejandrosahonero.logic.welcome.RegisterButtonController;
+import dev.alejandrosahonero.logic.welcome.ChangeButtonController;
 import dev.alejandrosahonero.logic.welcome.SettingsButtonController;
 
 import javax.swing.*;
@@ -13,7 +13,7 @@ public class StartView extends MainView {
     final int buttonsWidth = 260;
 
     private JLabel background;
-    private JButton loginButton, registerButton, settingsButton;
+    private JButton loginButton, changeButton, settingsButton;
     private JPanel buttonPanel;
 
     public StartView() {
@@ -56,11 +56,11 @@ public class StartView extends MainView {
         buttonPanel.add(loginButton, BorderLayout.CENTER);
     }
     private void registerButton() {
-        registerButton = createButton("REGISTRARSE", buttonsWidth, 0, 25, 0xEEE7CC, 0x2E8B57);
-        registerButton.setBorder(BorderFactory.createLineBorder(new Color(0x2E8B57),3));
-        registerButton.addActionListener(new RegisterButtonController(this));
+        changeButton = createButton("CAMBIAR CLAVE", buttonsWidth, 0, 25, 0xEEE7CC, 0x2E8B57);
+        changeButton.setBorder(BorderFactory.createLineBorder(new Color(0x2E8B57),3));
+        changeButton.addActionListener(new ChangeButtonController(this));
 
-        buttonPanel.add(registerButton , BorderLayout.EAST);
+        buttonPanel.add(changeButton, BorderLayout.EAST);
     }
     private void settingsButton() {
         settingsButton = createButton("AJUSTES", buttonsWidth, 0, 25, 0xEEE7CC, 0x2E8B57);
@@ -74,8 +74,8 @@ public class StartView extends MainView {
     public JButton getLoginButton() {
         return loginButton;
     }
-    public JButton getRegisterButton() {
-        return registerButton;
+    public JButton getChangeButton() {
+        return changeButton;
     }
     public JButton getSettingsButton() {
         return settingsButton;

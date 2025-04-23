@@ -26,22 +26,18 @@ public class ListAlumView extends MainView {
         tablePanel = new JPanel(new BorderLayout());
         tablePanel.setBounds(getWindowsWidth()/30, getWindowsHeight()/20, getWindowsWidth()-getWindowsWidth()/25*2, getWindowsHeight()-getWindowsHeight()/3);
 
-        String[] columnNames = {"First Name",
-                "Last Name",
-                "Sport",
-                "# of Years",
-                "Vegetarian"};
+        String[] columnNames = {"ID Matrícula", "Apellido Paterno", "Apellido Materno", "Nombres", "Edad"};
         Object[][] data = {
-                {"Kathy", "Smith",
-                        "Snowboarding", 5, false},
-                {"John", "Doe",
-                        "Rowing", 3, true},
-                {"Sue", "Black",
-                        "Knitting", 2, false},
-                {"Jane", "White",
-                        "Speed reading", 20, true},
-                {"Joe", "Brown",
-                        "Pool", 10, false}
+                {"1000", "Smith", "Smith",
+                        "Juan", 5},
+                {"1001", "Doe", "Smith",
+                        "Pepe", 3},
+                {"1002", "Black", "Smith",
+                        "Victor", 2},
+                {"1003", "White", "Smith",
+                        "Andres Vicent", 20},
+                {"1004", "Brown", "Smith",
+                        "Paul", 10}
         };
 
         listAlum = new JTable(data, columnNames);

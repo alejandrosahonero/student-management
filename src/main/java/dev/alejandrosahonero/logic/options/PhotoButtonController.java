@@ -22,19 +22,11 @@ public class PhotoButtonController implements ActionListener {
         chooser.setFileFilter(filter);
 
         if(gestionar())
-        {
             matriculacionView.setPhoto(new ImageIcon(chooser.getSelectedFile().getPath()));
-        }
         else
-        {
             matriculacionView.setPhoto(new ImageIcon("src/main/resources/img/photo-default.jpg"));
-        }
     }
     public boolean gestionar(){
-        if(chooser.showOpenDialog(matriculacionView) == JFileChooser.APPROVE_OPTION) {
-            return true;
-        }
-        else
-            return false;
+        return chooser.showOpenDialog(matriculacionView) == JFileChooser.APPROVE_OPTION;
     }
 }

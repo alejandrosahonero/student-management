@@ -9,7 +9,8 @@ public class ModModView extends MainView {
     JLabel background;
 
     public ModModView() {
-        super("Modulos");
+        super("Moduficar Módulos");
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         initComponents();
     }

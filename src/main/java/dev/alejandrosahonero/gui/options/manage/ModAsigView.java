@@ -8,7 +8,8 @@ public class ModAsigView extends MainView {
     private JLabel background;
 
     public ModAsigView(){
-        super("Modificar Alumno");
+        super("Modificar Asignatura");
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         initComponents();
     }

@@ -11,7 +11,8 @@ public class ListAsigView extends MainView {
     private JPanel tablePanel;
 
     public ListAsigView(){
-        super("Modificar Alumno");
+        super("Asignaturas");
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         initComponents();
     }

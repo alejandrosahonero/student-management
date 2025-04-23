@@ -9,6 +9,7 @@ public class ModAlumView extends MainView {
 
     public ModAlumView(){
         super("Modificar Alumno");
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         initComponents();
     }

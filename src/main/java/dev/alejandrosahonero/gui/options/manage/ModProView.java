@@ -9,7 +9,8 @@ public class ModProView extends MainView {
     JLabel background;
 
     public ModProView() {
-        super("Profesores");
+        super("Modificar Profesores");
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         initComponents();
     }

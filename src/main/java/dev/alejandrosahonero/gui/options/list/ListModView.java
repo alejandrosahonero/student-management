@@ -11,7 +11,8 @@ public class ListModView extends MainView {
     private JPanel tablePanel;
 
     public ListModView() {
-        super("Modificar Alumno");
+        super("Módulos");
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         initComponents();
     }

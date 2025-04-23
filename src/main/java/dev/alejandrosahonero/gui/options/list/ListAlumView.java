@@ -11,7 +11,8 @@ public class ListAlumView extends MainView {
     private JPanel tablePanel;
 
     public ListAlumView() {
-        super("Modificar Alumno");
+        super("Alumnos");
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         initComponents();
     }

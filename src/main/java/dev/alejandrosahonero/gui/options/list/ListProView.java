@@ -11,7 +11,8 @@ public class ListProView extends MainView {
     private JPanel tablePanel;
 
     public ListProView() {
-        super("Modificar Alumno");
+        super("Profesores");
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         initComponents();
     }

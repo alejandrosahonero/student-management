@@ -20,6 +20,7 @@ public class MatricularView extends MainView
     public MatricularView()
     {
         super("Matriculacion");
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
         initComponents();
     }

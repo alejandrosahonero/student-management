@@ -8,21 +8,18 @@ import java.io.Serializable;
 public class Persona implements Serializable {
     @Id
     private String dni;
-    private String apellido;
-    private String nombre;
+    private String apellidoPaterno, apellidoMaterno, nombres, sexo;
     private int edad;
-    private String sexo;
 
     public Persona() {}
-    public Persona(String dni, String apellido, String nombre, int edad, String sexo) {
+    public Persona(String dni, String apellidoPaterno, String apellidoMaterno, String nombres, int edad, String sexo) {
         this.dni = dni;
-        this.apellido = apellido;
-        this.nombre = nombre;
+        this.apellidoPaterno = apellidoPaterno;
+        this.apellidoMaterno = apellidoMaterno;
+        this.nombres = nombres;
         this.edad = edad;
         this.sexo = sexo;
     }
-
-
 
     //Getters and Setters
     public String getDni() {
@@ -31,17 +28,23 @@ public class Persona implements Serializable {
     public void setDni(String dni) {
         this.dni = dni;
     }
-    public String getNombre() {
-        return nombre;
+    public String getNombres() {
+        return nombres;
     }
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
-    public String getApellido() {
-        return apellido;
+    public String getApellidoPaterno() {
+        return apellidoPaterno;
     }
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
+    public void setApellidoPaterno(String apellidoPaterno) {
+        this.apellidoPaterno = apellidoPaterno;
+    }
+    public String getApellidoMaterno() {
+        return apellidoMaterno;
+    }
+    public void setApellidoMaterno(String apellidoMaterno) {
+        this.apellidoMaterno = apellidoMaterno;
     }
     public int getEdad() {
         return edad;

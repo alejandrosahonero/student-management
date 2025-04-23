@@ -9,8 +9,8 @@ public class Profesor extends Persona implements Serializable {
     private ArrayList<String> modulosImparte = new ArrayList<String>();
 
     public Profesor() {}
-    public Profesor(String dni, String apellido, String nombre, int edad, String sexo, ArrayList<String> modulosImparte) {
-        super(dni, apellido, nombre, edad, sexo);
+    public Profesor(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, int edad, String sexo, ArrayList<String> modulosImparte) {
+        super(dni, apellidoPaterno, apellidoMaterno, nombre, edad, sexo);
         this.modulosImparte = modulosImparte;
     }
 }

@@ -14,7 +14,7 @@ public class Main {
         StartView startView = new StartView();
         startView.setVisible(true);
 
-        /* Alumnos de ejemplo para tener una base de datos
+        /*//Alumnos de ejemplo para tener una base de datos
         EntityManager em = Conector.getEntityManager();
         em.getTransaction().begin();
         Alumno a1 = new Alumno("12345678A", "García", "López", "Ana", 19, "Femenino", 1001, new ArrayList<>(List.of("Programación", "Bases de Datos")));

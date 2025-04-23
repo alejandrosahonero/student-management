@@ -1,4 +1,4 @@
-package dev.alejandrosahonero.gui.options;
+package dev.alejandrosahonero.gui.options.list;
 
 import dev.alejandrosahonero.gui.MainView;
 

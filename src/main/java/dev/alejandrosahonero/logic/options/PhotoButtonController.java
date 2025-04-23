@@ -1,6 +1,6 @@
 package dev.alejandrosahonero.logic.options;
 
-import dev.alejandrosahonero.gui.options.MatriculacionView;
+import dev.alejandrosahonero.gui.options.manage.MatriculacionView;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;

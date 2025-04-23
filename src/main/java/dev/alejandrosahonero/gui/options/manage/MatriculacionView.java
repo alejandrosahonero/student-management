@@ -1,4 +1,4 @@
-package dev.alejandrosahonero.gui.options;
+package dev.alejandrosahonero.gui.options.manage;
 
 import dev.alejandrosahonero.gui.MainView;
 import dev.alejandrosahonero.logic.options.PhotoButtonController;

@@ -26,18 +26,18 @@ public class ListProView extends MainView {
         tablePanel = new JPanel(new BorderLayout());
         tablePanel.setBounds(getWindowsWidth()/30, getWindowsHeight()/20, getWindowsWidth()-getWindowsWidth()/25*2, getWindowsHeight()-getWindowsHeight()/3);
 
-        String[] columnNames = {"ID Matrícula", "Apellido Paterno", "Apellido Materno", "Nombres", "Edad"};
+        String[] columnNames = {"ID Profesor", "Apellido Paterno", "Apellido Materno", "Nombres", "Edad", "Módulos"};
         Object[][] data = {
                 {"1000", "Smith", "Smith",
-                        "Juan", 5},
+                        "Juan", 5, "Mates"},
                 {"1001", "Doe", "Smith",
-                        "Pepe", 3},
+                        "Pepe", 3, "Mates"},
                 {"1002", "Black", "Smith",
-                        "Victor", 2},
+                        "Victor", 2, "Mates"},
                 {"1003", "White", "Smith",
-                        "Andres Vicent", 20},
+                        "Andres Vicent", 20, "Mates"},
                 {"1004", "Brown", "Smith",
-                        "Paul", 10}
+                        "Paul", 10, "Mates"}
         };
 
         listAlum = new JTable(data, columnNames);

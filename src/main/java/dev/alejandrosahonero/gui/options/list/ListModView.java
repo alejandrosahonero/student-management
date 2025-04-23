@@ -26,7 +26,7 @@ public class ListModView extends MainView {
         tablePanel = new JPanel(new BorderLayout());
         tablePanel.setBounds(getWindowsWidth()/30, getWindowsHeight()/20, getWindowsWidth()-getWindowsWidth()/25*2, getWindowsHeight()-getWindowsHeight()/3);
 
-        String[] columnNames = {"ID Matrícula", "Apellido Paterno", "Apellido Materno", "Nombres", "Edad"};
+        String[] columnNames = {"ID Módulo", "Siglas", "Nombre", "Descripción", "Total Alumnos"};
         Object[][] data = {
                 {"1000", "Smith", "Smith",
                         "Juan", 5},

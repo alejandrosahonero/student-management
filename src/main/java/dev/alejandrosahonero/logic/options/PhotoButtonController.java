@@ -1,6 +1,6 @@
 package dev.alejandrosahonero.logic.options;
 
-import dev.alejandrosahonero.gui.options.manage.MatriculacionView;
+import dev.alejandrosahonero.gui.options.manage.MatricularView;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -8,11 +8,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PhotoButtonController implements ActionListener {
-    private MatriculacionView matriculacionView;
+    private MatricularView matricularView;
     private JFileChooser chooser;
 
-    public PhotoButtonController(MatriculacionView matriculacionView) {
-        this.matriculacionView = matriculacionView;
+    public PhotoButtonController(MatricularView matricularView) {
+        this.matricularView = matricularView;
     }
     public void actionPerformed(ActionEvent e) {
         chooser = new JFileChooser();
@@ -22,11 +22,11 @@ public class PhotoButtonController implements ActionListener {
         chooser.setFileFilter(filter);
 
         if(gestionar())
-            matriculacionView.setPhoto(new ImageIcon(chooser.getSelectedFile().getPath()));
+            matricularView.setPhoto(new ImageIcon(chooser.getSelectedFile().getPath()));
         else
-            matriculacionView.setPhoto(new ImageIcon("src/main/resources/img/photo-default.jpg"));
+            matricularView.setPhoto(new ImageIcon("src/main/resources/img/photo-default.jpg"));
     }
     public boolean gestionar(){
-        return chooser.showOpenDialog(matriculacionView) == JFileChooser.APPROVE_OPTION;
+        return chooser.showOpenDialog(matricularView) == JFileChooser.APPROVE_OPTION;
     }
 }

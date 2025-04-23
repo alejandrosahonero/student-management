@@ -14,7 +14,7 @@ public class OptionsController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         /*if(e.getSource() == optionsView.getMatricularButton()){
             optionsView.setVisible(false);
-            new MatriculacionView().setVisible(true);
+            new MatricularView().setVisible(true);
         }
         if(e.getSource() == optionsView.getListarButton()){
             optionsView.setVisible(false);

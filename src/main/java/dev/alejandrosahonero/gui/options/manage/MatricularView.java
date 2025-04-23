@@ -6,7 +6,7 @@ import dev.alejandrosahonero.logic.options.PhotoButtonController;
 import javax.swing.*;
 import java.awt.*;
 
-public class MatriculacionView extends MainView
+public class MatricularView extends MainView
 {
     final int photoWidth = 233;
     final int photoHeight = 300;
@@ -17,7 +17,7 @@ public class MatriculacionView extends MainView
     private JTextField nombre, apellido, email, telefono;
     private ImageIcon photo;
 
-    public MatriculacionView()
+    public MatricularView()
     {
         super("Matriculacion");
 

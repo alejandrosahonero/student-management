@@ -17,32 +17,23 @@ public class OptionsController implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == optionsView.getMatricularButton()){
+        if(e.getSource() == optionsView.getMatricularButton())
             new MatricularView().setVisible(true);
-        }
-        if(e.getSource() == optionsView.getModAlumButton()){
+        if(e.getSource() == optionsView.getModAlumButton())
             new ModAlumView().setVisible(true);
-        }
-        if(e.getSource() == optionsView.getModProButton()){
+        if(e.getSource() == optionsView.getModProButton())
             new ModProView().setVisible(true);
-        }
-        if(e.getSource() == optionsView.getModModButton()){
+        if(e.getSource() == optionsView.getModModButton())
             new ModModView().setVisible(true);
-        }
-        if(e.getSource() == optionsView.getModAsigButton()){
+        if(e.getSource() == optionsView.getModAsigButton())
             new ModAsigView().setVisible(true);
-        }
-        if(e.getSource() == optionsView.getListAlumButton()){
+        if(e.getSource() == optionsView.getListAlumButton())
             new ListAlumView().setVisible(true);
-        }
-        if(e.getSource() == optionsView.getListProButton()){
+        if(e.getSource() == optionsView.getListProButton())
             new ListProView().setVisible(true);
-        }
-        if(e.getSource() == optionsView.getListModButton()){
+        if(e.getSource() == optionsView.getListModButton())
             new ListModView().setVisible(true);
-        }
-        if(e.getSource() == optionsView.getListAsigButton()){
+        if(e.getSource() == optionsView.getListAsigButton())
             new ListAsigView().setVisible(true);
-        }
     }
 }

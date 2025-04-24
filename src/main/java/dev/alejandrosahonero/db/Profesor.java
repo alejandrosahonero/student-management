@@ -7,10 +7,10 @@ import java.util.ArrayList;
 @Entity
 public class Profesor extends Persona implements Serializable {
     private int id;
-    private ArrayList<String> modulosImparte = new ArrayList<String>();
+    private ArrayList<Modulo> modulosImparte = new ArrayList<Modulo>();
 
     public Profesor() {}
-    public Profesor(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, int edad, String sexo, int id, ArrayList<String> modulosImparte) {
+    public Profesor(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, short edad, String sexo, int id, ArrayList<Modulo> modulosImparte) {
         super(dni, apellidoPaterno, apellidoMaterno, nombre, edad, sexo);
         this.id = id;
         this.modulosImparte = modulosImparte;
@@ -20,7 +20,7 @@ public class Profesor extends Persona implements Serializable {
     public int getId() {
         return id;
     }
-    public ArrayList<String> getModulosImparte() {
+    public ArrayList<Modulo> getModulosImparte() {
         return modulosImparte;
     }
 }

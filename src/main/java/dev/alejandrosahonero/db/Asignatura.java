@@ -10,15 +10,13 @@ public class Asignatura {
     private String siglas;
     private String nombre;
     private String descripcion;
-    private int totalAlumnos;
 
     public Asignatura() {}
-    public Asignatura(int id, String siglas, String nombre, String descripcion, int totalAlumnos) {
+    public Asignatura(int id, String siglas, String nombre, String descripcion) {
         this.id = id;
         this.siglas = siglas;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.totalAlumnos = totalAlumnos;
     }
 
     //Getters
@@ -33,8 +31,5 @@ public class Asignatura {
     }
     public String getDescripcion() {
         return descripcion;
-    }
-    public int getTotalAlumnos() {
-        return totalAlumnos;
     }
 }

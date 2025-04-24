@@ -25,7 +25,7 @@ public class ListAsigController {
             TypedQuery<Asignatura> query = em.createQuery("SELECT a FROM Asignatura a ORDER BY a.id", Asignatura.class);
             List<Asignatura> lista = query.getResultList();
             for (Asignatura a : lista) {
-                model.addRow(new Object[]{a.getId(), a.getSiglas(), a.getNombre(), a.getDescripcion(), a.getTotalAlumnos()});
+                model.addRow(new Object[]{a.getId(), a.getSiglas(), a.getNombre(), a.getDescripcion()});
             }
             em.getTransaction().commit();
             em.close();

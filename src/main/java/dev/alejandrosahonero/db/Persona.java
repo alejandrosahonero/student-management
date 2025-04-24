@@ -9,10 +9,10 @@ public class Persona implements Serializable {
     @Id
     private String dni;
     private String apellidoPaterno, apellidoMaterno, nombres, sexo;
-    private int edad;
+    private short edad;
 
     public Persona() {}
-    public Persona(String dni, String apellidoPaterno, String apellidoMaterno, String nombres, int edad, String sexo) {
+    public Persona(String dni, String apellidoPaterno, String apellidoMaterno, String nombres, short edad, String sexo) {
         this.dni = dni;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
@@ -46,10 +46,10 @@ public class Persona implements Serializable {
     public void setApellidoMaterno(String apellidoMaterno) {
         this.apellidoMaterno = apellidoMaterno;
     }
-    public int getEdad() {
+    public short getEdad() {
         return edad;
     }
-    public void setEdad(int edad) {
+    public void setEdad(short edad) {
         this.edad = edad;
     }
     public String getSexo() {

@@ -9,9 +9,9 @@ import java.awt.*;
 
 public class ListAlumView extends MainView {
     private JLabel background;
-    private DefaultTableModel model;
     private JTable listAlum;
     private JPanel tablePanel;
+    private DefaultTableModel model;
     private ListAlumController listAlumController;
 
     public ListAlumView() {
@@ -31,7 +31,7 @@ public class ListAlumView extends MainView {
         tablePanel = new JPanel(new BorderLayout());
         tablePanel.setBounds(getWindowsWidth()/30, getWindowsHeight()/20, getWindowsWidth()-getWindowsWidth()/25*2, getWindowsHeight()-getWindowsHeight()/3);
 
-        model = new DefaultTableModel(new String[]{"ID Matrícula", "Apellido Paterno", "Apellido Materno", "Nombres", "Edad"}, 0);
+        model = new DefaultTableModel(new String[]{"ID Matrícula", "DNI", "Apellido Paterno", "Apellido Materno", "Nombres", "Edad"}, 0);
         listAlum = new JTable(model);
 
         JScrollPane scrollPane = new JScrollPane(listAlum);

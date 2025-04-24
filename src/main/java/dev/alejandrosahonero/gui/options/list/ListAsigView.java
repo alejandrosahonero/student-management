@@ -1,14 +1,18 @@
 package dev.alejandrosahonero.gui.options.list;
 
 import dev.alejandrosahonero.gui.MainView;
+import dev.alejandrosahonero.logic.options.list.ListAsigController;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class ListAsigView extends MainView {
     private JLabel background;
     private JTable listAlum;
     private JPanel tablePanel;
+    private DefaultTableModel model;
+    private ListAsigController listAsigController;
 
     public ListAsigView(){
         super("Asignaturas");
@@ -27,24 +31,14 @@ public class ListAsigView extends MainView {
         tablePanel = new JPanel(new BorderLayout());
         tablePanel.setBounds(getWindowsWidth()/30, getWindowsHeight()/20, getWindowsWidth()-getWindowsWidth()/25*2, getWindowsHeight()-getWindowsHeight()/3);
 
-        String[] columnNames = {"ID Asignatura", "Siglas", "Nombre", "Descripción", "Profesores"};
-        Object[][] data = {
-                {"1000", "Smith", "Smith",
-                        "Juan", 5},
-                {"1001", "Doe", "Smith",
-                        "Pepe", 3},
-                {"1002", "Black", "Smith",
-                        "Victor", 2},
-                {"1003", "White", "Smith",
-                        "Andres Vicent", 20},
-                {"1004", "Brown", "Smith",
-                        "Paul", 10}
-        };
-
-        listAlum = new JTable(data, columnNames);
+        model = new DefaultTableModel(new String[]{"ID Asignatura", "Siglas", "Nombre", "Descripción", "Total Alumnos"}, 0);
+        listAlum = new JTable(model);
 
         JScrollPane scrollPane = new JScrollPane(listAlum);
         tablePanel.add(scrollPane);
+
+        listAsigController = new ListAsigController(this);
+        listAsigController.cargarDatos(model);
 
         background.add(tablePanel);
     }

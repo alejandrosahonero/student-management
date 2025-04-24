@@ -6,19 +6,19 @@ import java.util.ArrayList;
 
 @Entity
 public class Alumno extends Persona implements Serializable {
-    private int IDMatricula;
+    private int id;
     private ArrayList<String> modulosCursa = new ArrayList<String>();
 
     public Alumno() {}
-    public Alumno(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, int edad, String sexo, int IDMatricula, ArrayList<String> modulosCursa) {
+    public Alumno(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, int edad, String sexo, int id, ArrayList<String> modulosCursa) {
         super(dni, apellidoPaterno, apellidoMaterno, nombre, edad, sexo);
-        this.IDMatricula = IDMatricula;
+        this.id = id;
         this.modulosCursa = modulosCursa;
     }
 
     //Getters
-    public int getIDMatricula() {
-        return IDMatricula;
+    public int getId() {
+        return id;
     }
     public ArrayList<String> getModulosCursa() {
         return modulosCursa;

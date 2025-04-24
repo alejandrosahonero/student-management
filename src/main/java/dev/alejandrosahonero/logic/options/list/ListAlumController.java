@@ -20,10 +20,10 @@ public class ListAlumController {
         EntityManager em = Conector.getEntityManager();
         try {
             em.getTransaction().begin();
-            TypedQuery<Alumno> query = em.createQuery("SELECT a FROM Alumno a ORDER BY a.IDMatricula", Alumno.class);
+            TypedQuery<Alumno> query = em.createQuery("SELECT a FROM Alumno a ORDER BY a.id", Alumno.class);
             List<Alumno> lista = query.getResultList();
             for (Alumno a : lista) {
-                model.addRow(new Object[]{a.getIDMatricula(), a.getApellidoPaterno(), a.getApellidoMaterno(), a.getNombres(), a.getEdad()});
+                model.addRow(new Object[]{a.getId(), a.getDni(), a.getApellidoPaterno(), a.getApellidoMaterno(), a.getNombres(), a.getEdad()});
             }
             em.getTransaction().commit();
             em.close();

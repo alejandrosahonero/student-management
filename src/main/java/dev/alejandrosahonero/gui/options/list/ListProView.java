@@ -1,14 +1,18 @@
 package dev.alejandrosahonero.gui.options.list;
 
 import dev.alejandrosahonero.gui.MainView;
+import dev.alejandrosahonero.logic.options.list.ListProController;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class ListProView extends MainView {
     private JLabel background;
     private JTable listAlum;
     private JPanel tablePanel;
+    private DefaultTableModel model;
+    private ListProController listProController;
 
     public ListProView() {
         super("Profesores");
@@ -27,24 +31,14 @@ public class ListProView extends MainView {
         tablePanel = new JPanel(new BorderLayout());
         tablePanel.setBounds(getWindowsWidth()/30, getWindowsHeight()/20, getWindowsWidth()-getWindowsWidth()/25*2, getWindowsHeight()-getWindowsHeight()/3);
 
-        String[] columnNames = {"ID Profesor", "Apellido Paterno", "Apellido Materno", "Nombres", "Edad", "Módulos"};
-        Object[][] data = {
-                {"1000", "Smith", "Smith",
-                        "Juan", 5, "Mates"},
-                {"1001", "Doe", "Smith",
-                        "Pepe", 3, "Mates"},
-                {"1002", "Black", "Smith",
-                        "Victor", 2, "Mates"},
-                {"1003", "White", "Smith",
-                        "Andres Vicent", 20, "Mates"},
-                {"1004", "Brown", "Smith",
-                        "Paul", 10, "Mates"}
-        };
-
-        listAlum = new JTable(data, columnNames);
+        model = new DefaultTableModel(new String[]{"ID Profesor", "DNI", "Apellido Paterno", "Apellido Materno", "Nombres", "Edad"}, 0);
+        listAlum = new JTable(model);
 
         JScrollPane scrollPane = new JScrollPane(listAlum);
         tablePanel.add(scrollPane);
+
+        listProController = new ListProController(this);
+        listProController.cargarDatos(model);
 
         background.add(tablePanel);
     }

@@ -2,10 +2,10 @@ package dev.alejandrosahonero.app;
 
 import dev.alejandrosahonero.db.Alumno;
 import dev.alejandrosahonero.db.Conector;
+import dev.alejandrosahonero.db.Profesor;
 import dev.alejandrosahonero.gui.welcome.StartView;
 
 import javax.persistence.EntityManager;
-import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +14,7 @@ public class Main {
         StartView startView = new StartView();
         startView.setVisible(true);
 
-        /*//Alumnos de ejemplo para tener una base de datos
+        //Alumnos de ejemplo para tener una base de datos
         EntityManager em = Conector.getEntityManager();
         em.getTransaction().begin();
         Alumno a1 = new Alumno("12345678A", "García", "López", "Ana", 19, "Femenino", 1001, new ArrayList<>(List.of("Programación", "Bases de Datos")));
@@ -117,8 +117,29 @@ public class Main {
         em.persist(a48);
         em.persist(a49);
         em.persist(a50);
+
+        Profesor p1 = new Profesor("50000001A", "Martínez", "Rojas", "Lucía", 45, "Femenino", 2000, new ArrayList<>(List.of("Programación", "Bases de Datos")));
+        Profesor p2 = new Profesor("50000002B", "Gómez", "Hernández", "Carlos", 50, "Masculino", 2001, new ArrayList<>(List.of("Sistemas Informáticos", "FOL")));
+        Profesor p3 = new Profesor("50000003C", "López", "Fernández", "Isabel", 38, "Femenino", 2002, new ArrayList<>(List.of("Lenguajes de Marcas", "Entornos de Desarrollo")));
+        Profesor p4 = new Profesor("50000004D", "Ruiz", "Morales", "Álvaro", 42, "Masculino", 2003, new ArrayList<>(List.of("Programación", "Lenguajes de Marcas")));
+        Profesor p5 = new Profesor("50000005E", "Díaz", "Cruz", "María", 47, "Femenino", 2004, new ArrayList<>(List.of("FOL", "Bases de Datos")));
+        Profesor p6 = new Profesor("50000006F", "Serrano", "Ortega", "Javier", 40, "Masculino", 2005, new ArrayList<>(List.of("Entornos de Desarrollo", "Sistemas Informáticos")));
+        Profesor p7 = new Profesor("50000007G", "Castillo", "Navarro", "Elena", 36, "Femenino", 2006, new ArrayList<>(List.of("Bases de Datos", "Lenguajes de Marcas")));
+        Profesor p8 = new Profesor("50000008H", "Vega", "Delgado", "Tomás", 39, "Masculino", 2007, new ArrayList<>(List.of("Programación", "Entornos de Desarrollo")));
+        Profesor p9 = new Profesor("50000009I", "Paredes", "Romero", "Sandra", 44, "Femenino", 2008, new ArrayList<>(List.of("FOL", "Sistemas Informáticos")));
+        Profesor p10 = new Profesor("50000010J", "Cano", "Leiva", "Andrés", 41, "Masculino", 2009, new ArrayList<>(List.of("Lenguajes de Marcas", "Programación")));
+        em.persist(p1);
+        em.persist(p2);
+        em.persist(p3);
+        em.persist(p4);
+        em.persist(p5);
+        em.persist(p6);
+        em.persist(p7);
+        em.persist(p8);
+        em.persist(p9);
+        em.persist(p10);
         em.getTransaction().commit();
-        em.close();*/
+        em.close();
 
     }
 }

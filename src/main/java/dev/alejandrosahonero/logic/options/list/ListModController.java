@@ -1,9 +1,7 @@
 package dev.alejandrosahonero.logic.options.list;
 
-import dev.alejandrosahonero.db.Alumno;
 import dev.alejandrosahonero.db.Conector;
 import dev.alejandrosahonero.db.Modulo;
-import dev.alejandrosahonero.gui.options.list.ListAlumView;
 import dev.alejandrosahonero.gui.options.list.ListModView;
 
 import javax.persistence.EntityManager;

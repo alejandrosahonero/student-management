@@ -7,7 +7,7 @@ import java.util.ArrayList;
 @Entity
 public class Alumno extends Persona implements Serializable {
     private int id;
-    private ArrayList<Modulo> modulosCursa = new ArrayList<Modulo>();
+    private ArrayList<Modulo> modulosCursa = new ArrayList<>();
 
     public Alumno() {}
     public Alumno(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, short edad, String sexo, int id, ArrayList<Modulo> modulosCursa) {

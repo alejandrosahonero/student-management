@@ -1,7 +1,9 @@
 package dev.alejandrosahonero.gui.options.manage;
 
 import dev.alejandrosahonero.gui.MainView;
+import dev.alejandrosahonero.logic.options.manage.matricular.MatricularController;
 import dev.alejandrosahonero.logic.options.manage.PhotoButtonController;
+import dev.alejandrosahonero.logic.options.manage.matricular.txtController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -58,52 +60,62 @@ public class MatricularView extends MainView
         dni = new JTextField("DNI");
         dni.setHorizontalAlignment(SwingConstants.CENTER);
         dni.setBounds(margin, margin*3/2+getButtonsHeight(), getButtonsWidth(), getButtonsHeight());
+        dni.addMouseListener(new txtController(this));
         background.add(dni);
 
         apellidoPaterno = new JTextField("Apellido Paterno");
         apellidoPaterno.setHorizontalAlignment(SwingConstants.CENTER);
         apellidoPaterno.setBounds(margin*2+getButtonsWidth(), margin*3/2+getButtonsHeight(), getButtonsWidth(), getButtonsHeight());
+        apellidoPaterno.addMouseListener(new txtController(this));
         background.add(apellidoPaterno);
 
         apellidoMaterno = new JTextField("Apellido Materno");
         apellidoMaterno.setHorizontalAlignment(SwingConstants.CENTER);
         apellidoMaterno.setBounds(margin*3+getButtonsWidth()*2, margin*3/2+getButtonsHeight(), getButtonsWidth(), getButtonsHeight());
+        apellidoMaterno.addMouseListener(new txtController(this));
         background.add(apellidoMaterno);
 
         nombres = new JTextField("Nombres");
         nombres.setHorizontalAlignment(SwingConstants.CENTER);
         nombres.setBounds(margin, margin*3+getButtonsHeight()*2, getButtonsWidth(), getButtonsHeight());
+        nombres.addMouseListener(new txtController(this));
         background.add(nombres);
 
         fechaNac = new JTextField("Fecha Nacimiento");
         fechaNac.setHorizontalAlignment(SwingConstants.CENTER);
         fechaNac.setBounds(margin*2+getButtonsWidth(), margin*3+getButtonsHeight()*2, getButtonsWidth(), getButtonsHeight());
+        fechaNac.addMouseListener(new txtController(this));
         background.add(fechaNac);
 
         sexo = new JTextField("Sexo");
         sexo.setHorizontalAlignment(SwingConstants.CENTER);
         sexo.setBounds(margin*3+getButtonsWidth()*2, margin*3+getButtonsHeight()*2, getButtonsWidth(), getButtonsHeight());
+        sexo.addMouseListener(new txtController(this));
         background.add(sexo);
     }
     private void academicInformation(){
         modulo = new JTextField("Modulo");
         modulo.setHorizontalAlignment(SwingConstants.CENTER);
         modulo.setBounds(margin, margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
+        modulo.addMouseListener(new txtController(this));
         background.add(modulo);
 
         nuss = new JTextField("NUSS");
         nuss.setHorizontalAlignment(SwingConstants.CENTER);
         nuss.setBounds(margin*2+getButtonsWidth(), margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
+        nuss.addMouseListener(new txtController(this));
         background.add(nuss);
 
         email = new JTextField("Email");
         email.setHorizontalAlignment(SwingConstants.CENTER);
         email.setBounds(margin*3+getButtonsWidth()*2, margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
+        email.addMouseListener(new txtController(this));
         background.add(email);
 
         telefono = new JTextField("Telefono");
         telefono.setHorizontalAlignment(SwingConstants.CENTER);
         telefono.setBounds(margin*4+getButtonsWidth()*3, margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
+        telefono.addMouseListener(new txtController(this));
         background.add(telefono);
     }
     private void imagePanel()
@@ -125,13 +137,48 @@ public class MatricularView extends MainView
     private void matricularButton(){
         matricularButton = createButton("MATRICULAR", 0, 0, 20, 0x3D5A40, 0xffffff);
         matricularButton.setBounds(margin*13/3+getButtonsWidth()*3, margin*2+photoHeight, getButtonsWidth(), getButtonsHeight());
+        matricularButton.addActionListener(new MatricularController(this));
 
         background.add(matricularButton);
     }
-
     public void setPhoto(ImageIcon photoChossed) {
         this.photo = new ImageIcon(photoChossed.getImage().getScaledInstance(photoWidth, photoHeight, Image.SCALE_SMOOTH));
         labelPhoto.setIcon(photo);
         revalidate();
+    }
+
+    //Getters
+    public JTextField getDni() {
+        return dni;
+    }
+    public JTextField getApellidoPaterno() {
+        return apellidoPaterno;
+    }
+    public JTextField getApellidoMaterno() {
+        return apellidoMaterno;
+    }
+    public JTextField getNombres() {
+        return nombres;
+    }
+    public JTextField getFechaNac() {
+        return fechaNac;
+    }
+    public JTextField getSexo() {
+        return sexo;
+    }
+    public JTextField getModulo() {
+        return modulo;
+    }
+    public JTextField getNuss() {
+        return nuss;
+    }
+    public JTextField getEmail() {
+        return email;
+    }
+    public JTextField getTelefono() {
+        return telefono;
+    }
+    public JButton getMatricularButton() {
+        return matricularButton;
     }
 }

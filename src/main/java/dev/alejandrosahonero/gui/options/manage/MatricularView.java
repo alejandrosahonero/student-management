@@ -1,7 +1,7 @@
 package dev.alejandrosahonero.gui.options.manage;
 
 import dev.alejandrosahonero.gui.MainView;
-import dev.alejandrosahonero.logic.options.manage.matricular.MatricularController;
+import dev.alejandrosahonero.logic.options.manage.matricular.MatricularButtonController;
 import dev.alejandrosahonero.logic.options.manage.PhotoButtonController;
 import dev.alejandrosahonero.logic.options.manage.matricular.txtController;
 
@@ -147,7 +147,7 @@ public class MatricularView extends MainView
     private void matricularButton(){
         matricularButton = createButton("MATRICULAR", 0, 0, 20, 0x3D5A40, 0xffffff);
         matricularButton.setBounds(margin*13/3+getButtonsWidth()*3, margin*2+photoHeight, getButtonsWidth(), getButtonsHeight());
-        matricularButton.addActionListener(new MatricularController(this));
+        matricularButton.addActionListener(new MatricularButtonController(this));
 
         background.add(matricularButton);
     }

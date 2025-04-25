@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.sql.Date;
 
 @Entity
 public class Profesor extends Persona implements Serializable {
@@ -13,8 +14,8 @@ public class Profesor extends Persona implements Serializable {
     private ArrayList<Modulo> modulosImparte = new ArrayList<>();
 
     public Profesor() {}
-    public Profesor(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, short edad, String sexo, String nuss, ArrayList<Modulo> modulosImparte) {
-        super(dni, apellidoPaterno, apellidoMaterno, nombre, edad, sexo);
+    public Profesor(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, Date fechaNacimiento, String sexo, String nuss, ArrayList<Modulo> modulosImparte) {
+        super(dni, apellidoPaterno, apellidoMaterno, nombre, fechaNacimiento, sexo);
         this.nuss = nuss;
         this.modulosImparte = modulosImparte;
     }

@@ -6,6 +6,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.sql.Date;
 
 @Entity
 public class Alumno extends Persona implements Serializable {
@@ -21,8 +22,8 @@ public class Alumno extends Persona implements Serializable {
     }
 
     public Alumno() {}
-    public Alumno(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, short edad, String sexo, Modulo modulo, String nuss, ArrayList<Asignatura> asignaturas) {
-        super(dni, apellidoPaterno, apellidoMaterno, nombre, edad, sexo);
+    public Alumno(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, Date fechaNacimiento, String sexo, Modulo modulo, String nuss, ArrayList<Asignatura> asignaturas) {
+        super(dni, apellidoPaterno, apellidoMaterno, nombre, fechaNacimiento, sexo);
         this.modulo = modulo;
         this.nuss = nuss;
         this.asignaturas = asignaturas;

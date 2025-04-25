@@ -9,12 +9,12 @@ import java.util.ArrayList;
 public class Alumno extends Persona implements Serializable {
     @GeneratedValue
     private int id;
-    private String modulo;
+    private Modulo modulo;
     private String nuss;
     private ArrayList<Asignatura> asignaturas = new ArrayList<>();
 
     public Alumno() {}
-    public Alumno(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, short edad, String sexo, String modulo, String nuss, ArrayList<Asignatura> asignaturas) {
+    public Alumno(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, short edad, String sexo, Modulo modulo, String nuss, ArrayList<Asignatura> asignaturas) {
         super(dni, apellidoPaterno, apellidoMaterno, nombre, edad, sexo);
         this.modulo = modulo;
         this.nuss = nuss;
@@ -25,7 +25,7 @@ public class Alumno extends Persona implements Serializable {
     public int getId() {
         return id;
     }
-    public String getModulo() {
+    public Modulo getModulo() {
         return modulo;
     }
     public String getNuss() {

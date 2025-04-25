@@ -1,6 +1,7 @@
 package dev.alejandrosahonero.db;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import java.io.Serializable;
@@ -8,7 +9,7 @@ import java.util.ArrayList;
 
 @Entity
 public class Modulo implements Serializable {
-    @Id
+    @Id @GeneratedValue
     private int id;
     private String siglas;
     private String nombre;
@@ -17,8 +18,7 @@ public class Modulo implements Serializable {
     private ArrayList<Asignatura> asignaturas;
 
     public Modulo() {}
-    public Modulo(int id, String siglas, String nombre, String descripcion) {
-        this.id = id;
+    public Modulo(String siglas, String nombre, String descripcion) {
         this.siglas = siglas;
         this.nombre = nombre;
         this.descripcion = descripcion;

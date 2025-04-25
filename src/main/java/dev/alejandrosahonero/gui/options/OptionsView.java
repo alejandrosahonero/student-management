@@ -11,6 +11,7 @@ public class OptionsView extends MainView {
     private JButton matricularButton, modAlumButton, modProButton, modModButton, modAsigButton, listAlumButton, listProButton, listModButton, listAsigButton;
     public OptionsView(){
         super("Options");
+        addWindowListener(new OptionsController(this));
 
         initComponents();
     }

@@ -18,11 +18,11 @@ public class Modulo implements Serializable {
     private ArrayList<Asignatura> asignaturas;
 
     public Modulo() {}
-    public Modulo(String siglas, String nombre, String descripcion) {
+    public Modulo(String siglas, String nombre, String descripcion, ArrayList<Asignatura> asignaturas) {
         this.siglas = siglas;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.asignaturas = new ArrayList<>();
+        this.asignaturas = asignaturas;
     }
     private void addAsignatura(Asignatura asignatura) {
         this.asignaturas.add(asignatura);

@@ -217,6 +217,6 @@ public class ExampleDB {
         em.persist(p10);
 
         em.getTransaction().commit();
-        Conector.close();
+        em.close();
     }
 }

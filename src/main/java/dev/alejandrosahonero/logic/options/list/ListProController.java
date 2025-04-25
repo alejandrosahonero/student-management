@@ -24,7 +24,7 @@ public class ListProController {
             TypedQuery<Profesor> query = em.createQuery("SELECT p FROM Profesor p ORDER BY p.id", Profesor.class);
             List<Profesor> lista = query.getResultList();
             for (Profesor p : lista) {
-                model.addRow(new Object[]{p.getId(), p.getDni(), p.getApellidoPaterno(), p.getApellidoMaterno(), p.getNombres(), p.getEdad()});
+                model.addRow(new Object[]{p.getId(), p.getDni(), p.getApellidoPaterno(), p.getApellidoMaterno(), p.getNombres(), p.getEdad(), p.getNuss(), p.getModulosImparte()});
             }
             em.getTransaction().commit();
             em.close();

@@ -195,25 +195,25 @@ public class ExampleDB {
 
         ArrayList<Modulo> modExample = new ArrayList<>();
         modExample.add(DAM1);
-        Profesor p1 = new Profesor("50000001A", "Martínez", "Rojas", "Lucía", (short)45, "Femenino", modExample);
+        Profesor p1 = new Profesor("50000001A", "Martínez", "Rojas", "Lucía", (short)45, "Femenino", "2000", modExample);
         em.persist(p1);
-        Profesor p2 = new Profesor("50000002B", "Gómez", "López", "Carlos", (short)50, "Masculino", modExample);
+        Profesor p2 = new Profesor("50000002B", "Gómez", "López", "Carlos", (short)50, "Masculino", "2001", modExample);
         em.persist(p2);
-        Profesor p3 = new Profesor("50000003C", "Sánchez", "Díaz", "María", (short)42, "Femenino", modExample);
+        Profesor p3 = new Profesor("50000003C", "Sánchez", "Díaz", "María", (short)42, "Femenino", "2002", modExample);
         em.persist(p3);
-        Profesor p4 = new Profesor("50000004D", "Ramírez", "Pérez", "Andrés", (short)47, "Masculino", modExample);
+        Profesor p4 = new Profesor("50000004D", "Ramírez", "Pérez", "Andrés", (short)47, "Masculino", "2003", modExample);
         em.persist(p4);
-        Profesor p5 = new Profesor("50000005E", "Fernández", "Ruiz", "Carmen", (short)44, "Femenino", modExample);
+        Profesor p5 = new Profesor("50000005E", "Fernández", "Ruiz", "Carmen", (short)44, "Femenino", "2004", modExample);
         em.persist(p5);
-        Profesor p6 = new Profesor("50000006F", "Castillo", "Moreno", "José", (short)49, "Masculino", modExample);
+        Profesor p6 = new Profesor("50000006F", "Castillo", "Moreno", "José", (short)49, "Masculino", "2005", modExample);
         em.persist(p6);
-        Profesor p7 = new Profesor("50000007G", "Iglesias", "Ortiz", "Elena", (short)41, "Femenino", modExample);
+        Profesor p7 = new Profesor("50000007G", "Iglesias", "Ortiz", "Elena", (short)41, "Femenino", "2006", modExample);
         em.persist(p7);
-        Profesor p8 = new Profesor("50000008H", "Navarro", "Molina", "Luis", (short)53, "Masculino", modExample);
+        Profesor p8 = new Profesor("50000008H", "Navarro", "Molina", "Luis", (short)53, "Masculino", "2007", modExample);
         em.persist(p8);
-        Profesor p9 = new Profesor("50000009I", "Delgado", "Vega", "Beatriz", (short)46, "Femenino", modExample);
+        Profesor p9 = new Profesor("50000009I", "Delgado", "Vega", "Beatriz", (short)46, "Femenino", "2008", modExample);
         em.persist(p9);
-        Profesor p10 = new Profesor("50000010J", "Cruz", "Serrano", "Manuel", (short)48, "Masculino", modExample);
+        Profesor p10 = new Profesor("50000010J", "Cruz", "Serrano", "Manuel", (short)48, "Masculino", "2009", modExample);
         em.persist(p10);
 
         em.getTransaction().commit();

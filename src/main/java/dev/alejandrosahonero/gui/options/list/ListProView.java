@@ -31,7 +31,7 @@ public class ListProView extends MainView {
         tablePanel = new JPanel(new BorderLayout());
         tablePanel.setBounds(getWindowsWidth()/30, getWindowsHeight()/20, getWindowsWidth()-getWindowsWidth()/25*2, getWindowsHeight()-getWindowsHeight()/3);
 
-        model = new DefaultTableModel(new String[]{"ID Profesor", "DNI", "Apellido Paterno", "Apellido Materno", "Nombres", "Edad"}, 0);
+        model = new DefaultTableModel(new String[]{"ID Profesor", "DNI", "Apellido Paterno", "Apellido Materno", "Nombres", "Edad", "NUSS", "Módulos que imparte"}, 0);
         listAlum = new JTable(model);
 
         JScrollPane scrollPane = new JScrollPane(listAlum);

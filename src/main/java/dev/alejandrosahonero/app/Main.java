@@ -10,6 +10,6 @@ public class Main {
         startView.setVisible(true);
 
         //Example database (use only if dont have "database.odb" file)
-        ExampleDB.create();
+        //ExampleDB.create();
     }
 }

@@ -1,19 +1,20 @@
 package dev.alejandrosahonero.db;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class Asignatura {
-    @Id
+    @Id @GeneratedValue
     private int id;
     private String siglas;
     private String nombre;
     private String descripcion;
 
     public Asignatura() {}
-    public Asignatura(int id, String siglas, String nombre, String descripcion) {
-        this.id = id;
+    public Asignatura(String siglas, String nombre, String descripcion) {
         this.siglas = siglas;
         this.nombre = nombre;
         this.descripcion = descripcion;

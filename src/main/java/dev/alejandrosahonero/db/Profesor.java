@@ -14,8 +14,8 @@ public class Profesor extends Persona implements Serializable {
     private ArrayList<Modulo> modulosImparte = new ArrayList<>();
 
     public Profesor() {}
-    public Profesor(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, Date fechaNacimiento, String sexo, String nuss, ArrayList<Modulo> modulosImparte) {
-        super(dni, apellidoPaterno, apellidoMaterno, nombre, fechaNacimiento, sexo);
+    public Profesor(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, Date fechaNacimiento, String sexo, String email, int tlf, String nuss, ArrayList<Modulo> modulosImparte) {
+        super(dni, apellidoPaterno, apellidoMaterno, nombre, fechaNacimiento, sexo, email, tlf);
         this.nuss = nuss;
         this.modulosImparte = modulosImparte;
     }

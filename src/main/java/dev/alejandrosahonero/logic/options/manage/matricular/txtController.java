@@ -13,10 +13,7 @@ import java.awt.event.MouseListener;
 public class txtController extends MouseAdapter {
     MatricularView matricularView;
 
-    public txtController(MatricularView matricularView)
-    {
-        this.matricularView = matricularView;
-    }
+    public txtController(){}
     public void mouseClicked(MouseEvent e) {
         if(((JTextField)e.getSource()).getBackground() == Color.WHITE) {
             ((JTextField) e.getSource()).setText("");

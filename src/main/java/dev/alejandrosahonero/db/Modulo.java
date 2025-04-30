@@ -9,10 +9,11 @@ import java.util.ArrayList;
 
 @Entity
 public class Modulo implements Serializable {
-    @Id @GeneratedValue
+    @Id
+    private String nombre;
+    @GeneratedValue
     private int id;
     private String siglas;
-    private String nombre;
     private String descripcion;
     @ManyToMany
     private ArrayList<Asignatura> asignaturas;

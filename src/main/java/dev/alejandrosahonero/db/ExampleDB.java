@@ -33,9 +33,9 @@ public class ExampleDB {
         em.persist(digi);
         asigDAM_DAW1.add(digi);
 
-        Modulo DAM1 = new Modulo("DAM1", "Desarrollo de aplicaciones multiplataforma", "Te prepararás para crear apps en ordenadores, móviles y otros dispositivos, usando distintos lenguajes y tecnologías", asigDAM_DAW1);
+        Modulo DAM1 = new Modulo("DAM1", "Desarrollo de aplicaciones multiplataforma 1", "Te prepararás para crear apps en ordenadores, móviles y otros dispositivos, usando distintos lenguajes y tecnologías", asigDAM_DAW1);
         em.persist(DAM1);
-        Modulo DAW1 = new Modulo("DAW1", "Desarrollo de aplicaciones web", "Te enfocarás en crear y mantener sitios y aplicaciones web, tanto del lado del cliente como del servidor", asigDAM_DAW1);
+        Modulo DAW1 = new Modulo("DAW1", "Desarrollo de aplicaciones web 1", "Te enfocarás en crear y mantener sitios y aplicaciones web, tanto del lado del cliente como del servidor", asigDAM_DAW1);
         em.persist(DAW1);
 
         ArrayList<Asignatura> asigDAM2 = new ArrayList<>();
@@ -64,7 +64,7 @@ public class ExampleDB {
         em.persist(fctDam);
         asigDAM2.add(fctDam);
 
-        Modulo DAM2 = new Modulo("DAM1", "Desarrollo de aplicaciones multiplataforma", "Te prepararás para crear apps en ordenadores, móviles y otros dispositivos, usando distintos lenguajes y tecnologías", asigDAM2);
+        Modulo DAM2 = new Modulo("DAM2", "Desarrollo de aplicaciones multiplataforma 2", "Te prepararás para crear apps en ordenadores, móviles y otros dispositivos, usando distintos lenguajes y tecnologías", asigDAM2);
         em.persist(DAM2);
 
         ArrayList<Asignatura> asigDAW2 = new ArrayList<>();
@@ -90,7 +90,7 @@ public class ExampleDB {
         em.persist(entorno);
         asigDAW2.add(entorno);
 
-        Modulo DAW2 = new Modulo("DAW1", "Desarrollo de aplicaciones web", "Te enfocarás en crear y mantener sitios y aplicaciones web, tanto del lado del cliente como del servidor", asigDAW2);
+        Modulo DAW2 = new Modulo("DAW2", "Desarrollo de aplicaciones web 2", "Te enfocarás en crear y mantener sitios y aplicaciones web, tanto del lado del cliente como del servidor", asigDAW2);
         em.persist(DAW2);
 
         Alumno a1 = new Alumno("12345678A", "García", "López", "Ana", Date.valueOf("2004-02-14"), "Femenino", null, 678421876, DAM1, "1001", asigDAM_DAW1);

@@ -22,6 +22,12 @@ public class Alumno extends Persona implements Serializable {
     }
 
     public Alumno() {}
+    public Alumno(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, Date fechaNacimiento, String sexo, String email, int tlf, Modulo modulo, String nuss) {
+        super(dni, apellidoPaterno, apellidoMaterno, nombre, fechaNacimiento, sexo, email, tlf);
+        this.modulo = modulo;
+        this.nuss = nuss;
+        this.asignaturas = new ArrayList<>();
+    }
     public Alumno(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, Date fechaNacimiento, String sexo, String email, int tlf, Modulo modulo, String nuss, ArrayList<Asignatura> asignaturas) {
         super(dni, apellidoPaterno, apellidoMaterno, nombre, fechaNacimiento, sexo, email, tlf);
         this.modulo = modulo;

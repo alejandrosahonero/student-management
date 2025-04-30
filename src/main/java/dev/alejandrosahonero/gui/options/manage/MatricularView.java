@@ -1,12 +1,15 @@
 package dev.alejandrosahonero.gui.options.manage;
 
 import dev.alejandrosahonero.gui.MainView;
+import dev.alejandrosahonero.logic.options.manage.ModModController;
 import dev.alejandrosahonero.logic.options.manage.matricular.MatricularButtonController;
 import dev.alejandrosahonero.logic.options.manage.PhotoButtonController;
 import dev.alejandrosahonero.logic.options.manage.matricular.txtController;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.List;
+import java.util.Objects;
 
 public class MatricularView extends MainView
 {
@@ -17,7 +20,8 @@ public class MatricularView extends MainView
     private JLabel background, labelPhoto, title1, title2;
     private JPanel imagePanel;
     private JButton photoButton, matricularButton;
-    private JTextField dni, apellidoPaterno, apellidoMaterno, nombres, fechaNac, sexo, modulo, nuss, email, telefono;
+    private JTextField dni, apellidoPaterno, apellidoMaterno, nombres, fechaNac, sexo, nuss, email, telefono;
+    private JComboBox modulo;
     private ImageIcon photo;
 
     public MatricularView()
@@ -100,11 +104,13 @@ public class MatricularView extends MainView
         background.add(sexo);
     }
     private void academicInformation(){
-        modulo = new JTextField("Modulo");
-        modulo.setHorizontalAlignment(SwingConstants.CENTER);
+        modulo = new JComboBox();
+        List<String> modulos = ModModController.getAllModulos();
+        for (Object m : modulos.toArray())
+            modulo.addItem(m);
+        modulo.setBounds(0,0,getButtonsWidth(),getButtonsHeight());
         modulo.setBackground(Color.WHITE);
         modulo.setBounds(margin, margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
-        modulo.addMouseListener(new txtController(this));
         background.add(modulo);
 
         nuss = new JTextField("NUSS");
@@ -176,7 +182,7 @@ public class MatricularView extends MainView
     public JTextField getSexo() {
         return sexo;
     }
-    public JTextField getModulo() {
+    public JComboBox getModulo() {
         return modulo;
     }
     public JTextField getNuss() {

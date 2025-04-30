@@ -44,6 +44,8 @@ public class MatricularButtonController implements ActionListener {
             Alumno newAlumno = new Alumno(n_dni, n_aPaterno, n_aMaterno, n_nombres, Date.valueOf(n_fechaNacimiento), n_sexo, n_email, Integer.parseInt(n_tlf), mAux, n_nuss);
             em.persist(newAlumno);
 
+            JOptionPane.showMessageDialog(matricularView, "La matriculación se realizó correctamente", "¡Matriculación exitosa!", JOptionPane.PLAIN_MESSAGE);
+
             em.getTransaction().commit();
             em.close();
         } catch (Exception ex) {

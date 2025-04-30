@@ -6,20 +6,9 @@ import dev.alejandrosahonero.logic.options.OptionsController;
 import javax.swing.*;
 import java.awt.*;
 
-public class NewModView extends MainView {
-    private JLabel background;
-
+public class NewModView extends MainManageView {
     public NewModView(){
         super("Añadir Módulo");
-        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-
-        initComponents();
-    }
-
-    private void initComponents(){
-        background = new JLabel(getBackgroundImage());
-
-
-        add(background, BorderLayout.CENTER);
+        super.doneButton("AÑADIR");
     }
 }

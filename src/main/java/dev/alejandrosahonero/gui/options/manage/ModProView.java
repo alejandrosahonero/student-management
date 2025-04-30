@@ -5,22 +5,9 @@ import dev.alejandrosahonero.gui.MainView;
 import javax.swing.*;
 import java.awt.*;
 
-public class ModProView extends MainView {
-    JLabel background;
-
-    public ModProView() {
-        super("Modificar Profesores");
-        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-
-        initComponents();
-    }
-
-    /**
-     * Método que inicializa todos los demás métodos para aligerar la carga al constructor
-     */
-    private void initComponents() {
-        background = new JLabel(getBackgroundImage());
-
-        add(background, BorderLayout.CENTER);
+public class ModProView extends MainManageView {
+    public ModProView(){
+        super("Modificar Profesor");
+        super.doneButton("MODIFICAR");
     }
 }

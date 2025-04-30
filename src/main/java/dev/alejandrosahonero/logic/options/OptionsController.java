@@ -35,10 +35,16 @@ public class OptionsController implements ActionListener, WindowListener {
             new MatricularView().setVisible(true);
         if(e.getSource() == optionsView.getModAlumButton())
             new ModAlumView().setVisible(true);
+        if(e.getSource() == optionsView.getNewProButton())
+            new NewProView().setVisible(true);
         if(e.getSource() == optionsView.getModProButton())
             new ModProView().setVisible(true);
+        if(e.getSource() == optionsView.getNewModButton())
+            new NewModView().setVisible(true);
         if(e.getSource() == optionsView.getModModButton())
             new ModModView().setVisible(true);
+        if(e.getSource() == optionsView.getNewAsigButton())
+            new NewModView().setVisible(true);
         if(e.getSource() == optionsView.getModAsigButton())
             new ModAsigView().setVisible(true);
         if(e.getSource() == optionsView.getListAlumButton())

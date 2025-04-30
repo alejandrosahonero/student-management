@@ -76,11 +76,11 @@ public class OptionsView extends MainView {
         background.add(modAlumButton);
     }
     private void newProButton(){
-        modProButton = createButton("Añadir Profesor", getButtonsWidth(), getButtonsHeight(), 22, 0x3D5A40, 0xffffff);
-        modProButton.addActionListener(new OptionsController(this));
-        modProButton.setBounds(marginHori, marginTitle*2+getButtonsHeight()*2+marginTopLeft, getButtonsWidth(), getButtonsHeight());
+        newProButton = createButton("Añadir Profesor", getButtonsWidth(), getButtonsHeight(), 22, 0x3D5A40, 0xffffff);
+        newProButton.addActionListener(new OptionsController(this));
+        newProButton.setBounds(marginHori, marginTitle*2+getButtonsHeight()*2+marginTopLeft, getButtonsWidth(), getButtonsHeight());
 
-        background.add(modProButton);
+        background.add(newProButton);
     }
     private void modProButton(){
         modProButton = createButton("Modificar Profesor", getButtonsWidth(), getButtonsHeight(), 22, 0x3D5A40, 0xffffff);
@@ -90,11 +90,11 @@ public class OptionsView extends MainView {
         background.add(modProButton);
     }
     private void newModButton(){
-        modModButton = createButton("Añadir Módulo", getButtonsWidth(), getButtonsHeight(), 22, 0x3D5A40, 0xffffff);
-        modModButton.addActionListener(new OptionsController(this));
-        modModButton.setBounds(marginHori, marginTitle*2+getButtonsHeight()*3+marginTopLeft*2, getButtonsWidth(), getButtonsHeight());
+        newModButton = createButton("Añadir Módulo", getButtonsWidth(), getButtonsHeight(), 22, 0x3D5A40, 0xffffff);
+        newModButton.addActionListener(new OptionsController(this));
+        newModButton.setBounds(marginHori, marginTitle*2+getButtonsHeight()*3+marginTopLeft*2, getButtonsWidth(), getButtonsHeight());
 
-        background.add(modModButton);
+        background.add(newModButton);
     }
     private void modModButton(){
         modModButton = createButton("Modificar Módulo", getButtonsWidth(), getButtonsHeight(), 22, 0x3D5A40, 0xffffff);
@@ -104,11 +104,11 @@ public class OptionsView extends MainView {
         background.add(modModButton);
     }
     private void newAsigButton(){
-        modAsigButton = createButton("Añadir Asignatura", getButtonsWidth(), getButtonsHeight(), 20, 0x3D5A40, 0xffffff);
-        modAsigButton.addActionListener(new OptionsController(this));
-        modAsigButton.setBounds(marginHori, marginTitle*2+getButtonsHeight()*4+marginTopLeft*3, getButtonsWidth(), getButtonsHeight());
+        newAsigButton = createButton("Añadir Asignatura", getButtonsWidth(), getButtonsHeight(), 20, 0x3D5A40, 0xffffff);
+        newAsigButton.addActionListener(new OptionsController(this));
+        newAsigButton.setBounds(marginHori, marginTitle*2+getButtonsHeight()*4+marginTopLeft*3, getButtonsWidth(), getButtonsHeight());
 
-        background.add(modAsigButton);
+        background.add(newAsigButton);
     }
     private void modAsigButton(){
         modAsigButton = createButton("Modificar Asignatura", getButtonsWidth(), getButtonsHeight(), 20, 0x3D5A40, 0xffffff);
@@ -185,17 +185,8 @@ public class OptionsView extends MainView {
     public JButton getListAsigButton() {
         return listAsigButton;
     }
-    public static int getMarginTopLeft() {
-        return marginTopLeft;
-    }
-    public static int getMarginTopRight() {
-        return marginTopRight;
-    }
     public static int getMarginTitle() {
         return marginTitle;
-    }
-    public static int getMarginHori() {
-        return marginHori;
     }
     public static int getLineWidth() {
         return lineWidth;

@@ -44,7 +44,7 @@ public class OptionsController implements ActionListener, WindowListener {
         if(e.getSource() == optionsView.getModModButton())
             new ModModView().setVisible(true);
         if(e.getSource() == optionsView.getNewAsigButton())
-            new NewModView().setVisible(true);
+            new NewAsigView().setVisible(true);
         if(e.getSource() == optionsView.getModAsigButton())
             new ModAsigView().setVisible(true);
         if(e.getSource() == optionsView.getListAlumButton())

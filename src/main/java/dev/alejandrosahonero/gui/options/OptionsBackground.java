@@ -1,6 +1,6 @@
 package dev.alejandrosahonero.gui.options;
 
-import dev.alejandrosahonero.gui.MainView;
+import dev.alejandrosahonero.gui.options.OptionsView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,10 +19,10 @@ public class OptionsBackground extends JLabel {
         Color c = new Color(0x3D5A40);
         g.setColor(c);
         //Línea del medio
-        g.fillRect(windowsWidth/2, windowsHeight/12, 4, windowsHeight/6*4);
+        g.fillRect(windowsWidth/2, OptionsView.getMarginTitle(), OptionsView.getLineWidth(), windowsHeight-OptionsView.getMarginTitle()*3);
         //Lina debajo title1
-        g.fillRect(windowsWidth/12, windowsHeight/7, windowsWidth/3, 4);
+        g.fillRect(windowsWidth/12, OptionsView.getMarginTitle()*5/2, windowsWidth/3, OptionsView.getLineWidth());
         //Línea debajo title2
-        g.fillRect(windowsWidth/2+windowsWidth/12, windowsHeight/7, windowsWidth/3, 4);
+        g.fillRect(windowsWidth/2+windowsWidth/12, OptionsView.getMarginTitle()*5/2, windowsWidth/3, OptionsView.getLineWidth());
     }
 }

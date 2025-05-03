@@ -1,7 +1,6 @@
-package dev.alejandrosahonero.logic.options.manage;
+package dev.alejandrosahonero.logic.options.manage.modulo;
 
 import dev.alejandrosahonero.db.Conector;
-import dev.alejandrosahonero.db.Modulo;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;

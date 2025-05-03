@@ -13,7 +13,7 @@ public abstract class MainManageView extends MainView {
     final int photoHeight = 300;
     final int margin = 50;
 
-    protected JLabel background, labelPhoto, title1, title2, searchTitle;
+    protected JLabel background, labelPhoto, title1, title2;
     protected JPanel imagePanel;
     protected JButton photoButton, doneButton, searchButton;
     protected JTextField dni, apellidoPaterno, apellidoMaterno, nombres, fechaNac, sexo, nuss, email, telefono, searchBar;
@@ -155,26 +155,17 @@ public abstract class MainManageView extends MainView {
         labelPhoto.setIcon(photo);
         revalidate();
     }
-    protected void searchTitle(){
-        searchTitle = new JLabel("ID:");
-        searchTitle.setFont(new Font("Tahoma", Font.BOLD, 25));
-        searchTitle.setForeground(new Color(0x3D5A40));
-        searchTitle.setHorizontalAlignment(SwingConstants.CENTER);
-        searchTitle.setVerticalAlignment(SwingConstants.CENTER);
-        searchTitle.setBounds(getButtonsWidth()*3-margin/2, margin+margin/2, getButtonsWidth()/3, getButtonsHeight()/2);
-        background.add(searchTitle);
-    }
     protected void searchBar(){
-        searchBar = new JTextField();
+        searchBar = new JTextField("ID");
         searchBar.setHorizontalAlignment(SwingConstants.CENTER);
         searchBar.setBackground(Color.WHITE);
-        searchBar.setBounds(getWindowsWidth()/2+margin*3, margin+margin/2, getButtonsWidth()/3, getButtonsHeight()/2);
+        searchBar.setBounds(getWindowsWidth()/2+margin*2, margin+margin/2, getButtonsWidth()/2, getButtonsHeight()/2);
         searchBar.addMouseListener(new txtController());
         background.add(searchBar);
     }
     protected void searchButton(){
         searchButton = createButton("BUSQ", getButtonsWidth()/20, getButtonsHeight()/2, 15, 0x3D5A40, 0xffffff);
-        searchButton.setBounds(getWindowsWidth()/2+margin*3+getButtonsWidth()/3, margin+margin/2, getButtonsWidth()/3, getButtonsHeight()/2);
+        searchButton.setBounds(getWindowsWidth()/2+margin*2+getButtonsWidth()/2, margin+margin/2, getButtonsWidth()/3, getButtonsHeight()/2);
         background.add(searchButton, 1);
     }
 

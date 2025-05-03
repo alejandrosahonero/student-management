@@ -7,7 +7,6 @@ public class ModAlumView extends MainManageView {
         super("Modificar Alumno");
         super.doneButton("MODIFICAR");
 
-        searchTitle();
         searchBar();
         searchButton();
     }

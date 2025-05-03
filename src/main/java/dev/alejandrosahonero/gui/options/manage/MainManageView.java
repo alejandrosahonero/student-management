@@ -1,8 +1,8 @@
 package dev.alejandrosahonero.gui.options.manage;
 
 import dev.alejandrosahonero.gui.MainView;
-import dev.alejandrosahonero.logic.options.manage.ModModController;
-import dev.alejandrosahonero.logic.options.manage.matricular.txtController;
+import dev.alejandrosahonero.logic.options.manage.modulo.ModModController;
+import dev.alejandrosahonero.logic.options.manage.alumno.txtController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,12 +13,12 @@ public abstract class MainManageView extends MainView {
     final int photoHeight = 300;
     final int margin = 50;
 
-    private JLabel background, labelPhoto, title1, title2;
-    private JPanel imagePanel;
-    private JButton photoButton, matricularButton;
-    private JTextField dni, apellidoPaterno, apellidoMaterno, nombres, fechaNac, sexo, nuss, email, telefono;
-    private JComboBox modulo;
-    private ImageIcon photo;
+    protected JLabel background, labelPhoto, title1, title2, searchTitle;
+    protected JPanel imagePanel;
+    protected JButton photoButton, doneButton, searchButton;
+    protected JTextField dni, apellidoPaterno, apellidoMaterno, nombres, fechaNac, sexo, nuss, email, telefono, searchBar;
+    protected JComboBox modulo;
+    protected ImageIcon photo;
 
     public MainManageView(String title) {
         super(title);
@@ -40,17 +40,17 @@ public abstract class MainManageView extends MainView {
         title1 = new JLabel("INFORMACIÓN PERSONAL");
         title1.setFont(new Font("Tahoma", Font.BOLD, 50));
         title1.setForeground(new Color(0x3D5A40));
-        title1.setHorizontalAlignment(SwingConstants.CENTER);
+        title1.setHorizontalAlignment(SwingConstants.LEFT);
         title1.setVerticalAlignment(SwingConstants.CENTER);
-        title1.setBounds(margin, margin, getButtonsWidth()*3, getButtonsHeight());
+        title1.setBounds(margin/2, margin, getButtonsWidth()*3, getButtonsHeight());
         background.add(title1);
 
         title2 = new JLabel("INFORMACIÓN ACADÉMICA");
         title2.setFont(new Font("Tahoma", Font.BOLD, 50));
         title2.setForeground(new Color(0x3D5A40));
-        title2.setHorizontalAlignment(SwingConstants.CENTER);
+        title2.setHorizontalAlignment(SwingConstants.LEFT);
         title2.setVerticalAlignment(SwingConstants.CENTER);
-        title2.setBounds(margin, photoHeight+margin*5/2, getButtonsWidth()*3, getButtonsHeight());
+        title2.setBounds(margin/2, photoHeight+margin*5/2, getButtonsWidth()*3, getButtonsHeight());
         background.add(title2);
     }
     private void personalInformation(){
@@ -144,16 +144,38 @@ public abstract class MainManageView extends MainView {
         background.add(imagePanel);
     }
     protected void doneButton(String nameButton){
-        matricularButton = createButton(nameButton, 0, 0, 20, 0x3D5A40, 0xffffff);
-        matricularButton.setBounds(margin*13/3+getButtonsWidth()*3, margin*2+photoHeight, getButtonsWidth(), getButtonsHeight());
-        //matricularButton.addActionListener(new MatricularButtonController(this));
+        doneButton = createButton(nameButton, 0, 0, 20, 0x3D5A40, 0xffffff);
+        doneButton.setBounds(margin*13/3+getButtonsWidth()*3, margin*2+photoHeight, getButtonsWidth(), getButtonsHeight());
+        //doneButton.addActionListener(new Controller(this));
 
-        background.add(matricularButton);
+        background.add(doneButton);
     }
     public void setPhoto(ImageIcon photoChossed) {
         this.photo = new ImageIcon(photoChossed.getImage().getScaledInstance(photoWidth, photoHeight, Image.SCALE_SMOOTH));
         labelPhoto.setIcon(photo);
         revalidate();
+    }
+    protected void searchTitle(){
+        searchTitle = new JLabel("ID:");
+        searchTitle.setFont(new Font("Tahoma", Font.BOLD, 25));
+        searchTitle.setForeground(new Color(0x3D5A40));
+        searchTitle.setHorizontalAlignment(SwingConstants.CENTER);
+        searchTitle.setVerticalAlignment(SwingConstants.CENTER);
+        searchTitle.setBounds(getButtonsWidth()*3-margin/2, margin+margin/2, getButtonsWidth()/3, getButtonsHeight()/2);
+        background.add(searchTitle);
+    }
+    protected void searchBar(){
+        searchBar = new JTextField();
+        searchBar.setHorizontalAlignment(SwingConstants.CENTER);
+        searchBar.setBackground(Color.WHITE);
+        searchBar.setBounds(getWindowsWidth()/2+margin*3, margin+margin/2, getButtonsWidth()/3, getButtonsHeight()/2);
+        searchBar.addMouseListener(new txtController());
+        background.add(searchBar);
+    }
+    protected void searchButton(){
+        searchButton = createButton("BUSQ", getButtonsWidth()/20, getButtonsHeight()/2, 15, 0x3D5A40, 0xffffff);
+        searchButton.setBounds(getWindowsWidth()/2+margin*3+getButtonsWidth()/3, margin+margin/2, getButtonsWidth()/3, getButtonsHeight()/2);
+        background.add(searchButton, 1);
     }
 
     //Getters
@@ -187,7 +209,7 @@ public abstract class MainManageView extends MainView {
     public JTextField getTelefono() {
         return telefono;
     }
-    public JButton getMatricularButton() {
-        return matricularButton;
+    public JButton getDoneButton() {
+        return doneButton;
     }
 }

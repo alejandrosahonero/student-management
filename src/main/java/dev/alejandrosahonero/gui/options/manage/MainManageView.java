@@ -203,4 +203,10 @@ public abstract class MainManageView extends MainView {
     public JButton getDoneButton() {
         return doneButton;
     }
+    public JTextField getSearchBar() {
+        return searchBar;
+    }
+    public JButton getSearchButton() {
+        return searchButton;
+    }
 }

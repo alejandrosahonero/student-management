@@ -166,7 +166,7 @@ public abstract class MainManageView extends MainView {
     protected void searchButton(){
         searchButton = createButton("BUSQ", getButtonsWidth()/20, getButtonsHeight()/2, 15, 0x3D5A40, 0xffffff);
         searchButton.setBounds(getWindowsWidth()/2+margin*2+getButtonsWidth()/2, margin+margin/2, getButtonsWidth()/3, getButtonsHeight()/2);
-        background.add(searchButton, 1);
+        background.add(searchButton);
     }
 
     //Getters

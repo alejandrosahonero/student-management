@@ -1,4 +1,4 @@
 package dev.alejandrosahonero.logic.options.manage.profesor;
 
-public class ModProController {
+public class ModProButtonController {
 }

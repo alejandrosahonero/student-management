@@ -1,7 +1,7 @@
 package dev.alejandrosahonero.gui.options.manage;
 
 import dev.alejandrosahonero.gui.MainView;
-import dev.alejandrosahonero.logic.options.manage.modulo.ModModController;
+import dev.alejandrosahonero.logic.options.manage.modulo.ModModButtonController;
 import dev.alejandrosahonero.logic.options.manage.txtController;
 
 import javax.swing.*;
@@ -120,7 +120,7 @@ public abstract class MainManageView extends MainView {
     }
     private void academicInformation(){
         modulo = new JComboBox();
-        List<String> modulos = ModModController.getAllModulos();
+        List<String> modulos = ModModButtonController.getAllModulos();
         for (Object m : modulos.toArray())
             modulo.addItem(m);
         modulo.setFont(new Font("Tahoma", Font.BOLD, 15));

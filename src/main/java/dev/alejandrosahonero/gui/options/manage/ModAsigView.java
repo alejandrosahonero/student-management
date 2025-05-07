@@ -1,6 +1,7 @@
 package dev.alejandrosahonero.gui.options.manage;
 
-import dev.alejandrosahonero.gui.MainView;
+import dev.alejandrosahonero.logic.options.manage.asignatura.RmButtonController;
+import dev.alejandrosahonero.logic.options.manage.asignatura.SearchButtonController;
 import dev.alejandrosahonero.logic.options.manage.asignatura.ModAsigButtonController;
 
 import javax.swing.*;
@@ -8,6 +9,10 @@ import javax.swing.*;
 public class ModAsigView extends MainManageView {
     public ModAsigView(){
         super("Modificar Asignatura");
-        super.doneButton("MODIFICAR", new ModAsigButtonController(this));
+
+        doneButton("MODIFICAR", new ModAsigButtonController(this));
+        searchBar();
+        searchButton(new SearchButtonController(this));
+        removeButton(new RmButtonController(this));
     }
 }

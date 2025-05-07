@@ -117,7 +117,7 @@ public abstract class MainManageView extends MainView {
         sexo.addMouseListener(new txtController());
         background.add(sexo);
     }
-    private void academicInformation(){
+    protected void academicInformation(){
         modulo = new JComboBox();
         List<String> modulos = ModModButtonController.getAllModulos();
         for (Object m : modulos.toArray())

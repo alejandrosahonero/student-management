@@ -10,6 +10,8 @@ public abstract class MainView extends JFrame {
     private final int buttonsWidth = 250;
     private final int buttonsHeight = 80;
 
+    private static final Color textFieldColor = new Color(0x8C8C8C);
+
     private ImageIcon icon, backgroundImage;
 
     public MainView(String title) {
@@ -56,6 +58,13 @@ public abstract class MainView extends JFrame {
         title.setHorizontalAlignment(SwingConstants.CENTER);
         return title;
     }
+    public JTextField createTextField(String text, int size){
+        JTextField field = new JTextField(text);
+        field.setFont(new Font("Tahoma", Font.BOLD, size));
+        field.setHorizontalAlignment(SwingConstants.CENTER);
+        field.setForeground(textFieldColor);
+        return field;
+    }
 
     //Getters
 
@@ -70,6 +79,9 @@ public abstract class MainView extends JFrame {
     }
     public int getButtonsHeight() {
         return buttonsHeight;
+    }
+    public static Color getTextFieldColor() {
+        return textFieldColor;
     }
     public ImageIcon getBackgroundImage() {
         return backgroundImage;

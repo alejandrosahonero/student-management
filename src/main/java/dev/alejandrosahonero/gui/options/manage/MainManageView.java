@@ -150,7 +150,7 @@ public abstract class MainManageView extends MainView {
         labelPhoto.setBounds(margin*5+getButtonsWidth()*3, margin, photoWidth, photoHeight);
         background.add(labelPhoto);
 
-        photoButton = createButton("Escoger imagen", 0, 30, 15, 0x3D5A40, 0xffffff);
+        photoButton = createButton("Escoger imagen", 15, 0x3D5A40, 0xffffff);
         //photoButton.addActionListener(new PhotoButtonController(this));
         photoButton.setBounds(margin*5+getButtonsWidth()*3, margin+photoHeight, photoWidth, 30);
         background.add(photoButton);
@@ -161,7 +161,7 @@ public abstract class MainManageView extends MainView {
         revalidate();
     }
     protected void doneButton(String nameButton, ActionListener actionListener){
-        doneButton = createButton(nameButton, 0, 0, 25, 0x3D5A40, 0xffffff);
+        doneButton = createButton(nameButton,25, 0x3D5A40, 0xffffff);
         doneButton.setBounds(margin*9/2+getButtonsWidth()*3, margin*5/2+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
         doneButton.addActionListener(actionListener);
         background.add(doneButton);
@@ -173,13 +173,13 @@ public abstract class MainManageView extends MainView {
         background.add(searchBar);
     }
     protected void searchButton(ActionListener actionListener){
-        searchButton = createButton("BUSQ", getButtonsWidth()/20, getButtonsHeight()/2, 15, 0x3D5A40, 0xffffff);
+        searchButton = createButton("BUSQ",15, 0x3D5A40, 0xffffff);
         searchButton.setBounds(getWindowsWidth()/2+margin*2+getButtonsWidth()/2, margin+margin/3, getButtonsWidth()/3, getButtonsHeight()/2);
         searchButton.addActionListener(actionListener);
         background.add(searchButton);
     }
     protected void removeButton(ActionListener actionListener){
-        removeButton = createButton("ELIMINAR", photoWidth, getButtonsHeight()/2, 15, 0xd11507, 0xffffff);
+        removeButton = createButton("ELIMINAR",15, 0xd11507, 0xffffff);
         removeButton.setBounds(margin*9/2+getButtonsWidth()*3,margin*5/2+getButtonsHeight()*4, getButtonsWidth(), getButtonsHeight()/2);
         removeButton.addActionListener(actionListener);
         background.add(removeButton);

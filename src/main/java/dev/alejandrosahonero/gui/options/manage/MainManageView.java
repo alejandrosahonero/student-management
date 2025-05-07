@@ -2,7 +2,7 @@ package dev.alejandrosahonero.gui.options.manage;
 
 import dev.alejandrosahonero.gui.MainView;
 import dev.alejandrosahonero.logic.options.manage.modulo.ModModController;
-import dev.alejandrosahonero.logic.options.manage.alumno.txtController;
+import dev.alejandrosahonero.logic.options.manage.txtController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -88,44 +88,32 @@ public abstract class MainManageView extends MainView {
         background.add(telefono_l);
     }
     private void personalInformation(){
-        dni = new JTextField("DNI");
-        dni.setHorizontalAlignment(SwingConstants.CENTER);
-        dni.setBackground(Color.WHITE);
+        dni = createTextField("DNI", 15);
         dni.setBounds(margin, margin*3/2+getButtonsHeight(), getButtonsWidth(), getButtonsHeight());
         dni.addMouseListener(new txtController());
         background.add(dni);
 
-        apellidoPaterno = new JTextField("Apellido Paterno");
-        apellidoPaterno.setHorizontalAlignment(SwingConstants.CENTER);
-        apellidoPaterno.setBackground(Color.WHITE);
+        apellidoPaterno = createTextField("APELLIDO PATERNO", 15);
         apellidoPaterno.setBounds(margin*2+getButtonsWidth(), margin*3/2+getButtonsHeight(), getButtonsWidth(), getButtonsHeight());
         apellidoPaterno.addMouseListener(new txtController());
         background.add(apellidoPaterno);
 
-        apellidoMaterno = new JTextField("Apellido Materno");
-        apellidoMaterno.setHorizontalAlignment(SwingConstants.CENTER);
-        apellidoMaterno.setBackground(Color.WHITE);
+        apellidoMaterno = createTextField("APELLIDO MATERNO", 15);
         apellidoMaterno.setBounds(margin*3+getButtonsWidth()*2, margin*3/2+getButtonsHeight(), getButtonsWidth(), getButtonsHeight());
         apellidoMaterno.addMouseListener(new txtController());
         background.add(apellidoMaterno);
 
-        nombres = new JTextField("Nombres");
-        nombres.setHorizontalAlignment(SwingConstants.CENTER);
-        nombres.setBackground(Color.WHITE);
+        nombres = createTextField("NOMBRES", 15);
         nombres.setBounds(margin, margin*3+getButtonsHeight()*2, getButtonsWidth(), getButtonsHeight());
         nombres.addMouseListener(new txtController());
         background.add(nombres);
 
-        fechaNac = new JTextField("Fecha Nacimiento");
-        fechaNac.setHorizontalAlignment(SwingConstants.CENTER);
-        fechaNac.setBackground(Color.WHITE);
+        fechaNac = createTextField("AAAA-MM-DD", 15);
         fechaNac.setBounds(margin*2+getButtonsWidth(), margin*3+getButtonsHeight()*2, getButtonsWidth(), getButtonsHeight());
         fechaNac.addMouseListener(new txtController());
         background.add(fechaNac);
 
-        sexo = new JTextField("Sexo");
-        sexo.setHorizontalAlignment(SwingConstants.CENTER);
-        sexo.setBackground(Color.WHITE);
+        sexo = createTextField("SEXO", 15);
         sexo.setBounds(margin*3+getButtonsWidth()*2, margin*3+getButtonsHeight()*2, getButtonsWidth(), getButtonsHeight());
         sexo.addMouseListener(new txtController());
         background.add(sexo);
@@ -135,28 +123,21 @@ public abstract class MainManageView extends MainView {
         List<String> modulos = ModModController.getAllModulos();
         for (Object m : modulos.toArray())
             modulo.addItem(m);
-        modulo.setBounds(0,0,getButtonsWidth(),getButtonsHeight());
-        modulo.setBackground(Color.WHITE);
+        modulo.setFont(new Font("Tahoma", Font.BOLD, 15));
         modulo.setBounds(margin, margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
         background.add(modulo);
 
-        nuss = new JTextField("NUSS");
-        nuss.setHorizontalAlignment(SwingConstants.CENTER);
-        nuss.setBackground(Color.WHITE);
+        nuss = createTextField("NUSS", 15);
         nuss.setBounds(margin*2+getButtonsWidth(), margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
         nuss.addMouseListener(new txtController());
         background.add(nuss);
 
-        email = new JTextField("Email");
-        email.setHorizontalAlignment(SwingConstants.CENTER);
-        email.setBackground(Color.WHITE);
+        email = createTextField("EMAIL", 15);
         email.setBounds(margin*3+getButtonsWidth()*2, margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
         email.addMouseListener(new txtController());
         background.add(email);
 
-        telefono = new JTextField("Telefono");
-        telefono.setHorizontalAlignment(SwingConstants.CENTER);
-        telefono.setBackground(Color.WHITE);
+        telefono = createTextField("TELÉFONO", 15);
         telefono.setBounds(margin*4+getButtonsWidth()*3, margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
         telefono.addMouseListener(new txtController());
         background.add(telefono);
@@ -189,9 +170,7 @@ public abstract class MainManageView extends MainView {
         revalidate();
     }
     protected void searchBar(){
-        searchBar = new JTextField("ID");
-        searchBar.setHorizontalAlignment(SwingConstants.CENTER);
-        searchBar.setBackground(Color.WHITE);
+        searchBar = createTextField("ID", 15);
         searchBar.setBounds(getWindowsWidth()/2+margin*2, margin+margin/3, getButtonsWidth()/2, getButtonsHeight()/2);
         searchBar.addMouseListener(new txtController());
         background.add(searchBar);

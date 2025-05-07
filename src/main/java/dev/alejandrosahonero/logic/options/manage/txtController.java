@@ -1,11 +1,10 @@
-package dev.alejandrosahonero.logic.options.manage.alumno;
+package dev.alejandrosahonero.logic.options.manage;
 
+import dev.alejandrosahonero.gui.MainView;
 import dev.alejandrosahonero.gui.options.manage.MatricularView;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -14,9 +13,9 @@ public class txtController extends MouseAdapter {
 
     public txtController(){}
     public void mouseClicked(MouseEvent e) {
-        if(((JTextField)e.getSource()).getBackground() == Color.WHITE) {
+        if(((JTextField)e.getSource()).getForeground() == MainView.getTextFieldColor()) {
             ((JTextField) e.getSource()).setText("");
-            ((JTextField) e.getSource()).setBackground(new Color(255, 255, 254));
+            ((JTextField) e.getSource()).setForeground(Color.BLACK);
         }
     }
 }

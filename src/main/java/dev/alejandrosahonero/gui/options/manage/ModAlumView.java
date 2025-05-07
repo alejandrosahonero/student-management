@@ -1,20 +1,16 @@
 package dev.alejandrosahonero.gui.options.manage;
 
-import dev.alejandrosahonero.gui.MainView;
+import dev.alejandrosahonero.logic.options.manage.alumno.ModAlumButtonController;
+import dev.alejandrosahonero.logic.options.manage.alumno.RmButtonController;
+import dev.alejandrosahonero.logic.options.manage.alumno.SearchButtonController;
 
-import javax.swing.*;
-
-public class ModAlumView extends MainView {
-    private JLabel background;
-
+public class ModAlumView extends MainManageView {
     public ModAlumView(){
         super("Modificar Alumno");
-        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
-        initComponents();
-    }
-    private void initComponents(){
-        background = new JLabel(getBackgroundImage());
-        add(background);
+        doneButton("MODIFICAR", new ModAlumButtonController(this));
+        searchBar();
+        searchButton(new SearchButtonController(this));
+        removeButton(new RmButtonController(this));
     }
 }

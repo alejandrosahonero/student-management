@@ -1,4 +1,4 @@
-package dev.alejandrosahonero.logic.options.manage.matricular;
+package dev.alejandrosahonero.logic.options.manage.alumno;
 
 import dev.alejandrosahonero.db.Alumno;
 import dev.alejandrosahonero.db.Conector;
@@ -7,7 +7,6 @@ import dev.alejandrosahonero.gui.options.manage.MatricularView;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import javax.persistence.TypedQuery;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

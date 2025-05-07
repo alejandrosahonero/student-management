@@ -1,20 +1,18 @@
 package dev.alejandrosahonero.gui.options.manage;
 
-import dev.alejandrosahonero.gui.MainView;
+import dev.alejandrosahonero.logic.options.manage.asignatura.RmButtonController;
+import dev.alejandrosahonero.logic.options.manage.asignatura.SearchButtonController;
+import dev.alejandrosahonero.logic.options.manage.asignatura.ModAsigButtonController;
 
 import javax.swing.*;
 
-public class ModAsigView extends MainView {
-    private JLabel background;
-
+public class ModAsigView extends MainManageView {
     public ModAsigView(){
         super("Modificar Asignatura");
-        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
 
-        initComponents();
-    }
-    private void initComponents(){
-        background = new JLabel(getBackgroundImage());
-        add(background);
+        doneButton("MODIFICAR", new ModAsigButtonController(this));
+        searchBar();
+        searchButton(new SearchButtonController(this));
+        removeButton(new RmButtonController(this));
     }
 }

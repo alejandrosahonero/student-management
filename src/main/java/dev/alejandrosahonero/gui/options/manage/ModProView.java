@@ -1,26 +1,19 @@
 package dev.alejandrosahonero.gui.options.manage;
 
-import dev.alejandrosahonero.gui.MainView;
+import dev.alejandrosahonero.logic.options.manage.profesor.RmButtonController;
+import dev.alejandrosahonero.logic.options.manage.profesor.SearchButtonController;
+import dev.alejandrosahonero.logic.options.manage.profesor.ModProButtonController;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class ModProView extends MainView {
-    JLabel background;
+public class ModProView extends MainManageView {
+    public ModProView(){
+        super("Modificar Profesor");
 
-    public ModProView() {
-        super("Modificar Profesores");
-        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-
-        initComponents();
-    }
-
-    /**
-     * Método que inicializa todos los demás métodos para aligerar la carga al constructor
-     */
-    private void initComponents() {
-        background = new JLabel(getBackgroundImage());
-
-        add(background, BorderLayout.CENTER);
+        doneButton("MODIFICAR", new ModProButtonController(this));
+        searchBar();
+        searchButton(new SearchButtonController(this));
+        removeButton(new RmButtonController(this));
     }
 }

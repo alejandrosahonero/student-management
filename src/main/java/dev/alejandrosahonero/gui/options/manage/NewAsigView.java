@@ -3,24 +3,14 @@ package dev.alejandrosahonero.gui.options.manage;
 import dev.alejandrosahonero.gui.MainView;
 import dev.alejandrosahonero.gui.options.OptionsBackground;
 import dev.alejandrosahonero.logic.options.OptionsController;
+import dev.alejandrosahonero.logic.options.manage.asignatura.NewAsigButtonController;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class NewAsigView extends MainView {
-    private JLabel background;
-
+public class NewAsigView extends MainManageView {
     public NewAsigView(){
         super("Añadir Asignatura");
-        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-
-        initComponents();
-    }
-
-    private void initComponents(){
-        background = new JLabel(getBackgroundImage());
-
-
-        add(background, BorderLayout.CENTER);
+        super.doneButton("AÑADIR", new NewAsigButtonController(this));
     }
 }

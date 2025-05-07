@@ -10,12 +10,11 @@ import java.awt.event.ActionListener;
 import java.util.List;
 
 public abstract class MainManageView extends MainView {
-    final int photoWidth = 233;
-    final int photoHeight = 300;
+    final int photoWidth = 194;
+    final int photoHeight = 250;
     final int margin = 50;
 
     protected JLabel background, labelPhoto, title1, title2, dni_l, apellidoPaterno_l, apellidoMaterno_l, nombres_l, fechaNac_l, sexo_l, modulo_l, nuss_l, email_l, telefono_l;
-    protected JPanel imagePanel;
     protected JButton photoButton, doneButton, searchButton, removeButton;
     protected JTextField dni, apellidoPaterno, apellidoMaterno, nombres, fechaNac, sexo, nuss, email, telefono, searchBar;
     protected JComboBox modulo;
@@ -52,7 +51,7 @@ public abstract class MainManageView extends MainView {
         title2.setForeground(new Color(0x3D5A40));
         title2.setHorizontalAlignment(SwingConstants.LEFT);
         title2.setVerticalAlignment(SwingConstants.CENTER);
-        title2.setBounds(margin/2, photoHeight+margin*5/2, getButtonsWidth()*3, getButtonsHeight());
+        title2.setBounds(margin/2, margin*7/2+getButtonsHeight()*3, getButtonsWidth()*3, getButtonsHeight());
         background.add(title2);
     }
     private void subTitles(){
@@ -144,19 +143,17 @@ public abstract class MainManageView extends MainView {
     }
     private void imagePanel()
     {
-        imagePanel = new JPanel(new BorderLayout());
-
         photo = new ImageIcon("src/main/resources/img/photo-default.jpg");
         photo = new ImageIcon(photo.getImage().getScaledInstance(photoWidth, photoHeight, Image.SCALE_SMOOTH));
+
         labelPhoto = new JLabel(photo);
-        imagePanel.add(labelPhoto, BorderLayout.CENTER);
+        labelPhoto.setBounds(margin*5+getButtonsWidth()*3, margin, photoWidth, photoHeight);
+        background.add(labelPhoto);
 
         photoButton = createButton("Escoger imagen", 0, 30, 15, 0x3D5A40, 0xffffff);
         //photoButton.addActionListener(new PhotoButtonController(this));
-        imagePanel.add(photoButton, BorderLayout.SOUTH);
-
-        imagePanel.setBounds(margin*9/2+getButtonsWidth()*3, margin, photoWidth, photoHeight+photoButton.getHeight());
-        background.add(imagePanel);
+        photoButton.setBounds(margin*5+getButtonsWidth()*3, margin+photoHeight, photoWidth, 30);
+        background.add(photoButton);
     }
     public void setPhoto(ImageIcon photoChossed) {
         this.photo = new ImageIcon(photoChossed.getImage().getScaledInstance(photoWidth, photoHeight, Image.SCALE_SMOOTH));
@@ -165,7 +162,7 @@ public abstract class MainManageView extends MainView {
     }
     protected void doneButton(String nameButton, ActionListener actionListener){
         doneButton = createButton(nameButton, 0, 0, 25, 0x3D5A40, 0xffffff);
-        doneButton.setBounds(margin*13/3+getButtonsWidth()*3, margin*3/2+photoHeight, getButtonsWidth(), getButtonsHeight());
+        doneButton.setBounds(margin*9/2+getButtonsWidth()*3, margin*5/2+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
         doneButton.addActionListener(actionListener);
         background.add(doneButton);
     }
@@ -183,7 +180,7 @@ public abstract class MainManageView extends MainView {
     }
     protected void removeButton(ActionListener actionListener){
         removeButton = createButton("ELIMINAR", photoWidth, getButtonsHeight()/2, 15, 0xd11507, 0xffffff);
-        removeButton.setBounds(margin*13/3+getButtonsWidth()*3,margin*3/2+getButtonsHeight()+photoHeight+photoButton.getHeight(), getButtonsWidth(), getButtonsHeight()/2);
+        removeButton.setBounds(margin*9/2+getButtonsWidth()*3,margin*5/2+getButtonsHeight()*4, getButtonsWidth(), getButtonsHeight()/2);
         removeButton.addActionListener(actionListener);
         background.add(removeButton);
     }

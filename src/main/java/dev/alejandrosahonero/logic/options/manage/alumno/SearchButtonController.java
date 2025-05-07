@@ -20,16 +20,19 @@ public class SearchButtonController implements ActionListener {
         try {
             EntityManager em = Conector.getEntityManager();
             em.getTransaction().begin();
+
             int s_id = Integer.parseInt(modAlumView.getSearchBar().getText());
             Query query = em.createQuery("SELECT a FROM Alumno a WHERE a.id = :s_id");
             query.setParameter("s_id", s_id);
             Alumno alumAux = (Alumno) query.getSingleResult();
+
             modAlumView.getDni().setText(alumAux.getDni());
             modAlumView.getApellidoPaterno().setText(alumAux.getApellidoPaterno());
             modAlumView.getApellidoMaterno().setText(alumAux.getApellidoMaterno());
             modAlumView.getNombres().setText(alumAux.getNombres());
             modAlumView.getFechaNac().setText(alumAux.getFechaNacimiento().toString());
             modAlumView.getSexo().setText(alumAux.getSexo());
+            modAlumView.getModulo().setSelectedItem(alumAux.getModulo().getSiglas());
             modAlumView.getNuss().setText(alumAux.getNuss());
             modAlumView.getEmail().setText(alumAux.getEmail());
             modAlumView.getTelefono().setText(String.valueOf(alumAux.getTlf()));

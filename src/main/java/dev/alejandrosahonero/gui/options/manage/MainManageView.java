@@ -16,7 +16,7 @@ public abstract class MainManageView extends MainView {
 
     protected JLabel background, labelPhoto, title1, title2, dni_l, apellidoPaterno_l, apellidoMaterno_l, nombres_l, fechaNac_l, sexo_l, modulo_l, nuss_l, email_l, telefono_l;
     protected JPanel imagePanel;
-    protected JButton photoButton, doneButton, searchButton;
+    protected JButton photoButton, doneButton, searchButton, removeButton;
     protected JTextField dni, apellidoPaterno, apellidoMaterno, nombres, fechaNac, sexo, nuss, email, telefono, searchBar;
     protected JComboBox modulo;
     protected ImageIcon photo;
@@ -68,7 +68,7 @@ public abstract class MainManageView extends MainView {
         nombres_l = createTitle("NOMBRES", 20, 0x3D5A40);
         nombres_l.setBounds(margin, margin*5, getButtonsWidth(), getButtonsHeight());
         background.add(nombres_l);
-        fechaNac_l = createTitle("FECHA NACIMIENTO(aaa-mm-dd)", 14, 0x3D5A40);
+        fechaNac_l = createTitle("FECHA DE NACIMIENTO", 20, 0x3D5A40);
         fechaNac_l.setBounds(margin*2+getButtonsWidth(), margin*5, getButtonsWidth(), getButtonsHeight());
         background.add(fechaNac_l);
         sexo_l = createTitle("SEXO", 20, 0x3D5A40);
@@ -158,16 +158,16 @@ public abstract class MainManageView extends MainView {
         imagePanel.setBounds(margin*9/2+getButtonsWidth()*3, margin, photoWidth, photoHeight+photoButton.getHeight());
         background.add(imagePanel);
     }
-    protected void doneButton(String nameButton, ActionListener actionListener){
-        doneButton = createButton(nameButton, 0, 0, 20, 0x3D5A40, 0xffffff);
-        doneButton.setBounds(margin*13/3+getButtonsWidth()*3, margin*2+photoHeight, getButtonsWidth(), getButtonsHeight());
-        doneButton.addActionListener(actionListener);
-        background.add(doneButton);
-    }
     public void setPhoto(ImageIcon photoChossed) {
         this.photo = new ImageIcon(photoChossed.getImage().getScaledInstance(photoWidth, photoHeight, Image.SCALE_SMOOTH));
         labelPhoto.setIcon(photo);
         revalidate();
+    }
+    protected void doneButton(String nameButton, ActionListener actionListener){
+        doneButton = createButton(nameButton, 0, 0, 25, 0x3D5A40, 0xffffff);
+        doneButton.setBounds(margin*13/3+getButtonsWidth()*3, margin*3/2+photoHeight, getButtonsWidth(), getButtonsHeight());
+        doneButton.addActionListener(actionListener);
+        background.add(doneButton);
     }
     protected void searchBar(){
         searchBar = createTextField("ID", 15);
@@ -180,6 +180,12 @@ public abstract class MainManageView extends MainView {
         searchButton.setBounds(getWindowsWidth()/2+margin*2+getButtonsWidth()/2, margin+margin/3, getButtonsWidth()/3, getButtonsHeight()/2);
         searchButton.addActionListener(actionListener);
         background.add(searchButton);
+    }
+    protected void removeButton(ActionListener actionListener){
+        removeButton = createButton("ELIMINAR", photoWidth, getButtonsHeight()/2, 15, 0xd11507, 0xffffff);
+        removeButton.setBounds(margin*13/3+getButtonsWidth()*3,margin*3/2+getButtonsHeight()+photoHeight+photoButton.getHeight(), getButtonsWidth(), getButtonsHeight()/2);
+        removeButton.addActionListener(actionListener);
+        background.add(removeButton);
     }
 
     //Getters

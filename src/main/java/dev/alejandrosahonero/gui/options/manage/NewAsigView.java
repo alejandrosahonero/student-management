@@ -3,6 +3,7 @@ package dev.alejandrosahonero.gui.options.manage;
 import dev.alejandrosahonero.gui.MainView;
 import dev.alejandrosahonero.gui.options.OptionsBackground;
 import dev.alejandrosahonero.logic.options.OptionsController;
+import dev.alejandrosahonero.logic.options.manage.asignatura.NewAsigButtonController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,6 +11,6 @@ import java.awt.*;
 public class NewAsigView extends MainManageView {
     public NewAsigView(){
         super("Añadir Asignatura");
-        super.doneButton("AÑADIR");
+        super.doneButton("AÑADIR", new NewAsigButtonController(this));
     }
 }

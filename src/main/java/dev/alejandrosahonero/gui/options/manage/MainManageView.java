@@ -6,6 +6,7 @@ import dev.alejandrosahonero.logic.options.manage.alumno.txtController;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionListener;
 import java.util.List;
 
 public abstract class MainManageView extends MainView {
@@ -13,7 +14,7 @@ public abstract class MainManageView extends MainView {
     final int photoHeight = 300;
     final int margin = 50;
 
-    protected JLabel background, labelPhoto, title1, title2;
+    protected JLabel background, labelPhoto, title1, title2, dni_l, apellidoPaterno_l, apellidoMaterno_l, nombres_l, fechaNac_l, sexo_l, modulo_l, nuss_l, email_l, telefono_l;
     protected JPanel imagePanel;
     protected JButton photoButton, doneButton, searchButton;
     protected JTextField dni, apellidoPaterno, apellidoMaterno, nombres, fechaNac, sexo, nuss, email, telefono, searchBar;
@@ -31,6 +32,7 @@ public abstract class MainManageView extends MainView {
 
         imagePanel();
         titles();
+        subTitles();
         personalInformation();
         academicInformation();
 
@@ -41,7 +43,7 @@ public abstract class MainManageView extends MainView {
         title1.setFont(new Font("Tahoma", Font.BOLD, 50));
         title1.setForeground(new Color(0x3D5A40));
         title1.setHorizontalAlignment(SwingConstants.LEFT);
-        title1.setVerticalAlignment(SwingConstants.CENTER);
+        title1.setVerticalAlignment(SwingConstants.TOP);
         title1.setBounds(margin/2, margin, getButtonsWidth()*3, getButtonsHeight());
         background.add(title1);
 
@@ -52,6 +54,38 @@ public abstract class MainManageView extends MainView {
         title2.setVerticalAlignment(SwingConstants.CENTER);
         title2.setBounds(margin/2, photoHeight+margin*5/2, getButtonsWidth()*3, getButtonsHeight());
         background.add(title2);
+    }
+    private void subTitles(){
+        dni_l = createTitle("DNI", 20, 0x3D5A40);
+        dni_l.setBounds(margin, margin*2, getButtonsWidth(), getButtonsHeight());
+        background.add(dni_l);
+        apellidoPaterno_l = createTitle("APELLIDO PATERNO", 20, 0x3D5A40);
+        apellidoPaterno_l.setBounds(margin*2+getButtonsWidth(), margin*2, getButtonsWidth(), getButtonsHeight());
+        background.add(apellidoPaterno_l);
+        apellidoMaterno_l = createTitle("APELLIDO MATERNO", 20, 0x3D5A40);
+        apellidoMaterno_l.setBounds(margin*3+getButtonsWidth()*2, margin*2, getButtonsWidth(), getButtonsHeight());
+        background.add(apellidoMaterno_l);
+        nombres_l = createTitle("NOMBRES", 20, 0x3D5A40);
+        nombres_l.setBounds(margin, margin*5, getButtonsWidth(), getButtonsHeight());
+        background.add(nombres_l);
+        fechaNac_l = createTitle("FECHA NACIMIENTO(aaa-mm-dd)", 14, 0x3D5A40);
+        fechaNac_l.setBounds(margin*2+getButtonsWidth(), margin*5, getButtonsWidth(), getButtonsHeight());
+        background.add(fechaNac_l);
+        sexo_l = createTitle("SEXO", 20, 0x3D5A40);
+        sexo_l.setBounds(margin*3+getButtonsWidth()*2, margin*5, getButtonsWidth(), getButtonsHeight());
+        background.add(sexo_l);
+        modulo_l = createTitle("MODULO", 20, 0x3D5A40);
+        modulo_l.setBounds(margin, margin*29/3, getButtonsWidth(), getButtonsHeight());
+        background.add(modulo_l);
+        nuss_l = createTitle("NUSS", 20, 0x3D5A40);
+        nuss_l.setBounds(margin*2+getButtonsWidth(), margin*29/3, getButtonsWidth(), getButtonsHeight());
+        background.add(nuss_l);
+        email_l = createTitle("EMAIL", 20, 0x3D5A40);
+        email_l.setBounds(margin*3+getButtonsWidth()*2, margin*29/3, getButtonsWidth(), getButtonsHeight());
+        background.add(email_l);
+        telefono_l = createTitle("TELÉFONO", 20, 0x3D5A40);
+        telefono_l.setBounds(margin*4+getButtonsWidth()*3, margin*29/3, getButtonsWidth(), getButtonsHeight());
+        background.add(telefono_l);
     }
     private void personalInformation(){
         dni = new JTextField("DNI");
@@ -143,11 +177,10 @@ public abstract class MainManageView extends MainView {
         imagePanel.setBounds(margin*9/2+getButtonsWidth()*3, margin, photoWidth, photoHeight+photoButton.getHeight());
         background.add(imagePanel);
     }
-    protected void doneButton(String nameButton){
+    protected void doneButton(String nameButton, ActionListener actionListener){
         doneButton = createButton(nameButton, 0, 0, 20, 0x3D5A40, 0xffffff);
         doneButton.setBounds(margin*13/3+getButtonsWidth()*3, margin*2+photoHeight, getButtonsWidth(), getButtonsHeight());
-        //doneButton.addActionListener(new Controller(this));
-
+        doneButton.addActionListener(actionListener);
         background.add(doneButton);
     }
     public void setPhoto(ImageIcon photoChossed) {
@@ -159,13 +192,14 @@ public abstract class MainManageView extends MainView {
         searchBar = new JTextField("ID");
         searchBar.setHorizontalAlignment(SwingConstants.CENTER);
         searchBar.setBackground(Color.WHITE);
-        searchBar.setBounds(getWindowsWidth()/2+margin*2, margin+margin/2, getButtonsWidth()/2, getButtonsHeight()/2);
+        searchBar.setBounds(getWindowsWidth()/2+margin*2, margin+margin/3, getButtonsWidth()/2, getButtonsHeight()/2);
         searchBar.addMouseListener(new txtController());
         background.add(searchBar);
     }
-    protected void searchButton(){
+    protected void searchButton(ActionListener actionListener){
         searchButton = createButton("BUSQ", getButtonsWidth()/20, getButtonsHeight()/2, 15, 0x3D5A40, 0xffffff);
-        searchButton.setBounds(getWindowsWidth()/2+margin*2+getButtonsWidth()/2, margin+margin/2, getButtonsWidth()/3, getButtonsHeight()/2);
+        searchButton.setBounds(getWindowsWidth()/2+margin*2+getButtonsWidth()/2, margin+margin/3, getButtonsWidth()/3, getButtonsHeight()/2);
+        searchButton.addActionListener(actionListener);
         background.add(searchButton);
     }
 

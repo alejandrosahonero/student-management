@@ -48,6 +48,14 @@ public abstract class MainView extends JFrame {
         button.setHorizontalAlignment(SwingConstants.CENTER);
         return button;
     }
+    public JLabel createTitle(String name, int size, int foreColor){
+        JLabel title = new JLabel(name);
+        title.setFont(new Font("Tahoma", Font.BOLD, size));
+        title.setForeground(new Color(foreColor));
+        title.setVerticalAlignment(SwingConstants.CENTER);
+        title.setHorizontalAlignment(SwingConstants.CENTER);
+        return title;
+    }
 
     //Getters
 

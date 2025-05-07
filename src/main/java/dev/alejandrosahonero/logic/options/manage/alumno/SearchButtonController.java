@@ -5,6 +5,7 @@ import dev.alejandrosahonero.db.Conector;
 import dev.alejandrosahonero.gui.options.manage.ModAlumView;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -19,8 +20,10 @@ public class SearchButtonController implements ActionListener {
         try {
             EntityManager em = Conector.getEntityManager();
             em.getTransaction().begin();
-            String s_id = modAlumView.getSearchBar().getText();
-            Alumno alumAux = em.find(Alumno.class, s_id);
+            int s_id = Integer.parseInt(modAlumView.getSearchBar().getText());
+            Query query = em.createQuery("SELECT a FROM Alumno a WHERE a.id = :s_id");
+            query.setParameter("s_id", s_id);
+            Alumno alumAux = (Alumno) query.getSingleResult();
             modAlumView.getDni().setText(alumAux.getDni());
             modAlumView.getApellidoPaterno().setText(alumAux.getApellidoPaterno());
             modAlumView.getApellidoMaterno().setText(alumAux.getApellidoMaterno());

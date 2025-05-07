@@ -24,6 +24,12 @@ public class Modulo implements Serializable {
         this.descripcion = descripcion;
         this.asignaturas = asignaturas;
     }
+
+    @Override
+    public String toString() {
+        return siglas;
+    }
+
     private void addAsignatura(Asignatura asignatura) {
         this.asignaturas.add(asignatura);
     }

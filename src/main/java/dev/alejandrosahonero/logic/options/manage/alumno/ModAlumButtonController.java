@@ -69,6 +69,8 @@ public class ModAlumButtonController implements ActionListener {
 
         //Reset JTextFields texts
         modAlumView.setPhoto(new ImageIcon("src/main/resources/img/photo-default.jpg"));
+        modAlumView.getSearchBar().setText("");
+        modAlumView.getSearchBar().setForeground(MainView.getTextFieldColor());
         modAlumView.getDni().setText("DNI");
         modAlumView.getDni().setForeground(MainView.getTextFieldColor());
         modAlumView.getApellidoPaterno().setText("APELLIDO PATERNO");

@@ -9,7 +9,7 @@ public class ModAlumView extends MainManageView {
         super("Modificar Alumno");
 
         doneButton("MODIFICAR", new ModAlumButtonController(this));
-        searchBar();
+        searchBar("DNI");
         searchButton(new SearchButtonController(this));
         removeButton(new RmButtonController(this));
     }

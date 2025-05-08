@@ -3,6 +3,7 @@ package dev.alejandrosahonero.logic.options.manage.alumno;
 import dev.alejandrosahonero.db.Alumno;
 import dev.alejandrosahonero.db.Conector;
 import dev.alejandrosahonero.db.Modulo;
+import dev.alejandrosahonero.gui.MainView;
 import dev.alejandrosahonero.gui.options.manage.MatricularView;
 
 import javax.persistence.EntityManager;
@@ -55,13 +56,22 @@ public class MatricularButtonController implements ActionListener {
         //Reset JTextFields texts
         matricularView.setPhoto(new ImageIcon("src/main/resources/img/photo-default.jpg"));
         matricularView.getDni().setText("DNI");
+        matricularView.getDni().setForeground(MainView.getTextFieldColor());
         matricularView.getApellidoPaterno().setText("Apellido Paterno");
+        matricularView.getApellidoPaterno().setForeground(MainView.getTextFieldColor());
         matricularView.getApellidoMaterno().setText("Apellido Materno");
+        matricularView.getApellidoMaterno().setForeground(MainView.getTextFieldColor());
         matricularView.getNombres().setText("Nombres");
-        matricularView.getFechaNac().setText("Fecha de Nacimiento");
+        matricularView.getNombres().setForeground(MainView.getTextFieldColor());
+        matricularView.getFechaNac().setText("AAAA-MM-DD");
+        matricularView.getFechaNac().setForeground(MainView.getTextFieldColor());
         matricularView.getSexo().setText("Sexo");
+        matricularView.getSexo().setForeground(MainView.getTextFieldColor());
         matricularView.getNuss().setText("NUSS");
+        matricularView.getNuss().setForeground(MainView.getTextFieldColor());
         matricularView.getEmail().setText("Email");
+        matricularView.getEmail().setForeground(MainView.getTextFieldColor());
         matricularView.getTelefono().setText("Teléfono");
+        matricularView.getTelefono().setForeground(MainView.getTextFieldColor());
     }
 }

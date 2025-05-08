@@ -2,6 +2,7 @@ package dev.alejandrosahonero.logic.options.manage.profesor;
 
 import dev.alejandrosahonero.db.Alumno;
 import dev.alejandrosahonero.db.Conector;
+import dev.alejandrosahonero.db.Profesor;
 import dev.alejandrosahonero.gui.options.manage.ModAlumView;
 import dev.alejandrosahonero.gui.options.manage.ModProView;
 
@@ -16,5 +17,32 @@ public class SearchButtonController implements ActionListener {
     public SearchButtonController(ModProView modProView) {
         this.modProView = modProView;
     }
-    public void actionPerformed(ActionEvent e) {}
+    public void actionPerformed(ActionEvent e) {
+        try {
+            EntityManager em = Conector.getEntityManager();
+            em.getTransaction().begin();
+
+            int s_id = Integer.parseInt(modProView.getSearchBar().getText());
+            Query query = em.createQuery("SELECT p FROM Profesor p WHERE p.id = :s_id");
+            query.setParameter("s_id", s_id);
+            Profesor proAux = (Profesor) query.getSingleResult();
+
+            modProView.getDni().setText(proAux.getDni());
+            modProView.getApellidoPaterno().setText(proAux.getApellidoPaterno());
+            modProView.getApellidoMaterno().setText(proAux.getApellidoMaterno());
+            modProView.getNombres().setText(proAux.getNombres());
+            modProView.getFechaNac().setText(proAux.getFechaNacimiento().toString());
+            modProView.getSexo().setText(proAux.getSexo());
+            modProView.getNuss().setText(proAux.getNuss());
+            modProView.getEmail().setText(proAux.getEmail());
+            modProView.getTelefono().setText(String.valueOf(proAux.getTlf()));
+            modProView.setPhoto(new ImageIcon("src/main/resources/img/photo-default.jpg"));
+            em.getTransaction().commit();
+            em.close();
+            JOptionPane.showMessageDialog(modProView, "Datos recuperados correctamente", "¡Éxito!", JOptionPane.PLAIN_MESSAGE);
+
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(modProView, "Fallo al recuperar los datos", "Algo salió mal", JOptionPane.ERROR_MESSAGE);
+        }
+    }
 }

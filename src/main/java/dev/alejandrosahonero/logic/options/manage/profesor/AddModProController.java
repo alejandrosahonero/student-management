@@ -18,10 +18,11 @@ public class AddModProController implements ActionListener {
     private static ArrayList<Modulo> modulosImparte;
     public AddModProController(AddModProView addModProView) {
         this.addModProView = addModProView;
-        modulosImparte = new ArrayList<>();
     }
     public void actionPerformed(ActionEvent e) {
+        modulosImparte = new ArrayList<>();
         EntityManager em = Conector.getEntityManager();
+
         if(e.getSource() == addModProView.getAcceptButton()){
             em.getTransaction().begin();
 
@@ -42,7 +43,7 @@ public class AddModProController implements ActionListener {
             addModProView.setVisible(false);
         }
         if(e.getSource() == addModProView.getCancelButton()){
-            addModProView.setVisible(false);
+            addModProView.dispose();
         }
     }
     public static List<String> getAllModulos(){

@@ -9,6 +9,7 @@ import dev.alejandrosahonero.gui.options.manage.ModProView;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -28,15 +29,25 @@ public class SearchButtonController implements ActionListener {
             Profesor proAux = (Profesor) query.getSingleResult();
 
             modProView.getDni().setText(proAux.getDni());
+            modProView.getDni().setForeground(Color.BLACK);
             modProView.getApellidoPaterno().setText(proAux.getApellidoPaterno());
+            modProView.getApellidoPaterno().setForeground(Color.BLACK);
             modProView.getApellidoMaterno().setText(proAux.getApellidoMaterno());
+            modProView.getApellidoMaterno().setForeground(Color.BLACK);
             modProView.getNombres().setText(proAux.getNombres());
+            modProView.getNombres().setForeground(Color.BLACK);
             modProView.getFechaNac().setText(proAux.getFechaNacimiento().toString());
+            modProView.getFechaNac().setForeground(Color.BLACK);
             modProView.getSexo().setText(proAux.getSexo());
+            modProView.getSexo().setForeground(Color.BLACK);
             modProView.getNuss().setText(proAux.getNuss());
+            modProView.getNuss().setForeground(Color.BLACK);
             modProView.getEmail().setText(proAux.getEmail());
+            modProView.getEmail().setForeground(Color.BLACK);
             modProView.getTelefono().setText(String.valueOf(proAux.getTlf()));
+            modProView.getTelefono().setForeground(Color.BLACK);
             modProView.setPhoto(new ImageIcon("src/main/resources/img/photo-default.jpg"));
+
             em.getTransaction().commit();
             em.close();
             JOptionPane.showMessageDialog(modProView, "Datos recuperados correctamente", "¡Éxito!", JOptionPane.PLAIN_MESSAGE);

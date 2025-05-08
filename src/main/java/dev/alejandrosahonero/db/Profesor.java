@@ -27,7 +27,14 @@ public class Profesor extends Persona implements Serializable {
     public String getNuss() {
         return nuss;
     }
-    public ArrayList<Modulo> getModulosImparte() {
-        return modulosImparte;
+    public String getModulosImparte() {
+        String mensaje = "";
+        for(int i=0; i<modulosImparte.size(); i++){
+            if(i==modulosImparte.size()-1)
+                mensaje+=modulosImparte.get(i).toString();
+            else
+                mensaje+=modulosImparte.get(i).toString()+", ";
+        }
+        return mensaje;
     }
 }

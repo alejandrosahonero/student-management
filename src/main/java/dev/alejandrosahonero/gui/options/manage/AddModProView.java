@@ -11,11 +11,14 @@ public class AddModProView extends MainView {
     private JPanel backPanel, modPanel, buttonPanel;
     private JButton acceptButton;
     private JButton cancelButton;
+    private ModProView modProView;
 
-    public AddModProView() {
+    public AddModProView(ModProView modProView) {
         super("Añadir módulos que imparte");
         setDefaultCloseOperation(HIDE_ON_CLOSE);
         setSize(getWindowsWidth()/2, getWindowsHeight()/2);
+
+        this.modProView = modProView;
 
         initComponents();
     }
@@ -33,13 +36,29 @@ public class AddModProView extends MainView {
         add(backPanel);
     }
     private void modulos(){
-        List<String> modulos = AddModProController.getAllModulos();
-        for(String m : modulos){
-            JCheckBox modulo = new JCheckBox(m);
-            modulo.setFont(new Font("Tahoma", Font.BOLD, 20));
-            modulo.setForeground(new Color(0x3D5A40));
-            modulo.setPreferredSize(new Dimension(getButtonsWidth()/2, getButtonsHeight()/2));
-            modPanel.add(modulo);
+        if(modProView.getModulosButton().getText() == "Editar modulos"){
+            List<String> modulos = AddModProController.getAllModulos();
+            List<String> modulosActuales = AddModProController.getSearchedModulos(this);
+            for(String m : modulos){
+                JCheckBox modulo = new JCheckBox(m);
+                modulo.setFont(new Font("Tahoma", Font.BOLD, 20));
+                modulo.setForeground(new Color(0x3D5A40));
+                modulo.setPreferredSize(new Dimension(getButtonsWidth()/2, getButtonsHeight()/2));
+                if(modulosActuales.contains(m)){
+                    modulo.setSelected(true);
+                }
+                modPanel.add(modulo);
+            }
+        }
+        else if(modProView.getModulosButton().getText() == "Añadir modulos"){
+            List<String> modulos = AddModProController.getAllModulos();
+            for(String m : modulos){
+                JCheckBox modulo = new JCheckBox(m);
+                modulo.setFont(new Font("Tahoma", Font.BOLD, 20));
+                modulo.setForeground(new Color(0x3D5A40));
+                modulo.setPreferredSize(new Dimension(getButtonsWidth()/2, getButtonsHeight()/2));
+                modPanel.add(modulo);
+            }
         }
     }
     private void acceptButton(){
@@ -64,5 +83,8 @@ public class AddModProView extends MainView {
     }
     public JPanel getModPanel() {
         return modPanel;
+    }
+    public ModProView getModProView() {
+        return modProView;
     }
 }

@@ -2,6 +2,7 @@ package dev.alejandrosahonero.logic.options.manage.profesor;
 
 import dev.alejandrosahonero.db.Conector;
 import dev.alejandrosahonero.db.Modulo;
+import dev.alejandrosahonero.db.Profesor;
 import dev.alejandrosahonero.gui.options.manage.AddModProView;
 
 import javax.persistence.EntityManager;
@@ -52,6 +53,19 @@ public class AddModProController implements ActionListener {
         em.getTransaction().begin();
         Query query = em.createQuery("SELECT m.siglas FROM Modulo m");
         List<String> allModulos = query.getResultList();
+        em.getTransaction().commit();
+        em.close();
+        return allModulos;
+    }
+    public static List<String> getSearchedModulos(AddModProView addModProView){
+        EntityManager em = Conector.getEntityManager();
+        em.getTransaction().begin();
+
+        String s_dni = addModProView.getModProView().getSearchBar().getText();
+
+        Profesor pAux = em.find(Profesor.class, s_dni);
+        List<String> allModulos = pAux.getModulosImparte();
+
         em.getTransaction().commit();
         em.close();
         return allModulos;

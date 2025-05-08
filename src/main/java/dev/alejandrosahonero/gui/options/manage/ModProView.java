@@ -21,7 +21,7 @@ public class ModProView extends MainManageView {
     }
     @Override
     protected void academicInformation(){
-        modulosButton = createButton("Añadir modulos", 20, 0x3D5A40, 0xffffff);
+        modulosButton = createButton("Editar modulos", 20, 0x3D5A40, 0xffffff);
         modulosButton.setBounds(margin, margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
         modulosButton.addActionListener(new ModulosButtonController(this));
         background.add(modulosButton);
@@ -40,5 +40,10 @@ public class ModProView extends MainManageView {
         telefono.setBounds(margin*4+getButtonsWidth()*3, margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
         telefono.addMouseListener(new txtController());
         background.add(telefono);
+    }
+
+    //Getter
+    public JButton getModulosButton() {
+        return modulosButton;
     }
 }

@@ -17,6 +17,6 @@ public class ModulosButtonController implements ActionListener {
         this.modProView = modProView;
     }
     public void actionPerformed(ActionEvent e) {
-        new AddModProView().setVisible(true);
+        new AddModProView(modProView).setVisible(true);
     }
 }

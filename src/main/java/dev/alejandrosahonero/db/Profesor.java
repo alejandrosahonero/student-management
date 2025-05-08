@@ -33,6 +33,9 @@ public class Profesor extends Persona implements Serializable {
     public void setNuss(String nuss) {
         this.nuss = nuss;
     }
+    public ArrayList<Modulo> getModulosImparteArray(){
+        return modulosImparte;
+    }
     public String getModulosImparte() {
         String mensaje = "";
         for(int i=0; i<modulosImparte.size(); i++){

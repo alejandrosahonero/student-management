@@ -12,7 +12,7 @@ public class ModModView extends MainManageView {
         super("Modificar Módulo");
 
         doneButton("MODIFICAR", new ModModButtonController(this));
-        searchBar();
+        searchBar("ID");
         searchButton(new SearchButtonController(this));
         removeButton(new RmButtonController(this));
     }

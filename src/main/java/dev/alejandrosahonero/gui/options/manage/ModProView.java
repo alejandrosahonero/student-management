@@ -15,7 +15,7 @@ public class ModProView extends MainManageView {
         super("Modificar Profesor");
 
         doneButton("MODIFICAR", new ModProButtonController(this));
-        searchBar();
+        searchBar("DNI");
         searchButton(new SearchButtonController(this));
         removeButton(new RmButtonController(this));
     }

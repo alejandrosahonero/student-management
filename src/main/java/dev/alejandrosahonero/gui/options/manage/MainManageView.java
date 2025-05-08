@@ -166,8 +166,8 @@ public abstract class MainManageView extends MainView {
         doneButton.addActionListener(actionListener);
         background.add(doneButton);
     }
-    protected void searchBar(){
-        searchBar = createTextField("ID", 15);
+    protected void searchBar(String name){
+        searchBar = createTextField(name, 15);
         searchBar.setBounds(getWindowsWidth()/2+margin*2, margin+margin/3, getButtonsWidth()/2, getButtonsHeight()/2);
         searchBar.addMouseListener(new txtController());
         background.add(searchBar);

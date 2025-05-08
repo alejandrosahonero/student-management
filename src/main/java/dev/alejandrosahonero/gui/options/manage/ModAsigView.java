@@ -11,7 +11,7 @@ public class ModAsigView extends MainManageView {
         super("Modificar Asignatura");
 
         doneButton("MODIFICAR", new ModAsigButtonController(this));
-        searchBar();
+        searchBar("ID");
         searchButton(new SearchButtonController(this));
         removeButton(new RmButtonController(this));
     }

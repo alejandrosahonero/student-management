@@ -38,10 +38,8 @@ public class ModProButtonController implements ActionListener {
         try {
             em.getTransaction().begin();
 
-            int s_id = Integer.parseInt(modProView.getSearchBar().getText());
-            Query query = em.createQuery("SELECT p FROM Profesor p WHERE p.id = :s_id");
-            query.setParameter("s_id", s_id);
-            Profesor proAux = (Profesor) query.getSingleResult();
+            String s_dni = modProView.getSearchBar().getText();
+            Profesor proAux = em.find(Profesor.class, s_dni);
 
             proAux.setDni(n_dni);
             proAux.setApellidoPaterno(n_aPaterno);

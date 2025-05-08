@@ -17,13 +17,4 @@ public class ModProButtonController implements ActionListener {
         this.modProView = modProView;
     }
     public void actionPerformed(ActionEvent e) {}
-    public static List<String> getAllModulos(){
-        EntityManager em = Conector.getEntityManager();
-        em.getTransaction().begin();
-        Query query = em.createQuery("SELECT m.siglas FROM Modulo m");
-        List<String> allModulos = query.getResultList();
-        em.getTransaction().commit();
-        em.close();
-        return allModulos;
-    }
 }

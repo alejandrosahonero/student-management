@@ -62,4 +62,7 @@ public class AddModProView extends MainView {
     public JButton getCancelButton() {
         return cancelButton;
     }
+    public JPanel getModPanel() {
+        return modPanel;
+    }
 }

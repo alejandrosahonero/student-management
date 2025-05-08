@@ -26,7 +26,8 @@ public class AddModProController implements ActionListener {
         if(e.getSource() == addModProView.getAcceptButton()){
             em.getTransaction().begin();
 
-            Component[] boxes = addModProView.getComponents();
+            Component[] boxes = addModProView.getModPanel().getComponents();
+
             for(Component box : boxes){
                 if(box instanceof JCheckBox){
                     if(((JCheckBox)box).isSelected()){

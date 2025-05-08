@@ -69,21 +69,21 @@ public class ModProButtonController implements ActionListener {
         modProView.getSearchBar().setForeground(MainView.getTextFieldColor());
         modProView.getDni().setText("DNI");
         modProView.getDni().setForeground(MainView.getTextFieldColor());
-        modProView.getApellidoPaterno().setText("APELLIDO PATERNO");
+        modProView.getApellidoPaterno().setText("Apellido Paterno");
         modProView.getApellidoPaterno().setForeground(MainView.getTextFieldColor());
-        modProView.getApellidoMaterno().setText("APELLIDO MATERNO");
+        modProView.getApellidoMaterno().setText("Apellido Materno");
         modProView.getApellidoMaterno().setForeground(MainView.getTextFieldColor());
-        modProView.getNombres().setText("NOMBRES");
+        modProView.getNombres().setText("Nombres");
         modProView.getNombres().setForeground(MainView.getTextFieldColor());
         modProView.getFechaNac().setText("AAAA-MM-DD");
         modProView.getFechaNac().setForeground(MainView.getTextFieldColor());
-        modProView.getSexo().setText("SEXO");
+        modProView.getSexo().setText("Sexo");
         modProView.getSexo().setForeground(MainView.getTextFieldColor());
         modProView.getNuss().setText("NUSS");
         modProView.getNuss().setForeground(MainView.getTextFieldColor());
-        modProView.getEmail().setText("EMAIL");
+        modProView.getEmail().setText("Email");
         modProView.getEmail().setForeground(MainView.getTextFieldColor());
-        modProView.getTelefono().setText("TELÉFONO");
+        modProView.getTelefono().setText("Teléfono");
         modProView.getTelefono().setForeground(MainView.getTextFieldColor());
     }
 }

@@ -58,17 +58,20 @@ public class AddModProController implements ActionListener {
         return allModulos;
     }
     public static List<String> getSearchedModulos(AddModProView addModProView){
+        List<String> modulosNames = new ArrayList<>();
         EntityManager em = Conector.getEntityManager();
         em.getTransaction().begin();
 
         String s_dni = addModProView.getModProView().getSearchBar().getText();
 
         Profesor pAux = em.find(Profesor.class, s_dni);
-        List<String> allModulos = pAux.getModulosImparte();
-
+        List<Modulo> allModulos = pAux.getModulosImparteArray();
+        for(Modulo m : allModulos){
+            modulosNames.add(m.getSiglas());
+        }
         em.getTransaction().commit();
         em.close();
-        return allModulos;
+        return modulosNames;
     }
     public static ArrayList<Modulo> getModulosImparte(){
         return modulosImparte;

@@ -24,8 +24,14 @@ public class Profesor extends Persona implements Serializable {
     public int getId() {
         return id;
     }
+    public void setId(int id) {
+        this.id = id;
+    }
     public String getNuss() {
         return nuss;
+    }
+    public void setNuss(String nuss) {
+        this.nuss = nuss;
     }
     public String getModulosImparte() {
         String mensaje = "";
@@ -36,5 +42,8 @@ public class Profesor extends Persona implements Serializable {
                 mensaje+=modulosImparte.get(i).toString()+", ";
         }
         return mensaje;
+    }
+    public void setModulosImparte(ArrayList<Modulo> modulosImparte) {
+        this.modulosImparte = modulosImparte;
     }
 }

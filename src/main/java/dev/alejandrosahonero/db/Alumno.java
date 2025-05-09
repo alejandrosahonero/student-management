@@ -15,10 +15,6 @@ public class Alumno extends Persona implements Serializable {;
     private String nuss;
     private ArrayList<Asignatura> asignaturas = new ArrayList<>();
 
-    public void setModulo(Modulo modulo) {
-        this.modulo = modulo;
-    }
-
     public Alumno() {}
     public Alumno(String dni, String apellidoPaterno, String apellidoMaterno, String nombre, Date fechaNacimiento, String sexo, String email, int tlf, Modulo modulo, String nuss) {
         super(dni, apellidoPaterno, apellidoMaterno, nombre, fechaNacimiento, sexo, email, tlf);
@@ -37,8 +33,14 @@ public class Alumno extends Persona implements Serializable {;
     public Modulo getModulo() {
         return modulo;
     }
+    public void setModulo(Modulo modulo) {
+        this.modulo = modulo;
+    }
     public String getNuss() {
         return nuss;
+    }
+    public void setNuss(String nuss) {
+        this.nuss = nuss;
     }
     public ArrayList<Asignatura> getAsignaturas() {
         return asignaturas;

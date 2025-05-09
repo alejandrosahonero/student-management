@@ -10,6 +10,8 @@ public abstract class MainView extends JFrame {
     private final int buttonsWidth = 250;
     private final int buttonsHeight = 80;
 
+    private final int margin = 50;
+
     private static final Color textFieldColor = new Color(0x8C8C8C);
 
     private ImageIcon icon, backgroundImage;
@@ -79,10 +81,13 @@ public abstract class MainView extends JFrame {
     public int getButtonsHeight() {
         return buttonsHeight;
     }
-    public static Color getTextFieldColor() {
+    public int getMargin(){
+        return margin;
+    }
+    public static Color getTextFieldColor(){
         return textFieldColor;
     }
-    public ImageIcon getBackgroundImage() {
+    public ImageIcon getBackgroundImage(){
         return backgroundImage;
     }
 }

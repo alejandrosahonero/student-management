@@ -1,12 +1,13 @@
 package dev.alejandrosahonero.gui.options.manage.modulo;
 
 import dev.alejandrosahonero.gui.MainView;
+import dev.alejandrosahonero.gui.options.manage.MainManageView;
 import dev.alejandrosahonero.logic.options.manage.modulo.AsignaturasButtonController;
 import dev.alejandrosahonero.logic.options.manage.modulo.NewModButtonController;
 
 import javax.swing.*;
 
-public class NewModView extends MainView {
+public class NewModView extends MainManageView {
     final int margin = 50;
 
     private JLabel background, title1, siglas_l, nombre_l, descripcion_l, asignaturas_l;
@@ -18,21 +19,25 @@ public class NewModView extends MainView {
 
         initComponents();
     }
-    private void initComponents(){
+    @Override
+    protected void initComponents(){
         background = new JLabel(getBackgroundImage());
 
-        title();
+        titles();
         subTitles();
         data();
+        doneButton();
 
         add(background);
     }
-    private void title(){
+    @Override
+    protected void titles(){
         title1 = createTitle("INFORMACIÓN DEL MÓDULO", 50, 0x3D5A40);
         title1.setBounds(margin, margin, getButtonsWidth()*3, getButtonsHeight());
         background.add(title1);
     }
-    private void subTitles(){
+    @Override
+    protected void subTitles(){
         siglas_l = createTitle("SIGLAS", 20, 0x3D5A40);
         siglas_l.setBounds(margin, margin*2+getButtonsHeight(), getButtonsWidth(), getButtonsHeight());
         background.add(siglas_l);
@@ -61,7 +66,7 @@ public class NewModView extends MainView {
 
         asignaturasButton = createButton("Asignar Asignaturas", 15, 0x3D5A40, 0xffffff);
         asignaturasButton.setBounds(margin*4+getButtonsWidth()*3, margin*3+getButtonsHeight()*2, getButtonsWidth(), getButtonsHeight());
-        asignaturasButton.addActionListener(new AsignaturasButtonController());
+        asignaturasButton.addActionListener(new AsignaturasButtonController(this));
         background.add(asignaturasButton);
     }
     private void doneButton(){

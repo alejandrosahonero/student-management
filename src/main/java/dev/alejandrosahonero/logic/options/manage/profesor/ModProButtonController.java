@@ -53,32 +53,32 @@ public class ModProButtonController implements ActionListener {
             em.close();
 
             JOptionPane.showMessageDialog(modProView, "La modificación se realizó correctamente", "¡Modificación exitosa!", JOptionPane.PLAIN_MESSAGE);
+
+            //Reset JTextFields texts
+            modProView.setPhoto(new ImageIcon("src/main/resources/img/photo-default.jpg"));
+            modProView.getSearchBar().setText("ID");
+            modProView.getSearchBar().setForeground(MainView.getTextFieldColor());
+            modProView.getDni().setText("DNI");
+            modProView.getDni().setForeground(MainView.getTextFieldColor());
+            modProView.getApellidoPaterno().setText("Apellido Paterno");
+            modProView.getApellidoPaterno().setForeground(MainView.getTextFieldColor());
+            modProView.getApellidoMaterno().setText("Apellido Materno");
+            modProView.getApellidoMaterno().setForeground(MainView.getTextFieldColor());
+            modProView.getNombres().setText("Nombres");
+            modProView.getNombres().setForeground(MainView.getTextFieldColor());
+            modProView.getFechaNac().setText("AAAA-MM-DD");
+            modProView.getFechaNac().setForeground(MainView.getTextFieldColor());
+            modProView.getSexo().setText("Sexo");
+            modProView.getSexo().setForeground(MainView.getTextFieldColor());
+            modProView.getNuss().setText("NUSS");
+            modProView.getNuss().setForeground(MainView.getTextFieldColor());
+            modProView.getEmail().setText("Email");
+            modProView.getEmail().setForeground(MainView.getTextFieldColor());
+            modProView.getTelefono().setText("Teléfono");
+            modProView.getTelefono().setForeground(MainView.getTextFieldColor());
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(modProView, "Error al cargar datos: " + ex.getMessage(), "Algo salió mal", JOptionPane.ERROR_MESSAGE);
             em.close();
         }
-
-        //Reset JTextFields texts
-        modProView.setPhoto(new ImageIcon("src/main/resources/img/photo-default.jpg"));
-        modProView.getSearchBar().setText("ID");
-        modProView.getSearchBar().setForeground(MainView.getTextFieldColor());
-        modProView.getDni().setText("DNI");
-        modProView.getDni().setForeground(MainView.getTextFieldColor());
-        modProView.getApellidoPaterno().setText("Apellido Paterno");
-        modProView.getApellidoPaterno().setForeground(MainView.getTextFieldColor());
-        modProView.getApellidoMaterno().setText("Apellido Materno");
-        modProView.getApellidoMaterno().setForeground(MainView.getTextFieldColor());
-        modProView.getNombres().setText("Nombres");
-        modProView.getNombres().setForeground(MainView.getTextFieldColor());
-        modProView.getFechaNac().setText("AAAA-MM-DD");
-        modProView.getFechaNac().setForeground(MainView.getTextFieldColor());
-        modProView.getSexo().setText("Sexo");
-        modProView.getSexo().setForeground(MainView.getTextFieldColor());
-        modProView.getNuss().setText("NUSS");
-        modProView.getNuss().setForeground(MainView.getTextFieldColor());
-        modProView.getEmail().setText("Email");
-        modProView.getEmail().setForeground(MainView.getTextFieldColor());
-        modProView.getTelefono().setText("Teléfono");
-        modProView.getTelefono().setForeground(MainView.getTextFieldColor());
     }
 }

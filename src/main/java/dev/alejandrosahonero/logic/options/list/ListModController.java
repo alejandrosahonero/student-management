@@ -20,10 +20,10 @@ public class ListModController {
         EntityManager em = Conector.getEntityManager();
         try {
             em.getTransaction().begin();
-            TypedQuery<Modulo> query = em.createQuery("SELECT m FROM Modulo m ORDER BY m.id", Modulo.class);
+            TypedQuery<Modulo> query = em.createQuery("SELECT m FROM Modulo m ORDER BY m.siglas", Modulo.class);
             List<Modulo> lista = query.getResultList();
             for (Modulo m : lista) {
-                model.addRow(new Object[]{m.getId(), m.getSiglas(), m.getNombre(), m.getDescripcion(), m.getAsignaturas()});
+                model.addRow(new Object[]{m.getSiglas(), m.getNombre(), m.getDescripcion(), m.getAsignaturas()});
             }
             em.getTransaction().commit();
             em.close();

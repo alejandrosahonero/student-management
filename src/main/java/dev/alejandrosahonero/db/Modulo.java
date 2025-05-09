@@ -9,8 +9,7 @@ import java.util.ArrayList;
 
 @Entity
 public class Modulo implements Serializable {
-    @Id @GeneratedValue
-    private int id;
+    @Id
     private String siglas;
     private String nombre;
     private String descripcion;
@@ -37,9 +36,6 @@ public class Modulo implements Serializable {
         this.asignaturas.remove(asignatura);
     }
     //Getters
-    public int getId() {
-        return id;
-    }
     public String getSiglas() {
         return siglas;
     }

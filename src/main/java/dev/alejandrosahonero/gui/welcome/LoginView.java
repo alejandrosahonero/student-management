@@ -1,6 +1,7 @@
 package dev.alejandrosahonero.gui.welcome;
 
 import dev.alejandrosahonero.gui.MainView;
+import dev.alejandrosahonero.logic.welcome.LoginButtonController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,12 +13,15 @@ public class LoginView extends MainView {
     private JTextField user;
     private JPasswordField pass;
     private JButton loginButton;
+    private StartView startView;
 
-    public LoginView() {
+    public LoginView(StartView startView) {
         super("Iniciar Sesión");
         setDefaultCloseOperation(HIDE_ON_CLOSE);
         setSize(new Dimension(getWindowsWidth()/2, getWindowsHeight()/2));
         setLocation(getWindowsWidth()/2-getWidth()/2, getWindowsHeight()/2-getHeight()/2);
+
+        this.startView = startView;
 
         initComponents();
     }
@@ -60,6 +64,14 @@ public class LoginView extends MainView {
 
         loginButton = createButton("INGRESAR", 20, 0x3D5A40, 0xffffff);
         loginButton.setBounds(getWidth()/2-getButtonsWidth()/2, margin*11/2+getButtonsHeight()/2*3, getButtonsWidth(), getButtonsHeight()/2);
+        loginButton.addActionListener(new LoginButtonController(this, startView));
         background.add(loginButton);
+    }
+
+    public JTextField getUser() {
+        return user;
+    }
+    public JPasswordField getPass() {
+        return pass;
     }
 }

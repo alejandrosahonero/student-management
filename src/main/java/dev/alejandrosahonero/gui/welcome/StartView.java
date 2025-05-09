@@ -1,7 +1,7 @@
 package dev.alejandrosahonero.gui.welcome;
 
 import dev.alejandrosahonero.gui.MainView;
-import dev.alejandrosahonero.logic.welcome.LoginButtonController;
+import dev.alejandrosahonero.logic.welcome.StartButtonController;
 import dev.alejandrosahonero.logic.welcome.ChangeButtonController;
 import dev.alejandrosahonero.logic.welcome.SettingsButtonController;
 
@@ -52,7 +52,7 @@ public class StartView extends MainView {
         loginButton = createButton("INICIAR SESION",40, 0x2E8B57, 0xffffff);
         loginButton.setPreferredSize(new Dimension(buttonsWidth,0));
         loginButton.setBorder(BorderFactory.createLineBorder(new Color(0x276b45),3));
-        loginButton.addActionListener(new LoginButtonController(this));
+        loginButton.addActionListener(new StartButtonController(this));
 
         buttonPanel.add(loginButton, BorderLayout.CENTER);
     }

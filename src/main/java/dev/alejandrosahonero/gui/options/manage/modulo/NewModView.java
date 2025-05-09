@@ -4,6 +4,7 @@ import dev.alejandrosahonero.gui.MainView;
 import dev.alejandrosahonero.gui.options.manage.MainManageView;
 import dev.alejandrosahonero.logic.options.manage.modulo.AsignaturasButtonController;
 import dev.alejandrosahonero.logic.options.manage.modulo.NewModButtonController;
+import dev.alejandrosahonero.logic.options.manage.txtController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -58,10 +59,12 @@ public class NewModView extends MainManageView {
     private void data(){
         siglas = createTextField("SIGLAS", 15);
         siglas.setBounds(marginHori, marginTitle*2+getButtonsHeight(), getButtonsWidth(), getButtonsHeight());
+        siglas.addMouseListener(new txtController());
         background.add(siglas);
 
         nombre = createTextField("Nombre", 15);
         nombre.setBounds(marginHori, marginTitle*2+marginVert+getButtonsHeight()*2, getButtonsWidth(), getButtonsHeight());
+        nombre.addMouseListener(new txtController());
         background.add(nombre);
 
         asignaturasButton = createButton("Asignar Asignaturas", 20, 0x3D5A40, 0xffffff);
@@ -82,5 +85,16 @@ public class NewModView extends MainManageView {
         doneButton.setBounds(marginHori*3+getButtonsWidth()*2, marginTitle*2+getButtonsHeight()+marginVert*2, getButtonsWidth(), getButtonsHeight());
         doneButton.addActionListener(new NewModButtonController(this));
         background.add(doneButton);
+    }
+
+    //Getters
+    public JTextField getSiglas() {
+        return siglas;
+    }
+    public JTextField getNombre() {
+        return nombre;
+    }
+    public JTextArea getDescripcion() {
+        return descripcion;
     }
 }

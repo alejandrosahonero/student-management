@@ -19,6 +19,11 @@ public class Asignatura {
         this.descripcion = descripcion;
     }
 
+    @Override
+    public String toString() {
+        return siglas;
+    }
+
     //Getters
     public String getSiglas() {
         return siglas;

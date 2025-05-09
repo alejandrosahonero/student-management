@@ -9,9 +9,7 @@ import java.util.ArrayList;
 import java.sql.Date;
 
 @Entity
-public class Alumno extends Persona implements Serializable {
-    @GeneratedValue
-    private int id;
+public class Alumno extends Persona implements Serializable {;
     @ManyToOne
     private Modulo modulo;
     private String nuss;
@@ -36,9 +34,6 @@ public class Alumno extends Persona implements Serializable {
     }
 
     //Getters
-    public int getId() {
-        return id;
-    }
     public Modulo getModulo() {
         return modulo;
     }

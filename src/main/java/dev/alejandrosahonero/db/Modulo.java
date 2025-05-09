@@ -29,21 +29,24 @@ public class Modulo implements Serializable {
         return siglas;
     }
 
-    private void addAsignatura(Asignatura asignatura) {
-        this.asignaturas.add(asignatura);
-    }
-    private void removeAsignatura(Asignatura asignatura) {
-        this.asignaturas.remove(asignatura);
-    }
-    //Getters
+    //Getters and Setters
     public String getSiglas() {
         return siglas;
+    }
+    public void setSiglas(String siglas) {
+        this.siglas = siglas;
     }
     public String getNombre() {
         return nombre;
     }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
     public String getDescripcion() {
         return descripcion;
+    }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
     public ArrayList<Asignatura> getAsignaturasArray() {
         return asignaturas;
@@ -57,5 +60,8 @@ public class Modulo implements Serializable {
                 mensaje+=asignaturas.get(i).toString()+", ";
         }
         return mensaje;
+    }
+    public void setAsignaturas(ArrayList<Asignatura> asignaturas) {
+        this.asignaturas = asignaturas;
     }
 }

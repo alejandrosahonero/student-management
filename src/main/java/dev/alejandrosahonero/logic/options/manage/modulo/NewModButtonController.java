@@ -3,6 +3,7 @@ package dev.alejandrosahonero.logic.options.manage.modulo;
 import dev.alejandrosahonero.db.Asignatura;
 import dev.alejandrosahonero.db.Conector;
 import dev.alejandrosahonero.db.Modulo;
+import dev.alejandrosahonero.gui.MainView;
 import dev.alejandrosahonero.gui.options.manage.modulo.NewModView;
 
 import javax.persistence.EntityManager;
@@ -32,6 +33,15 @@ public class NewModButtonController implements ActionListener {
             em.close();
 
             JOptionPane.showMessageDialog(newModView, "Se añadió el módulo: "+n_nombre.toUpperCase()+" correctamente", "¡Exito!", JOptionPane.PLAIN_MESSAGE);
+
+            //Reset fields
+            newModView.getSearchBar().setText("SIGLAS");
+            newModView.getSearchBar().setForeground(MainView.getTextFieldColor());
+            newModView.getSiglas().setText("SIGLAS");
+            newModView.getSiglas().setForeground(MainView.getTextFieldColor());
+            newModView.getNombre().setText("Nombre");
+            newModView.getNombre().setForeground(MainView.getTextFieldColor());
+            newModView.getDescripcion().setText("");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(newModView, "Error al cargar datos", "Algo salio mal", JOptionPane.ERROR_MESSAGE);
         }

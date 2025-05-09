@@ -93,12 +93,14 @@ public class ModModView extends MainManageView {
         searchBar.addMouseListener(new txtController());
         background.add(searchBar);
     }
+    @Override
     protected void searchButton(ActionListener actionListener){
         searchButton = createButton("BUSQ",15, 0x3D5A40, 0xffffff);
         searchButton.setBounds(marginHori+getButtonsWidth()*3+getButtonsWidth()/2, marginTitle*3/2, getButtonsWidth()/3, getButtonsHeight()/2);
         searchButton.addActionListener(actionListener);
         background.add(searchButton);
     }
+    @Override
     protected void removeButton(ActionListener actionListener){
         removeButton = createButton("ELIMINAR",15, 0xd11507, 0xffffff);
         removeButton.setBounds(marginHori*3+getButtonsWidth()*2,marginTitle*2+getButtonsHeight()*3+marginVert*3, getButtonsWidth(), getButtonsHeight()/2);

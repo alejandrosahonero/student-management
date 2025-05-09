@@ -31,7 +31,7 @@ public class ListAsigView extends MainView {
         tablePanel = new JPanel(new BorderLayout());
         tablePanel.setBounds(getWindowsWidth()/30, getWindowsHeight()/20, getWindowsWidth()-getWindowsWidth()/25*2, getWindowsHeight()-getWindowsHeight()/3);
 
-        model = new DefaultTableModel(new String[]{"ID Asignatura", "Siglas", "Nombre", "Descripción"}, 0);
+        model = new DefaultTableModel(new String[]{"Siglas", "Nombre", "Descripción"}, 0);
         listAlum = new JTable(model);
 
         JScrollPane scrollPane = new JScrollPane(listAlum);

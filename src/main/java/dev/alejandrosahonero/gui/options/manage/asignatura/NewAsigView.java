@@ -85,4 +85,18 @@ public class NewAsigView extends MainManageView {
         doneButton.addActionListener(new NewAsigButtonController(this));
         background.add(doneButton);
     }
+
+    //Getters
+    public JTextField getSiglas() {
+        return siglas;
+    }
+    public JTextField getNombre() {
+        return nombre;
+    }
+    public JTextField getHoras() {
+        return horas;
+    }
+    public JTextArea getDescripcion() {
+        return descripcion;
+    }
 }

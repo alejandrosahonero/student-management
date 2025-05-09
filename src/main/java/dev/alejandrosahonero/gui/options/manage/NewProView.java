@@ -1,6 +1,5 @@
 package dev.alejandrosahonero.gui.options.manage;
 
-import dev.alejandrosahonero.logic.options.manage.profesor.AddModProController;
 import dev.alejandrosahonero.logic.options.manage.profesor.ModulosButtonController;
 import dev.alejandrosahonero.logic.options.manage.profesor.NewProButtonController;
 import dev.alejandrosahonero.logic.options.manage.txtController;
@@ -35,10 +34,5 @@ public class NewProView extends MainManageView {
         telefono.setBounds(margin*4+getButtonsWidth()*3, margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
         telefono.addMouseListener(new txtController());
         background.add(telefono);
-    }
-
-    //Getter
-    public JButton getModulosButton() {
-        return modulosButton;
     }
 }

@@ -7,7 +7,6 @@ import dev.alejandrosahonero.logic.options.manage.profesor.ModProButtonControlle
 import dev.alejandrosahonero.logic.options.manage.txtController;
 
 import javax.swing.*;
-import java.awt.*;
 
 public class ModProView extends MainManageView {
     private JButton modulosButton;
@@ -40,10 +39,5 @@ public class ModProView extends MainManageView {
         telefono.setBounds(margin*4+getButtonsWidth()*3, margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
         telefono.addMouseListener(new txtController());
         background.add(telefono);
-    }
-
-    //Getter
-    public JButton getModulosButton() {
-        return modulosButton;
     }
 }

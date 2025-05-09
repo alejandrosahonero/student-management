@@ -30,11 +30,21 @@ public class Asignatura {
     public String getSiglas() {
         return siglas;
     }
+    public void setSiglas(String siglas) {
+        this.siglas = siglas;
+    }
     public String getNombre() {
         return nombre;
+    }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
     public String getDescripcion() {
         return descripcion;
     }
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
     public int getHoras() {return horas;}
+    public void setHoras(int horas) {this.horas = horas;}
 }

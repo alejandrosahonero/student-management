@@ -1,37 +1,37 @@
 package dev.alejandrosahonero.logic.welcome;
 
-import dev.alejandrosahonero.gui.welcome.StartView;
+import dev.alejandrosahonero.db.Admin;
+import dev.alejandrosahonero.db.Conector;
 import dev.alejandrosahonero.gui.options.OptionsView;
+import dev.alejandrosahonero.gui.welcome.LoginView;
+import dev.alejandrosahonero.gui.welcome.StartView;
 
-import java.awt.*;
+import javax.persistence.EntityManager;
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class LoginButtonController implements ActionListener {
+    private LoginView loginView;
     private StartView startView;
-
-    public LoginButtonController(StartView startView) {
+    public LoginButtonController(LoginView loginView, StartView startView) {
+        this.loginView = loginView;
         this.startView = startView;
     }
-
     public void actionPerformed(ActionEvent e) {
-        /*//    Prueba conexion base de datos
-        EntityManager em = Conector.getEntityManager();
-        em.getTransaction().begin();
-        Persona persona = new Persona("2956864X", "Hernesto", "Pablo", 34, "femenino");
-        em.persist(persona);
-        ArrayList<String> modulos = new ArrayList<>();
-        modulos.add("mates");
-        modulos.add("bio");
-        Profesor profesor = new Profesor("2956864Z", "Hernesto", "Pablo", 34, "femenino", modulos);
-        em.persist(profesor);
-        em.getTransaction().commit();
-        em.close();*/
 
-        startView.getLoginButton().setBackground(new Color(0x276b45));
+        String user = loginView.getUser().getText();
+        char[] p = loginView.getPass().getPassword();
+        String pass = new String(p);
 
-        startView.setVisible(false);
-        new OptionsView().setVisible(true);
-
+        if(user.equals(Admin.getUser()) && pass.equals(Admin.getPassword())){
+            loginView.dispose();
+            startView.dispose();
+            new OptionsView().setVisible(true);
+        }
+        else{
+            JOptionPane.showMessageDialog(loginView, "Credenciales incorrectas, saliendo del programa", "¡OJO!", JOptionPane.WARNING_MESSAGE);
+            System.exit(0);
+        }
     }
 }

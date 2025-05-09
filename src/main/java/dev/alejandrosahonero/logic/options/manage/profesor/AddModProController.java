@@ -62,7 +62,7 @@ public class AddModProController implements ActionListener {
         EntityManager em = Conector.getEntityManager();
         em.getTransaction().begin();
 
-        String s_dni = addModProView.getModProView().getSearchBar().getText();
+        String s_dni = addModProView.getMainManageView().getSearchBar().getText();
 
         Profesor pAux = em.find(Profesor.class, s_dni);
         List<Modulo> allModulos = pAux.getModulosImparteArray();

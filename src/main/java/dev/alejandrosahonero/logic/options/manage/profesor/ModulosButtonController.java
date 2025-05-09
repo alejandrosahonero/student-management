@@ -1,22 +1,17 @@
 package dev.alejandrosahonero.logic.options.manage.profesor;
 
 import dev.alejandrosahonero.gui.options.manage.AddModProView;
-import dev.alejandrosahonero.gui.options.manage.ModProView;
-import dev.alejandrosahonero.gui.options.manage.NewProView;
+import dev.alejandrosahonero.gui.options.manage.MainManageView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ModulosButtonController implements ActionListener {
-    private NewProView newProView;
-    private ModProView modProView;
-    public ModulosButtonController(NewProView newProView) {
-        this.newProView = newProView;
-    }
-    public ModulosButtonController(ModProView modProView) {
-        this.modProView = modProView;
+    private MainManageView mainManageView;
+    public ModulosButtonController(MainManageView mainManageView) {
+        this.mainManageView = mainManageView;
     }
     public void actionPerformed(ActionEvent e) {
-        new AddModProView(modProView).setVisible(true);
+        new AddModProView(mainManageView).setVisible(true);
     }
 }

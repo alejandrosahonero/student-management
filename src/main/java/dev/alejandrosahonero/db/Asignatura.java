@@ -11,12 +11,14 @@ public class Asignatura {
     private String siglas;
     private String nombre;
     private String descripcion;
+    private int horas;
 
     public Asignatura() {}
-    public Asignatura(String siglas, String nombre, String descripcion) {
+    public Asignatura(String siglas, String nombre, String descripcion, int horas) {
         this.siglas = siglas;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.horas = horas;
     }
 
     @Override
@@ -34,4 +36,5 @@ public class Asignatura {
     public String getDescripcion() {
         return descripcion;
     }
+    public int getHoras() {return horas;}
 }

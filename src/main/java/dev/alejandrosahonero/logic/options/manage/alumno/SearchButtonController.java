@@ -17,15 +17,13 @@ public class SearchButtonController implements ActionListener {
         this.modAlumView = modAlumView;
     }
     public void actionPerformed(ActionEvent e) {
-        //Set JTextFields texts
+        EntityManager em = Conector.getEntityManager();
+
         try {
-            EntityManager em = Conector.getEntityManager();
             em.getTransaction().begin();
 
-            int s_id = Integer.parseInt(modAlumView.getSearchBar().getText());
-            Query query = em.createQuery("SELECT a FROM Alumno a WHERE a.id = :s_id");
-            query.setParameter("s_id", s_id);
-            Alumno alumAux = (Alumno) query.getSingleResult();
+            String s_dni = modAlumView.getSearchBar().getText();
+            Alumno alumAux = em.find(Alumno.class, s_dni);
 
             modAlumView.getDni().setText(alumAux.getDni());
             modAlumView.getDni().setForeground(Color.BLACK);
@@ -53,6 +51,7 @@ public class SearchButtonController implements ActionListener {
             JOptionPane.showMessageDialog(modAlumView, "Datos recuperados correctamente", "¡Éxito!", JOptionPane.PLAIN_MESSAGE);
 
         } catch (Exception ex) {
+            em.close();
             JOptionPane.showMessageDialog(modAlumView, "Fallo al recuperar los datos", "Algo salió mal", JOptionPane.ERROR_MESSAGE);
         }
     }

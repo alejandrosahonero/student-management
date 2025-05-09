@@ -45,7 +45,17 @@ public class Modulo implements Serializable {
     public String getDescripcion() {
         return descripcion;
     }
-    public ArrayList<Asignatura> getAsignaturas() {
+    public ArrayList<Asignatura> getAsignaturasArray() {
         return asignaturas;
+    }
+    public String getAsignaturas() {
+        String mensaje = "";
+        for(int i=0; i<asignaturas.size(); i++){
+            if(i==asignaturas.size()-1)
+                mensaje+=asignaturas.get(i).toString();
+            else
+                mensaje+=asignaturas.get(i).toString()+", ";
+        }
+        return mensaje;
     }
 }

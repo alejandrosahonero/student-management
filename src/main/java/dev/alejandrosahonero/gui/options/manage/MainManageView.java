@@ -1,6 +1,7 @@
 package dev.alejandrosahonero.gui.options.manage;
 
 import dev.alejandrosahonero.gui.MainView;
+import dev.alejandrosahonero.logic.options.manage.PhotoButtonController;
 import dev.alejandrosahonero.logic.options.manage.modulo.ModModButtonController;
 import dev.alejandrosahonero.logic.options.manage.txtController;
 
@@ -151,7 +152,7 @@ public abstract class MainManageView extends MainView {
         background.add(labelPhoto);
 
         photoButton = createButton("Escoger imagen", 15, 0x3D5A40, 0xffffff);
-        //photoButton.addActionListener(new PhotoButtonController(this));
+        photoButton.addActionListener(new PhotoButtonController(this));
         photoButton.setBounds(margin*5+getButtonsWidth()*3, margin+photoHeight, photoWidth, 30);
         background.add(photoButton);
     }
@@ -216,13 +217,7 @@ public abstract class MainManageView extends MainView {
     public JTextField getTelefono() {
         return telefono;
     }
-    public JButton getDoneButton() {
-        return doneButton;
-    }
     public JTextField getSearchBar() {
         return searchBar;
-    }
-    public JButton getSearchButton() {
-        return searchButton;
     }
 }

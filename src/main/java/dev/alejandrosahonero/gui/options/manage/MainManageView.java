@@ -26,7 +26,7 @@ public abstract class MainManageView extends MainView {
 
         initComponents();
     }
-    private void initComponents(){
+    protected void initComponents(){
         background = new JLabel(getBackgroundImage());
 
         imagePanel();

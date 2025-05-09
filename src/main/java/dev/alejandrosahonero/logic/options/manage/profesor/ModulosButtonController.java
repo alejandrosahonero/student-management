@@ -1,6 +1,6 @@
 package dev.alejandrosahonero.logic.options.manage.profesor;
 
-import dev.alejandrosahonero.gui.options.manage.AddModProView;
+import dev.alejandrosahonero.gui.options.manage.profesor.AddModProView;
 import dev.alejandrosahonero.gui.options.manage.MainManageView;
 
 import java.awt.event.ActionEvent;

@@ -1,7 +1,7 @@
 package dev.alejandrosahonero.logic.options.manage;
 
 import dev.alejandrosahonero.gui.MainView;
-import dev.alejandrosahonero.gui.options.manage.MatricularView;
+import dev.alejandrosahonero.gui.options.manage.alumno.MatricularView;
 
 import javax.swing.*;
 import java.awt.*;

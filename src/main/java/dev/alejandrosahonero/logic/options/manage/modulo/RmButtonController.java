@@ -1,7 +1,6 @@
 package dev.alejandrosahonero.logic.options.manage.modulo;
 
-import dev.alejandrosahonero.gui.options.manage.ModAlumView;
-import dev.alejandrosahonero.gui.options.manage.ModModView;
+import dev.alejandrosahonero.gui.options.manage.modulo.ModModView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

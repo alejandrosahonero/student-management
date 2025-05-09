@@ -1,6 +1,6 @@
 package dev.alejandrosahonero.logic.options.manage.asignatura;
 
-import dev.alejandrosahonero.gui.options.manage.NewAsigView;
+import dev.alejandrosahonero.gui.options.manage.asignatura.NewAsigView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

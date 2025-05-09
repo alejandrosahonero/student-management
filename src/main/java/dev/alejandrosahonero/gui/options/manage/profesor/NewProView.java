@@ -1,26 +1,22 @@
-package dev.alejandrosahonero.gui.options.manage;
+package dev.alejandrosahonero.gui.options.manage.profesor;
 
+import dev.alejandrosahonero.gui.options.manage.MainManageView;
 import dev.alejandrosahonero.logic.options.manage.profesor.ModulosButtonController;
-import dev.alejandrosahonero.logic.options.manage.profesor.RmButtonController;
-import dev.alejandrosahonero.logic.options.manage.profesor.SearchButtonController;
-import dev.alejandrosahonero.logic.options.manage.profesor.ModProButtonController;
+import dev.alejandrosahonero.logic.options.manage.profesor.NewProButtonController;
 import dev.alejandrosahonero.logic.options.manage.txtController;
 
 import javax.swing.*;
 
-public class ModProView extends MainManageView {
+public class NewProView extends MainManageView {
     private JButton modulosButton;
-    public ModProView(){
-        super("Modificar Profesor");
+    public NewProView(){
+        super("Añadir Profesor");
 
-        doneButton("MODIFICAR", new ModProButtonController(this));
-        searchBar("DNI");
-        searchButton(new SearchButtonController(this));
-        removeButton(new RmButtonController(this));
+        doneButton("AÑADIR", new NewProButtonController(this));
     }
     @Override
     protected void academicInformation(){
-        modulosButton = createButton("Editar modulos", 20, 0x3D5A40, 0xffffff);
+        modulosButton = createButton("Añadir modulos", 20, 0x3D5A40, 0xffffff);
         modulosButton.setBounds(margin, margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
         modulosButton.addActionListener(new ModulosButtonController(this));
         background.add(modulosButton);

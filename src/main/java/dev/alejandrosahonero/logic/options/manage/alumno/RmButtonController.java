@@ -1,7 +1,6 @@
 package dev.alejandrosahonero.logic.options.manage.alumno;
 
-import dev.alejandrosahonero.db.Alumno;
-import dev.alejandrosahonero.gui.options.manage.ModAlumView;
+import dev.alejandrosahonero.gui.options.manage.alumno.ModAlumView;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

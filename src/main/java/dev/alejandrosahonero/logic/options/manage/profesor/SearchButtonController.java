@@ -1,13 +1,10 @@
 package dev.alejandrosahonero.logic.options.manage.profesor;
 
-import dev.alejandrosahonero.db.Alumno;
 import dev.alejandrosahonero.db.Conector;
 import dev.alejandrosahonero.db.Profesor;
-import dev.alejandrosahonero.gui.options.manage.ModAlumView;
-import dev.alejandrosahonero.gui.options.manage.ModProView;
+import dev.alejandrosahonero.gui.options.manage.profesor.ModProView;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

@@ -12,7 +12,7 @@ import java.util.List;
 public abstract class MainManageView extends MainView {
     final int photoWidth = 194;
     final int photoHeight = 250;
-    final int margin = 50;
+    protected final int margin = 50;
 
     protected JLabel background, labelPhoto, title1, title2, dni_l, apellidoPaterno_l, apellidoMaterno_l, nombres_l, fechaNac_l, sexo_l, modulo_l, nuss_l, email_l, telefono_l;
     protected JButton photoButton, doneButton, searchButton, removeButton;

@@ -1,7 +1,7 @@
 package dev.alejandrosahonero.logic.options.manage.modulo;
 
 import dev.alejandrosahonero.db.Conector;
-import dev.alejandrosahonero.gui.options.manage.ModModView;
+import dev.alejandrosahonero.gui.options.manage.modulo.ModModView;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;

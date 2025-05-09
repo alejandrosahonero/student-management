@@ -1,12 +1,7 @@
 package dev.alejandrosahonero.logic.options.manage.asignatura;
 
-import dev.alejandrosahonero.db.Alumno;
-import dev.alejandrosahonero.db.Conector;
-import dev.alejandrosahonero.gui.options.manage.ModAsigView;
+import dev.alejandrosahonero.gui.options.manage.asignatura.ModAsigView;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Query;
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 

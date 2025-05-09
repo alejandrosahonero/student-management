@@ -1,11 +1,9 @@
-package dev.alejandrosahonero.gui.options.manage;
+package dev.alejandrosahonero.gui.options.manage.modulo;
 
+import dev.alejandrosahonero.gui.options.manage.MainManageView;
 import dev.alejandrosahonero.logic.options.manage.modulo.RmButtonController;
 import dev.alejandrosahonero.logic.options.manage.modulo.SearchButtonController;
 import dev.alejandrosahonero.logic.options.manage.modulo.ModModButtonController;
-
-import javax.swing.*;
-import java.awt.*;
 
 public class ModModView extends MainManageView {
     public ModModView(){

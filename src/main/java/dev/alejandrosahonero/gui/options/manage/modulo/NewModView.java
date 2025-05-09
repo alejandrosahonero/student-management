@@ -14,7 +14,7 @@ public class NewModView extends MainManageView {
     final int marginHori = 132;
     final int marginVert = 72;
 
-    private JLabel background, title1, siglas_l, nombre_l, descripcion_l, asignaturas_l;
+    private JLabel title1, siglas_l, nombre_l, descripcion_l, asignaturas_l;
     private JTextField siglas, nombre;
     private JTextArea descripcion;
     private JButton asignaturasButton, doneButton;

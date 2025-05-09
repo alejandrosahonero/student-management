@@ -105,4 +105,15 @@ public class ModModView extends MainManageView {
         removeButton.addActionListener(actionListener);
         background.add(removeButton);
     }
+
+    //Getters
+    public JTextField getSiglas() {
+        return siglas;
+    }
+    public JTextField getNombre() {
+        return nombre;
+    }
+    public JTextArea getDescripcion() {
+        return descripcion;
+    }
 }

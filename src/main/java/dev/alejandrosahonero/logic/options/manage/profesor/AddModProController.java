@@ -3,7 +3,7 @@ package dev.alejandrosahonero.logic.options.manage.profesor;
 import dev.alejandrosahonero.db.Conector;
 import dev.alejandrosahonero.db.Modulo;
 import dev.alejandrosahonero.db.Profesor;
-import dev.alejandrosahonero.gui.options.manage.AddModProView;
+import dev.alejandrosahonero.gui.options.manage.profesor.AddModProView;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;

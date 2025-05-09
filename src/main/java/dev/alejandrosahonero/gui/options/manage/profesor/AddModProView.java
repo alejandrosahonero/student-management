@@ -1,6 +1,7 @@
-package dev.alejandrosahonero.gui.options.manage;
+package dev.alejandrosahonero.gui.options.manage.profesor;
 
 import dev.alejandrosahonero.gui.MainView;
+import dev.alejandrosahonero.gui.options.manage.MainManageView;
 import dev.alejandrosahonero.logic.options.manage.profesor.AddModProController;
 
 import javax.swing.*;

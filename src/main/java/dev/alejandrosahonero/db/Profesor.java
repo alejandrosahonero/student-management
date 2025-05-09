@@ -8,8 +8,6 @@ import java.sql.Date;
 
 @Entity
 public class Profesor extends Persona implements Serializable {
-    @GeneratedValue
-    private int id;
     private String nuss;
     private ArrayList<Modulo> modulosImparte = new ArrayList<>();
 
@@ -21,12 +19,6 @@ public class Profesor extends Persona implements Serializable {
     }
 
     //Getters
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
     public String getNuss() {
         return nuss;
     }

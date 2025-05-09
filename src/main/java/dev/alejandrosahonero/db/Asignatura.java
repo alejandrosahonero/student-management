@@ -7,8 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Asignatura {
-    @Id @GeneratedValue
-    private int id;
+    @Id
     private String siglas;
     private String nombre;
     private String descripcion;
@@ -20,10 +19,12 @@ public class Asignatura {
         this.descripcion = descripcion;
     }
 
-    //Getters
-    public int getId() {
-        return id;
+    @Override
+    public String toString() {
+        return siglas;
     }
+
+    //Getters
     public String getSiglas() {
         return siglas;
     }

@@ -79,10 +79,10 @@ public abstract class MainView extends JFrame {
     public int getButtonsHeight() {
         return buttonsHeight;
     }
-    public static Color getTextFieldColor() {
+    public static Color getTextFieldColor(){
         return textFieldColor;
     }
-    public ImageIcon getBackgroundImage() {
+    public ImageIcon getBackgroundImage(){
         return backgroundImage;
     }
 }

@@ -1,22 +1,27 @@
-package dev.alejandrosahonero.gui.options.manage;
+package dev.alejandrosahonero.gui.options.manage.profesor;
 
-import dev.alejandrosahonero.logic.options.manage.profesor.AddModProController;
+import dev.alejandrosahonero.gui.options.manage.MainManageView;
 import dev.alejandrosahonero.logic.options.manage.profesor.ModulosButtonController;
-import dev.alejandrosahonero.logic.options.manage.profesor.NewProButtonController;
+import dev.alejandrosahonero.logic.options.manage.profesor.RmButtonController;
+import dev.alejandrosahonero.logic.options.manage.profesor.SearchButtonController;
+import dev.alejandrosahonero.logic.options.manage.profesor.ModProButtonController;
 import dev.alejandrosahonero.logic.options.manage.txtController;
 
 import javax.swing.*;
 
-public class NewProView extends MainManageView {
+public class ModProView extends MainManageView {
     private JButton modulosButton;
-    public NewProView(){
-        super("Añadir Profesor");
+    public ModProView(){
+        super("Modificar Profesor");
 
-        doneButton("AÑADIR", new NewProButtonController(this));
+        doneButton("MODIFICAR", new ModProButtonController(this));
+        searchBar("DNI");
+        searchButton(new SearchButtonController(this));
+        removeButton(new RmButtonController(this));
     }
     @Override
     protected void academicInformation(){
-        modulosButton = createButton("Añadir modulos", 20, 0x3D5A40, 0xffffff);
+        modulosButton = createButton("Editar modulos", 20, 0x3D5A40, 0xffffff);
         modulosButton.setBounds(margin, margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
         modulosButton.addActionListener(new ModulosButtonController(this));
         background.add(modulosButton);
@@ -35,10 +40,5 @@ public class NewProView extends MainManageView {
         telefono.setBounds(margin*4+getButtonsWidth()*3, margin*6+getButtonsHeight()*3, getButtonsWidth(), getButtonsHeight());
         telefono.addMouseListener(new txtController());
         background.add(telefono);
-    }
-
-    //Getter
-    public JButton getModulosButton() {
-        return modulosButton;
     }
 }

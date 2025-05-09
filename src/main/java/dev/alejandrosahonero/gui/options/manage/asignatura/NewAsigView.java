@@ -1,12 +1,7 @@
-package dev.alejandrosahonero.gui.options.manage;
+package dev.alejandrosahonero.gui.options.manage.asignatura;
 
-import dev.alejandrosahonero.gui.MainView;
-import dev.alejandrosahonero.gui.options.OptionsBackground;
-import dev.alejandrosahonero.logic.options.OptionsController;
+import dev.alejandrosahonero.gui.options.manage.MainManageView;
 import dev.alejandrosahonero.logic.options.manage.asignatura.NewAsigButtonController;
-
-import javax.swing.*;
-import java.awt.*;
 
 public class NewAsigView extends MainManageView {
     public NewAsigView(){

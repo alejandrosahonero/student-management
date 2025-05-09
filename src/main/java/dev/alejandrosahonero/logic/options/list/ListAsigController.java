@@ -20,10 +20,10 @@ public class ListAsigController {
         EntityManager em = Conector.getEntityManager();
         try {
             em.getTransaction().begin();
-            TypedQuery<Asignatura> query = em.createQuery("SELECT a FROM Asignatura a ORDER BY a.id", Asignatura.class);
+            TypedQuery<Asignatura> query = em.createQuery("SELECT a FROM Asignatura a ORDER BY a.siglas", Asignatura.class);
             List<Asignatura> lista = query.getResultList();
             for (Asignatura a : lista) {
-                model.addRow(new Object[]{a.getId(), a.getSiglas(), a.getNombre(), a.getDescripcion()});
+                model.addRow(new Object[]{a.getSiglas(), a.getNombre(), a.getDescripcion()});
             }
             em.getTransaction().commit();
             em.close();

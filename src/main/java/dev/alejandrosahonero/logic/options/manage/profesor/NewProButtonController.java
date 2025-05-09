@@ -4,11 +4,10 @@ import dev.alejandrosahonero.db.Conector;
 import dev.alejandrosahonero.db.Modulo;
 import dev.alejandrosahonero.db.Profesor;
 import dev.alejandrosahonero.gui.MainView;
-import dev.alejandrosahonero.gui.options.manage.NewProView;
+import dev.alejandrosahonero.gui.options.manage.profesor.NewProView;
 
 import javax.persistence.EntityManager;
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Date;

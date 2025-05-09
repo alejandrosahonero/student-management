@@ -9,8 +9,7 @@ import java.util.ArrayList;
 
 @Entity
 public class Modulo implements Serializable {
-    @Id @GeneratedValue
-    private int id;
+    @Id
     private String siglas;
     private String nombre;
     private String descripcion;
@@ -30,26 +29,39 @@ public class Modulo implements Serializable {
         return siglas;
     }
 
-    private void addAsignatura(Asignatura asignatura) {
-        this.asignaturas.add(asignatura);
-    }
-    private void removeAsignatura(Asignatura asignatura) {
-        this.asignaturas.remove(asignatura);
-    }
-    //Getters
-    public int getId() {
-        return id;
-    }
+    //Getters and Setters
     public String getSiglas() {
         return siglas;
+    }
+    public void setSiglas(String siglas) {
+        this.siglas = siglas;
     }
     public String getNombre() {
         return nombre;
     }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
     public String getDescripcion() {
         return descripcion;
     }
-    public ArrayList<Asignatura> getAsignaturas() {
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+    public ArrayList<Asignatura> getAsignaturasArray() {
         return asignaturas;
+    }
+    public String getAsignaturas() {
+        String mensaje = "";
+        for(int i=0; i<asignaturas.size(); i++){
+            if(i==asignaturas.size()-1)
+                mensaje+=asignaturas.get(i).toString();
+            else
+                mensaje+=asignaturas.get(i).toString()+", ";
+        }
+        return mensaje;
+    }
+    public void setAsignaturas(ArrayList<Asignatura> asignaturas) {
+        this.asignaturas = asignaturas;
     }
 }

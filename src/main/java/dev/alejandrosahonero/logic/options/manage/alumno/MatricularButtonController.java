@@ -4,7 +4,7 @@ import dev.alejandrosahonero.db.Alumno;
 import dev.alejandrosahonero.db.Conector;
 import dev.alejandrosahonero.db.Modulo;
 import dev.alejandrosahonero.gui.MainView;
-import dev.alejandrosahonero.gui.options.manage.MatricularView;
+import dev.alejandrosahonero.gui.options.manage.alumno.MatricularView;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;

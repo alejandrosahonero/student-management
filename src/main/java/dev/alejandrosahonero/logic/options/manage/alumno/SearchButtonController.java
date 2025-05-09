@@ -2,7 +2,7 @@ package dev.alejandrosahonero.logic.options.manage.alumno;
 
 import dev.alejandrosahonero.db.Alumno;
 import dev.alejandrosahonero.db.Conector;
-import dev.alejandrosahonero.gui.options.manage.ModAlumView;
+import dev.alejandrosahonero.gui.options.manage.alumno.ModAlumView;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;

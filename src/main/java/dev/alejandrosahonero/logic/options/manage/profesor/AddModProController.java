@@ -3,7 +3,7 @@ package dev.alejandrosahonero.logic.options.manage.profesor;
 import dev.alejandrosahonero.db.Conector;
 import dev.alejandrosahonero.db.Modulo;
 import dev.alejandrosahonero.db.Profesor;
-import dev.alejandrosahonero.gui.options.manage.AddModProView;
+import dev.alejandrosahonero.gui.options.manage.profesor.AddModProView;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
@@ -62,7 +62,7 @@ public class AddModProController implements ActionListener {
         EntityManager em = Conector.getEntityManager();
         em.getTransaction().begin();
 
-        String s_dni = addModProView.getModProView().getSearchBar().getText();
+        String s_dni = addModProView.getMainManageView().getSearchBar().getText();
 
         Profesor pAux = em.find(Profesor.class, s_dni);
         List<Modulo> allModulos = pAux.getModulosImparteArray();

@@ -6,7 +6,14 @@ import dev.alejandrosahonero.gui.options.list.ListAlumView;
 import dev.alejandrosahonero.gui.options.list.ListAsigView;
 import dev.alejandrosahonero.gui.options.list.ListModView;
 import dev.alejandrosahonero.gui.options.list.ListProView;
-import dev.alejandrosahonero.gui.options.manage.*;
+import dev.alejandrosahonero.gui.options.manage.alumno.MatricularView;
+import dev.alejandrosahonero.gui.options.manage.alumno.ModAlumView;
+import dev.alejandrosahonero.gui.options.manage.asignatura.ModAsigView;
+import dev.alejandrosahonero.gui.options.manage.asignatura.NewAsigView;
+import dev.alejandrosahonero.gui.options.manage.modulo.ModModView;
+import dev.alejandrosahonero.gui.options.manage.modulo.NewModView;
+import dev.alejandrosahonero.gui.options.manage.profesor.ModProView;
+import dev.alejandrosahonero.gui.options.manage.profesor.NewProView;
 
 import java.awt.event.*;
 

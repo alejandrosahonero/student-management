@@ -1,6 +1,7 @@
-package dev.alejandrosahonero.gui.options.manage;
+package dev.alejandrosahonero.gui.options.manage.profesor;
 
 import dev.alejandrosahonero.gui.MainView;
+import dev.alejandrosahonero.gui.options.manage.MainManageView;
 import dev.alejandrosahonero.logic.options.manage.profesor.AddModProController;
 
 import javax.swing.*;
@@ -11,14 +12,14 @@ public class AddModProView extends MainView {
     private JPanel backPanel, modPanel, buttonPanel;
     private JButton acceptButton;
     private JButton cancelButton;
-    private ModProView modProView;
+    private MainManageView mainManageView;
 
-    public AddModProView(ModProView modProView) {
+    public AddModProView(MainManageView mainManageView) {
         super("Añadir módulos que imparte");
         setDefaultCloseOperation(HIDE_ON_CLOSE);
         setSize(getWindowsWidth()/2, getWindowsHeight()/2);
 
-        this.modProView = modProView;
+        this.mainManageView = mainManageView;
 
         initComponents();
     }
@@ -36,7 +37,7 @@ public class AddModProView extends MainView {
         add(backPanel);
     }
     private void modulos(){
-        if(modProView.getModulosButton().getText() == "Editar modulos"){
+        if(mainManageView instanceof ModProView){
             List<String> modulos = AddModProController.getAllModulos();
             List<String> modulosActuales = AddModProController.getSearchedModulos(this);
             for(String m : modulos){
@@ -50,7 +51,7 @@ public class AddModProView extends MainView {
                 modPanel.add(modulo);
             }
         }
-        else if(modProView.getModulosButton().getText() == "Añadir modulos"){
+        else if(mainManageView instanceof NewProView){
             List<String> modulos = AddModProController.getAllModulos();
             for(String m : modulos){
                 JCheckBox modulo = new JCheckBox(m);
@@ -84,7 +85,7 @@ public class AddModProView extends MainView {
     public JPanel getModPanel() {
         return modPanel;
     }
-    public ModProView getModProView() {
-        return modProView;
+    public MainManageView getMainManageView() {
+        return mainManageView;
     }
 }

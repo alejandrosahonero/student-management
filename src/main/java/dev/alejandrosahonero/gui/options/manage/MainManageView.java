@@ -12,7 +12,7 @@ import java.util.List;
 public abstract class MainManageView extends MainView {
     final int photoWidth = 194;
     final int photoHeight = 250;
-    final int margin = 50;
+    protected final int margin = 50;
 
     protected JLabel background, labelPhoto, title1, title2, dni_l, apellidoPaterno_l, apellidoMaterno_l, nombres_l, fechaNac_l, sexo_l, modulo_l, nuss_l, email_l, telefono_l;
     protected JButton photoButton, doneButton, searchButton, removeButton;
@@ -26,7 +26,7 @@ public abstract class MainManageView extends MainView {
 
         initComponents();
     }
-    private void initComponents(){
+    protected void initComponents(){
         background = new JLabel(getBackgroundImage());
 
         imagePanel();
@@ -37,7 +37,7 @@ public abstract class MainManageView extends MainView {
 
         add(background, BorderLayout.CENTER);
     }
-    private void titles(){
+    protected void titles(){
         title1 = new JLabel("INFORMACIÓN PERSONAL");
         title1.setFont(new Font("Tahoma", Font.BOLD, 50));
         title1.setForeground(new Color(0x3D5A40));
@@ -54,7 +54,7 @@ public abstract class MainManageView extends MainView {
         title2.setBounds(margin/2, margin*7/2+getButtonsHeight()*3, getButtonsWidth()*3, getButtonsHeight());
         background.add(title2);
     }
-    private void subTitles(){
+    protected void subTitles(){
         dni_l = createTitle("DNI", 20, 0x3D5A40);
         dni_l.setBounds(margin, margin*2, getButtonsWidth(), getButtonsHeight());
         background.add(dni_l);

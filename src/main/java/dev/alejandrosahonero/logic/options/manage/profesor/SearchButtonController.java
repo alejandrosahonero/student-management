@@ -1,13 +1,10 @@
 package dev.alejandrosahonero.logic.options.manage.profesor;
 
-import dev.alejandrosahonero.db.Alumno;
 import dev.alejandrosahonero.db.Conector;
 import dev.alejandrosahonero.db.Profesor;
-import dev.alejandrosahonero.gui.options.manage.ModAlumView;
-import dev.alejandrosahonero.gui.options.manage.ModProView;
+import dev.alejandrosahonero.gui.options.manage.profesor.ModProView;
 
 import javax.persistence.EntityManager;
-import javax.persistence.Query;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -19,8 +16,8 @@ public class SearchButtonController implements ActionListener {
         this.modProView = modProView;
     }
     public void actionPerformed(ActionEvent e) {
+        EntityManager em = Conector.getEntityManager();
         try {
-            EntityManager em = Conector.getEntityManager();
             em.getTransaction().begin();
 
             String s_dni = modProView.getSearchBar().getText();
@@ -51,6 +48,7 @@ public class SearchButtonController implements ActionListener {
             JOptionPane.showMessageDialog(modProView, "Datos recuperados correctamente", "¡Éxito!", JOptionPane.PLAIN_MESSAGE);
 
         } catch (Exception ex) {
+            em.close();
             JOptionPane.showMessageDialog(modProView, "Fallo al recuperar los datos", "Algo salió mal", JOptionPane.ERROR_MESSAGE);
         }
     }

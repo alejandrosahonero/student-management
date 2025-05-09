@@ -37,7 +37,7 @@ public abstract class MainManageView extends MainView {
 
         add(background, BorderLayout.CENTER);
     }
-    private void titles(){
+    protected void titles(){
         title1 = new JLabel("INFORMACIÓN PERSONAL");
         title1.setFont(new Font("Tahoma", Font.BOLD, 50));
         title1.setForeground(new Color(0x3D5A40));
@@ -54,7 +54,7 @@ public abstract class MainManageView extends MainView {
         title2.setBounds(margin/2, margin*7/2+getButtonsHeight()*3, getButtonsWidth()*3, getButtonsHeight());
         background.add(title2);
     }
-    private void subTitles(){
+    protected void subTitles(){
         dni_l = createTitle("DNI", 20, 0x3D5A40);
         dni_l.setBounds(margin, margin*2, getButtonsWidth(), getButtonsHeight());
         background.add(dni_l);

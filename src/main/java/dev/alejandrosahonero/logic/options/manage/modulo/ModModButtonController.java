@@ -42,18 +42,19 @@ public class ModModButtonController implements ActionListener {
             em.close();
 
             JOptionPane.showMessageDialog(modModView, "La modificación se realizó correctamente", "¡Modificación exitosa!", JOptionPane.PLAIN_MESSAGE);
+
+            //Reset fields
+            modModView.getSearchBar().setText("SIGLAS");
+            modModView.getSearchBar().setForeground(MainView.getTextFieldColor());
+            modModView.getSiglas().setText("SIGLAS");
+            modModView.getSiglas().setForeground(MainView.getTextFieldColor());
+            modModView.getNombre().setText("Nombre");
+            modModView.getNombre().setForeground(MainView.getTextFieldColor());
+            modModView.getDescripcion().setText("");
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(modModView, "Error al cargar datos: " + ex.getMessage(), "Algo salió mal", JOptionPane.ERROR_MESSAGE);
             em.close();
         }
-        //Reset fields
-        modModView.getSearchBar().setText("SIGLAS");
-        modModView.getSearchBar().setForeground(MainView.getTextFieldColor());
-        modModView.getSiglas().setText("SIGLAS");
-        modModView.getSiglas().setForeground(MainView.getTextFieldColor());
-        modModView.getNombre().setText("Nombre");
-        modModView.getNombre().setForeground(MainView.getTextFieldColor());
-        modModView.getDescripcion().setText("");
     }
 
     public static List<String> getAllModulos(){

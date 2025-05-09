@@ -21,10 +21,10 @@ public class ListProController {
         EntityManager em = Conector.getEntityManager();
         try {
             em.getTransaction().begin();
-            TypedQuery<Profesor> query = em.createQuery("SELECT p FROM Profesor p ORDER BY p.id", Profesor.class);
+            TypedQuery<Profesor> query = em.createQuery("SELECT p FROM Profesor p ORDER BY p.dni", Profesor.class);
             List<Profesor> lista = query.getResultList();
             for (Profesor p : lista) {
-                model.addRow(new Object[]{p.getId(), p.getDni(), p.getApellidoPaterno(), p.getApellidoMaterno(), p.getNombres(), p.getFechaNacimiento(), p.getNuss(), p.getEmail(), p.getTlf(), p.getModulosImparte()});
+                model.addRow(new Object[]{p.getDni(), p.getApellidoPaterno(), p.getApellidoMaterno(), p.getNombres(), p.getFechaNacimiento(), p.getNuss(), p.getEmail(), p.getTlf(), p.getModulosImparte()});
             }
             em.getTransaction().commit();
             em.close();

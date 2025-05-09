@@ -38,18 +38,18 @@ public class ModAsigButtonController implements ActionListener {
             em.close();
 
             JOptionPane.showMessageDialog(modAsigView, "La modificación se realizó correctamente", "¡Modificación exitosa!", JOptionPane.PLAIN_MESSAGE);
+
+            //Reset fields
+            modAsigView.getSiglas().setText("SIGLAS");
+            modAsigView.getSiglas().setForeground(MainView.getTextFieldColor());
+            modAsigView.getNombre().setText("Nombre");
+            modAsigView.getNombre().setForeground(MainView.getTextFieldColor());
+            modAsigView.getDescripcion().setText("");
+            modAsigView.getHoras().setText("Horas");
+            modAsigView.getHoras().setForeground(MainView.getTextFieldColor());
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(modAsigView, "Error al cargar datos: " + ex.getMessage(), "Algo salió mal", JOptionPane.ERROR_MESSAGE);
             em.close();
         }
-        //Reset fields
-        modAsigView.getSiglas().setText("SIGLAS");
-        modAsigView.getSiglas().setForeground(MainView.getTextFieldColor());
-        modAsigView.getNombre().setText("Nombre");
-        modAsigView.getNombre().setForeground(MainView.getTextFieldColor());
-        modAsigView.getDescripcion().setText("");
-        modAsigView.getHoras().setText("Horas");
-        modAsigView.getHoras().setForeground(MainView.getTextFieldColor());
-
     }
 }
